@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dt: 2012-06-28
+  exchange: MyString
+  ticker: MyString
+  month: MyString
+  year: 1
+  open: 1.5
+  high: 1.5
+  low: 1.5
+  settle: 1.5
+  volume: 1.5
+  interest: 1.5
+
+two:
+  dt: 2012-06-28
+  exchange: MyString
+  ticker: MyString
+  month: MyString
+  year: 1
+  open: 1.5
+  high: 1.5
+  low: 1.5
+  settle: 1.5
+  volume: 1.5
+  interest: 1.5
