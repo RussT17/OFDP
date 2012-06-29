@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629163618) do
+ActiveRecord::Schema.define(:version => 20120629191907) do
 
   create_table "futures_data_rows", :force => true do |t|
     t.date    "dt"
@@ -31,5 +31,16 @@ ActiveRecord::Schema.define(:version => 20120629163618) do
   add_index "futures_data_rows", ["month"], :name => "index_futures_data_rows_on_month"
   add_index "futures_data_rows", ["ticker"], :name => "index_futures_data_rows_on_ticker"
   add_index "futures_data_rows", ["year"], :name => "index_futures_data_rows_on_year"
+
+  create_table "month_codes", :id => false, :force => true do |t|
+    t.string "code"
+    t.string "month"
+  end
+
+  create_table "ticker_symbols", :id => false, :force => true do |t|
+    t.string "exchange"
+    t.string "symbol"
+    t.string "name"
+  end
 
 end

@@ -40,6 +40,7 @@ class FuturesController < ApplicationController
   
   def table_of_contents
     contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {'ticker' => record.ticker, 'month' => record.month, 'year' => record.year, 'exchange' => record.exchange}}
+    contents.delete_if {|c| TickerSymbol.where("symbol = '#{c['ticker']}'").where("exchange = '#{c['exchange']}'").length == 0}
     contents.sort do |a,b|
       comp = (a['ticker'] <=> b['ticker'])
       if comp.zero?
@@ -59,7 +60,18 @@ class FuturesController < ApplicationController
       end
     end
     
-    #generate ticker names
-    @tickers = contents.map {|c| c.ticker + c.month + c.year}
+    #generate urls for display
+    @urls = contents.map {|c| 'http://ofdp.dev/futures?ticker=' + c['ticker'] + '&month=' + c['month'] + '&year=' + c['year'].to_s + '&exchange=' + c['exchange']}
+    
+    #generate ticker for display
+    @tickers = contents.map {|c| c['ticker'] + c['month'] + c['year'].to_s}
+    
+    #generate name for display
+    @names = contents.map {|c| TickerSymbol.where("symbol = '#{c['ticker']}'").where("exchange = '#{c['exchange']}'").first.name + ' ' +
+      MonthCode.where("code = '#{c['month']}'").first.month.capitalize + ' ' + c['year'].to_s + ' ' + '(' + c['ticker'] + c['month'] + c['year'].to_s + ')'}
+      
+    #generate description for display
+    @descriptions = Array.new
+    contents.each_index {|i| @descriptions[i] = 'Future Contract: ' + /\s\(/.match(@names[i]).pre_match + ' Ticker: ' + @tickers[i] + ' Exchange: ' + contents[i]['exchange']}
   end
 end
