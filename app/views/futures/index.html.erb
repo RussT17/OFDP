@@ -1,38 +1,16 @@
 <%= link_to "Home",root_path %><br>
 <br>
 <div id='futures-data-selection'>
-	Ticker:
-	<select class='ticker'>
+	<% @fields.each do |f| %>
+	<%= f.capitalize %>:
+	<select class='<%= f %>'>
 		<option value='none'>Unselected</option>
-		<% @ticker_options.each do |option|%>
-		<option value='<%= option %>' <%= 'selected' if option == @ticker_selected %>><%= option%></option>
+		<% @all_options[f].each do |option|%>
+		<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= '-' if @valid_options[f].include?(option) %> <%= option%></option>
 		<% end %>
 	</select>
 	<br>
-	Month:
-	<select class='month'>
-		<option value='none'>Unselected</option>
-		<% @month_options.each do |option|%>
-		<option value='<%= option %>' <%= 'selected' if option == @month_selected %>><%= option%></option>
-		<% end %>
-	</select>
-	<br>
-	Year:
-	<select class='year'>
-		<option value='none'>Unselected</option>
-		<% @year_options.each do |option|%>
-		<option value='<%= option %>' <%= 'selected' if option == @year_selected %>><%= option%></option>
-		<% end %>
-	</select>
-	<br>
-	Exchange:
-	<select class='exchange'>
-		<option value='none'>Unselected</option>
-		<% @exchange_options.each do |option|%>
-		<option value='<%= option %>' <%= 'selected' if option == @exchange_selected %>><%= option%></option>
-		<% end %>
-	</select>
-	<br>
+	<% end %>
 	<br>
 </div>
 <%= link_to "Reset Form",futures_path %>

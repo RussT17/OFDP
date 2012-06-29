@@ -1,41 +1,39 @@
 class FuturesController < ApplicationController
   def index
+    @selected = Hash.new
+    @all_options = Hash.new
+    @valid_options = Hash.new
+    
+    #create an array of the names of the sorting fields
+    @fields = ['ticker','month','year','exchange']
+    
+    #determine all possible options for each field, whether or not they will return data
+    @fields.each {|f| @all_options[f] = FuturesDataRow.group(f).map {|row| row.send(f).to_s}}
+    
     #keep track of which choices the user made
-    @exchange_selected = params[:exchange] if params[:exchange] != 'none'
-    @ticker_selected = params[:ticker] if params[:ticker] != 'none'
-    @month_selected = params[:month] if params[:month] != 'none'
-    @year_selected = params[:year] if params[:year] != 'none'
+    @fields.each {|f| @selected[f] = params[f] if params[f] != 'none'}
     
     #narrow down the data to tailor the user's choices
     selected_data = FuturesDataRow
-    selected_data = selected_data.where("exchange = ?",@exchange_selected) if !@exchange_selected.nil?
-    selected_data = selected_data.where("ticker = ?",@ticker_selected) if !@ticker_selected.nil?
-    selected_data = selected_data.where("month = ?",@month_selected) if !@month_selected.nil?
-    selected_data = selected_data.where("year = ?",@year_selected.to_i) if !@year_selected.nil?
+    @fields.each {|f| selected_data = selected_data.where("#{f} = ?", @selected[f]) if !@selected[f].nil?}
     
-    #determine further options to display to the user, display all if the option is already selected
-    temp_selected_data = FuturesDataRow
-    temp_selected_data = temp_selected_data.where("ticker = ?",@ticker_selected) if !@ticker_selected.nil?
-    temp_selected_data = temp_selected_data.where("month = ?",@month_selected) if !@month_selected.nil?
-    temp_selected_data = temp_selected_data.where("year = ?",@year_selected.to_i) if !@year_selected.nil?
-    @exchange_options = temp_selected_data.group(:exchange).map {|row| row.exchange}
-    temp_selected_data = FuturesDataRow
-    temp_selected_data = temp_selected_data.where("exchange = ?",@exchange_selected) if !@exchange_selected.nil?
-    temp_selected_data = temp_selected_data.where("month = ?",@month_selected) if !@month_selected.nil?
-    temp_selected_data = temp_selected_data.where("year = ?",@year_selected.to_i) if !@year_selected.nil?
-    @ticker_options = temp_selected_data.group(:ticker).map {|row| row.ticker}
-    temp_selected_data = FuturesDataRow
-    temp_selected_data = temp_selected_data.where("ticker = ?",@ticker_selected) if !@ticker_selected.nil?
-    temp_selected_data = temp_selected_data.where("exchange = ?",@exchange_selected) if !@exchange_selected.nil?
-    temp_selected_data = temp_selected_data.where("year = ?",@year_selected.to_i) if !@year_selected.nil?
-    @month_options = temp_selected_data.group(:month).map {|row| row.month}
-    temp_selected_data = FuturesDataRow
-    temp_selected_data = temp_selected_data.where("ticker = ?",@ticker_selected) if !@ticker_selected.nil?
-    temp_selected_data = temp_selected_data.where("month = ?",@month_selected) if !@month_selected.nil?
-    temp_selected_data = temp_selected_data.where("exchange = ?",@exchange_selected.to_i) if !@exchange_selected.nil?
-    @year_options = temp_selected_data.group(:year).map {|row| row.year.to_s}
+    #determine valid options to display to the user, display all if the option is already selected
+    @fields.each do |f|
+      temp_selected_data = FuturesDataRow
+      (@fields - [f]).each do |g|
+        if g != 'year'
+          temp_selected_data = temp_selected_data.where("#{g} = ?", @selected[g]) if !@selected[g].nil?
+        else
+          temp_selected_data = temp_selected_data.where("#{g} = ?", @selected[g].to_i) if !@selected[g].nil?
+        end
+      end
+      @valid_options[f] = temp_selected_data.group(f).map {|row| row.send(f).to_s}
+    end
+    
+    #if a field has only one option, select it
+    @fields.each {|f| @selected[f] = @valid_options[f][0] if @valid_options[f].length == 1}
     
     #display data if all four selections are made
-    @data = selected_data if @exchange_selected and @ticker_selected and @month_selected and @year_selected
+    @data = selected_data if @fields.map {|f| @selected[f].nil?} == [false,false,false,false]
   end
 end
