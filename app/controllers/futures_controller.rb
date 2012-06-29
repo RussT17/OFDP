@@ -7,33 +7,59 @@ class FuturesController < ApplicationController
     #create an array of the names of the sorting fields
     @fields = ['ticker','month','year','exchange']
     
-    #determine all possible options for each field, whether or not they will return data
-    @fields.each {|f| @all_options[f] = FuturesDataRow.group(f).map {|row| row.send(f).to_s}}
+    #determine all possible options for each field, whether or not they will return data (should be done only when new data is added and stored in database)
+    @fields.each {|f| @all_options[f] = FuturesDataRow.uniq.pluck(f)}
     
     #keep track of which choices the user made
     @fields.each {|f| @selected[f] = params[f] if params[f] != 'none'}
     
-    #narrow down the data to tailor the user's choices
-    selected_data = FuturesDataRow
-    @fields.each {|f| selected_data = selected_data.where("#{f} = ?", @selected[f]) if !@selected[f].nil?}
-    
-    #determine valid options to display to the user, display all if the option is already selected
-    @fields.each do |f|
-      temp_selected_data = FuturesDataRow
-      (@fields - [f]).each do |g|
-        if g != 'year'
-          temp_selected_data = temp_selected_data.where("#{g} = ?", @selected[g]) if !@selected[g].nil?
-        else
-          temp_selected_data = temp_selected_data.where("#{g} = ?", @selected[g].to_i) if !@selected[g].nil?
+    #determine valid options to display to the user, if something is selected
+    if @fields.map {|f| @selected[f].nil?} != [true,true,true,true]
+      @fields.each do |f|
+        temp_selected_data = FuturesDataRow
+        (@fields - [f]).each do |g|
+          if g != 'year'
+            temp_selected_data = temp_selected_data.where("#{g} = ?", @selected[g]) if !@selected[g].nil?
+          else
+            temp_selected_data = temp_selected_data.where("#{g} = ?", @selected[g].to_i) if !@selected[g].nil?
+          end
         end
+        @valid_options[f] = temp_selected_data.uniq.pluck(f)
       end
-      @valid_options[f] = temp_selected_data.group(f).map {|row| row.send(f).to_s}
+    else
+      @valid_options = @all_options
+    end
+
+    #display data if all four selections are made
+    if @fields.map {|f| @selected[f].nil?} == [false,false,false,false]
+      selected_data = FuturesDataRow
+      @fields.each {|f| selected_data = selected_data.where("#{f} = ?", @selected[f]) if !@selected[f].nil?}
+      @data = selected_data
+    end
+  end
+  
+  def table_of_contents
+    contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {'ticker' => record.ticker, 'month' => record.month, 'year' => record.year, 'exchange' => record.exchange}}
+    contents.sort do |a,b|
+      comp = (a['ticker'] <=> b['ticker'])
+      if comp.zero?
+        comp = (a['month'] <=> b['month'])
+        if comp.zero?
+          comp = (a['year'] <=> b['year'])
+          if comp.zero?
+            comp = (a['exchange'] <=> b['exchange'])
+          else
+            comp
+          end
+        else
+          comp
+        end
+      else
+        comp
+      end
     end
     
-    #if a field has only one option, select it
-    @fields.each {|f| @selected[f] = @valid_options[f][0] if @valid_options[f].length == 1}
-    
-    #display data if all four selections are made
-    @data = selected_data if @fields.map {|f| @selected[f].nil?} == [false,false,false,false]
+    #generate ticker names
+    @tickers = contents.map {|c| c.ticker + c.month + c.year}
   end
 end

@@ -1,5 +1,6 @@
 Ofdp::Application.routes.draw do
   match "futures" => "futures#index"
+  match "futures/contents" => "futures#table_of_contents"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
