@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore the file with the database password.
-/config/database.yaml
+/config/database.yml
