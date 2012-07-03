@@ -1,6 +1,27 @@
 <%= link_to "Home",root_path %><br>
 <%= link_to "Data Selector",futures_path %><br>
 <h1>Table of Contents</h1>
+<table border='1'>
+	<tr>
+		<th>
+			Ticker Symbol
+		</th>
+		<th>
+			Future Name
+		</th>
+		<th>
+			Description
+		</th>
+		<th>
+			Data URL
+		</th>
+	</tr>
 <% @tickers.each_index do |i| %>
-<%= @tickers[i]%> | <%= @names[i]%> | <%= @descriptions[i]%> | <%= @urls[i]%> <br>
+	<tr>
+		<td><%= @tickers[i]%></td>
+		<td><%= @names[i]%></td>
+		<td><%= @descriptions[i]%></td>
+		<td><%= link_to @urls[i],@urls[i]%></td>
+	</tr>
 <% end %>
+</table>

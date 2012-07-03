@@ -35,20 +35,26 @@ class FuturesController < ApplicationController
       selected_data = FuturesDataRow
       @fields.each {|f| selected_data = selected_data.where("#{f} = ?", @selected[f]) if !@selected[f].nil?}
       @data = selected_data
+      @name = '(' + @selected['ticker'] + @selected['month'] + @selected['year'].to_s + ')'
+      if !TickerSymbol.where("symbol = '#{@selected['ticker']}'").where("exchange = '#{@selected['exchange']}'").length.zero?
+      @name = TickerSymbol.where("symbol = '#{@selected['ticker']}'").where("exchange = '#{@selected['exchange']}'").first.name + ' ' +
+        MonthCode.where("code = '#{@selected['month']}'").first.month.capitalize + ' ' + @selected['year'].to_s + ' ' << @name
+      end
     end
   end
   
   def table_of_contents
     contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {'ticker' => record.ticker, 'month' => record.month, 'year' => record.year, 'exchange' => record.exchange}}
     contents.delete_if {|c| TickerSymbol.where("symbol = '#{c['ticker']}'").where("exchange = '#{c['exchange']}'").length == 0}
-    contents.sort do |a,b|
+ 
+    contents.sort! do |a,b|
       comp = (a['ticker'] <=> b['ticker'])
       if comp.zero?
-        comp = (a['month'] <=> b['month'])
+        comp = (a['exchange'] <=> b['exchange'])
         if comp.zero?
           comp = (a['year'] <=> b['year'])
           if comp.zero?
-            comp = (a['exchange'] <=> b['exchange'])
+            comp = (a['month'] <=> b['month'])
           else
             comp
           end
@@ -59,9 +65,9 @@ class FuturesController < ApplicationController
         comp
       end
     end
-    
+
     #generate urls for display
-    @urls = contents.map {|c| 'http://ofdp.dev/futures?ticker=' + c['ticker'] + '&month=' + c['month'] + '&year=' + c['year'].to_s + '&exchange=' + c['exchange']}
+    @urls = contents.map {|c| futures_url + '?ticker=' + c['ticker'] + '&month=' + c['month'] + '&year=' + c['year'].to_s + '&exchange=' + c['exchange']}
     
     #generate ticker for display
     @tickers = contents.map {|c| c['ticker'] + c['month'] + c['year'].to_s}
@@ -72,6 +78,6 @@ class FuturesController < ApplicationController
       
     #generate description for display
     @descriptions = Array.new
-    contents.each_index {|i| @descriptions[i] = 'Future Contract: ' + /\s\(/.match(@names[i]).pre_match + ' Ticker: ' + @tickers[i] + ' Exchange: ' + contents[i]['exchange']}
+    contents.each_index {|i| @descriptions[i] = 'Future Contract: ' + (/\s\(/).match(@names[i]).pre_match + ' Ticker: ' + @tickers[i] + ' Exchange: ' + contents[i]['exchange']}
   end
 end

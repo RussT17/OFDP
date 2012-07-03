@@ -17,9 +17,11 @@
 	<br>
 </div>
 <%= link_to "Reset Form",futures_path %>
+<br><br>
 <% if !@data.nil? %>
 	<% if @data.length > 0 %>
-	<table>
+	<h3><%= @name %></h3>
+	<table border='1'>
 		<tr>
 			<th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Settle</th><th>Volume</th><th>Interest</th>
 		</tr>
