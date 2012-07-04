@@ -1,53 +1,52 @@
-<div class='side-bar'>
-	<div class='main-logo-small'></div>
-	<ul>
-	<li><%= link_to "Home",root_path %></li>
-	<li><%= link_to "Table of Contents",futures_contents_path %></li>
-	</ul>
-</div>
+<div class='container'>
+<div class='filler'>
+	<div class='header'><div class='main-logo-small'></div></div>
+<%= render "shared/sidebar" %>
 
 <div class='page-content'>
-<div class='data-selector'>
-<h2>Data Selector</h2>
-<br>
-<div id='futures-data-selection'>
-	<% @fields.each do |f| %>
-	<%= f.capitalize %>:
-	<select class='<%= f %>'>
-		<option value='none'>Unselected</option>
-		<% @all_options[f].each do |option|%>
-		<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option.to_s %>' <%= 'selected' if option.to_s == @selected[f].to_s %>><%= '-' if @valid_options[f].include?(option) %> <%= option.to_s %></option>
+	<div class='data-selector'>
+		<h1>Data Selector</h1>
+		<div id='futures-data-selection'>
+			<% @fields.each do |f| %>
+				<%= f.capitalize %>:
+				<select class='<%= f %>'>
+					<option value='none'>Unselected</option>
+					<% @all_options[f].each do |option|%>
+					<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option.to_s %>' <%= 'selected' if option.to_s == @selected[f].to_s %>><%= '-' if @valid_options[f].include?(option) %> <%= option.to_s %></option>
+					<% end %>
+				</select>
+				<br>
+			<% end %>
+			<br>
+		</div>
+		<%= link_to "Reset Form",futures_path %>
+		<br><br>
+		<% if !@data.nil? %>
+			<% if @data.length > 0 %>
+			<h3><%= @name %></h3>
+				<table border='1'>
+					<tr>
+						<th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Settle</th><th>Volume</th><th>Interest</th>
+					</tr>
+					<% @data.order("dt DESC").each do |row|%>
+					<tr>
+						<td><%= row.dt.to_s %></td>
+						<td><%= row.open.to_s %></td>
+						<td><%= row.high.to_s %></td>
+						<td><%= row.low.to_s %></td>
+						<td><%= row.settle.to_s %></td>
+						<td><%= row.volume.to_s %></td>
+						<td><%= row.interest.to_s %></td>
+					</tr>
+					<% end %>
+				</table>
+			<% else %>
+			<br><br>No data matches query.
+			<% end %>
 		<% end %>
-	</select>
-	<br>
-	<% end %>
-	<br>
+	</div>
 </div>
-<%= link_to "Reset Form",futures_path %>
-<br><br>
-<% if !@data.nil? %>
-	<% if @data.length > 0 %>
-	<h3><%= @name %></h3>
-	<table border='1'>
-		<tr>
-			<th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Settle</th><th>Volume</th><th>Interest</th>
-		</tr>
-	<% @data.order("dt DESC").each do |row|%>
-		<tr>
-			<td><%= row.dt.to_s %></td>
-			<td><%= row.open.to_s %></td>
-			<td><%= row.high.to_s %></td>
-			<td><%= row.low.to_s %></td>
-			<td><%= row.settle.to_s %></td>
-			<td><%= row.volume.to_s %></td>
-			<td><%= row.interest.to_s %></td>
-		</tr>
-	<% end %>
-	</table>
-	<% else %>
-	<br><br>No data matches query.
-	<% end %>
-<% end %>
+<div class='footer'></div>
 </div>
 </div>
 

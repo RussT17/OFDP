@@ -16,3 +16,6 @@
 
 # Ignore the file with the database password.
 /config/database.yml
+
+#Ignore tasks
+/lib/tasks

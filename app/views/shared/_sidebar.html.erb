@@ -1,0 +1,11 @@
+<div class='side-bar'>
+	<ul>
+	<li><%= link_to "Home",root_path %></li>
+	<li><%= (params[:controller] == 'futures') ? ('Futures Data Access') : (link_to "Futures Data Access",futures_path) %>
+		<ul>
+			<li><%= (params[:controller] == 'futures' and params[:action] == 'index') ? ('Data Selector') : (link_to "Data Selector",futures_path) %></li>
+			<li><%= (params[:controller] == 'futures' and params[:action] == 'table_of_contents') ? ('Table of Contents') : (link_to "Table of Contents",futures_contents_path) %></li>
+		</ul>
+	</li>
+	</ul>
+</div>
