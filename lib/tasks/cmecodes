@@ -1,0 +1,191 @@
+#code,exchange,category,name
+#CME codes
+AD,  AD,  XCME, FX, AUD/USD
+AC,  AC,  XCME, FX, AUD/CAD
+AJ,  AJ,  XCME, FX, AUD/JPY
+AN,  AN,  XCME, FX, AUD/NZD
+CD,  CD,  XCME, FX, CAD/USD
+CY,  CY,  XCME, FX, CAD/JPY
+SF,  SF,  XCME, FX, CHF/USD
+SJ,  SJ,  XCME, FX, CHF/USD
+FXD, FXD, XCME, FX, DJ Index
+EC,  EC,  XCME, FX, EUR/USD
+RP,  RP,  XCME, FX, EUR/GBP
+CA,  CA,  XCME, FX, EUR/AUD
+CC,  CC,  XCME, FX, EUR/CAD
+RF,  RF,  XCME, FX, EUR/CHF
+RY,  RY,  XCME, FX, EUR/JPY
+CN,  CN,  XCME, FX, EUR/NOK
+BP,  BP,  XCME, FX, GBP/USD
+BY,  BY,  XCME, FX, GBP/JPY
+BF,  BF,  XCME, FX, GBP/CHF
+JY,  JY,  XCME, FX, USD/JPY
+#J7,  J7,  XCME, FX, E-mini JPY/USD
+UN,  UN,  XCME, FX, NOK/USD
+NE,  NE,  XCME, FX, NZD/USD
+SE,  SE,  XCME, FX, SEK/USD
+BR,  BR,  XCME, FX, BRL/USD
+CZ,  CZ,  XCME, FX, CZK/USD
+K,   K,   XCME, FX, CZK/EUR
+R,   R,   XCME, FX, HUF/EUR
+FR,  FR,  XCME, FX, HUF/USD
+IS,  IS,  XCME, FX, ILS/USD
+KRW, KRW, XCME, FX, KRW/USD
+MP,  MP,  XCME, FX, MXN/USD
+Z,   Z,   XCME, FX, PLN/EUR
+RMB, RMB, XCME, FX, RMB/USD
+RME, RME, XCME, FX, RMB/EUR
+RMY, RMY, XCME, FX, RMB/JPY
+RU,  RU,  XCME, FX, RUB/JPY
+RA,  RA,  XCME, FX, ZAR/USD
+TRY, TRY, XCME, FX, USD/TRY
+TRE, TRE, XCME, FX, EUR/TRY
+16E, 16E, XCME, FX, EUR/USD 1-Month Realized Volatility
+36E, 36E, XCME, FX, EUR/USD 3-Month Realized Volatility
+#M6A, M6A, XCME, FX, E-micro AUD/USD
+#M6E, M6E, XCME, FX, E-micro EUR/USD
+#M6B, M6B, XCME, FX, E-micro GBP/USD
+#MCD, MCD, XCME, FX, E-micro CAD/USD
+#M6C, M6C, XCME, FX, E-micro USD/CAD
+#MSF, MSF, XCME, FX, E-micro CHF/USD
+#M6S, M6S, XCME, FX, E-micro USD/CHF
+#MJY, MJY, XCME, FX, E-micro JPY/USD
+#M6J, M6J, XCME, FX, E-micro USD/JPY
+CL,  CL,  XNYM, EN, Light Sweet Crude WTI
+CVF, CVF, XNYM, EN, Crude Oil Volatility Index (VIX)
+#QM,  QM,  XNYM, EN, E-mini Crude Oil
+BZ,  BZ,  XNYM, EN, Brent Crude Oil Last Day
+REB, REB, XNYM, EN, Russian Export Blend Crude (Rebco)
+MB,  MB,  XNYM, EN, Gulf Coast Sour Crude
+A0,  A0X, XNYM, EN, Argus Sour Crude Index
+BB,  BB,  XNYM, EN, Brent Crude Oil Penultimate
+EH,  EH,  XCBT, EN, CBOT Denatured Fuel Ethanol
+QE,  QE,  XNYM, EN, NY Harbor Ethanol
+NG,  NG,  XNYM, EN, Henry Hub Natural Gas
+HH,  HH,  XNYM, EN, Henry Hub Natural Gas Look-Alike
+HP,  HP,  XNYM, EN, Henry Hub Natural Gas Look-Alike Penultimate
+#QG,  QG,  XNYM, EN, E-mini Natural Gas
+NP,  NP,  XNYM, EN, Henry Hub Natural Gas Penultimate
+NN,  NN,  XNYM, EN, Henry Hub Natural Gas Swap
+PPE, PPE, XNYM, EN, Pine Prairie Energy Phys Del Nat Gas Mothly Del
+L1,  L1,  XNYM, EN, PJM West Hub Peak Cal-Mon Real-Time LMP Swap
+4SN, 4SN, XNYM, EN, PJM West Hub 50 MW Peak Cal-Mon Real-Time LMP Swap
+Z9,  Z9,  XNYM, EN, PJM AEP Dayton Hub 5MW Peak Cal-Mon Real-Time LMP Swap
+U6,  U6N, XNYM, EN, ISO New England Int Hub 5MW Peak Cal-Mon Day-Ahead LMP Swap
+T3,  T3N, XNYM, EN, NYISO Zone G 5MW Peak Cal-Mon Day-Ahead LBMP Swap
+K3,  K3X, XNYM, EN, NYISO Zone A 5MW Peak Cal-Mon Day-Ahead LBMP Swap
+H3,  H3N, XNYM, EN, Midwest ISO Cinergy Hub 5MW Peak Cal-Mon Real-Time Swap
+B3,  B3,  XNYM, EN, PJM Northern Illinois Hub 5MW Peak Cal-Mon Real-Time LMP Swap
+HO,  HO,  XNYM, EN, Heating Oil
+BH,  BH,  XNYM, EN, Heating Oil Fin
+#QH,  QH,  XNYM, EN, E-mini Heating Oil Fin
+RB,  RB,  XNYM, EN, RBOB Gasoline
+RT,  RT,  XNYM, EN, RBOB Gasoline Fin
+#QU,  QU,  XNYM, EN, E-mini RBOB Gasoline Fin
+7F,  GLI, XNYM, EN, European Gasoil (ICE)
+LR,  LR,  XNYM, EN, Gulf Coast Gasoline
+LU,  LU,  XNYM, EN, Gulf Coast Ultra Low Sulfur Diedel (ULSD)
+LH,  LH,  XNYM, EN, NY Harbor Ultra Low Sulfur Diesel (ULSD)
+QLD, QLD, XNYM, EN, Central Appalachian Coal
+UX,  UX,  XNYM, EN, UXC Uranium U308 Swap
+C,   C,   XCBT, AG, Corn
+YC,  YC,  XCBT, AG, Mid Corn
+DDG, DDG, XCBT, AG, Distillers Dried Grain
+W,   W,   XCBT, AG, Wheat
+#YW,  YW,  XCBT, AG, Mini-Sized Wheat
+S,   S,   XCBT, AG, Soybeans
+#YK,  YK,  XCBT, AG, Mini-Sized Soybeans
+06,  SM,  XCBT, AG, Soybean Meal
+07,  BO,  XCBT, AG, Soybean Oil
+BCX, BCX, XCBT, AG, Soybean Crush
+O,   O,   XCBT, AG, Oats
+14,  RR,  XCBT, AG, Rough Rice
+CPO, CPO, XCME, AG, Crude Palm Oil
+LC,  LC,  XCME, AG, Live Cattle
+LN,  LN,  XCME, AG, Lean Hogs
+FC,  FC,  XCME, AG, Feeder Cattle
+DA,  DA,  XCME, AG, Class III Milk
+DK,  DK,  XCME, AG, Class IV Milk
+ISM, ISM, XCME, AG, Intl Skim Milk Powder
+NF,  NF,  XCME, AG, Non-Fat Dry Milk
+DY,  DY,  XCME, AG, Dry Whey
+CB,  CB,  XCME, AG, Cash-Settled Butter
+CSC, CSC, XCME, AG, Cheese
+LB,  LB,  XCME, AG, Random Length Lumber
+WP,  WP,  XCME, AG, Softwood Pulp
+HWP, HWP, XCME, AG, Hardwood Pulp
+70,  AW,  XCBT, AG, DJ-UBS Commodity Index
+GI,  GI,  XCME, AG, S&P-GSCI
+GA,  GA,  XCME, AG, S&P-GSCI Excess Return Index
+CJ,  CJ,  XNYM, AG, NYMEX Cocoa
+KT,  KT,  XNYM, AG, NYMEX Coffee
+TT,  TT,  XNYM, AG, NYMEX Cotton
+YO,  YO,  XNYM, AG, NYMEX #11 Sugar
+GC,  GC,  XCEC, MT, Gold
+GVF, GVF, XCEC, MT, Gold Volatility Index (VIX)
+MGC, MGC, XCEC, MT, E-micro Gold
+QO,  QO,  XCEC, MT, COMEX MiNY Gold
+SI,  SI,  XCEC, MT, Silver
+#XSN, XSN, XCEC, MT, E-mini Silver
+QI,  QI,  XCEC, MT, COMEX miNY Silver
+PL,  PL,  XNYM, MT, Platinum
+PA,  PA,  XNYM, MT, Palladium
+HG,  HG,  XCEC, MT, Copper
+#QC,  QC,  XCEC, MT, E-mini Copper
+HRC, HRC, XNYM, MT, US MIdwest Dom Hot-Rolled Coil Steel Index
+UX,  UX,  XNYM, MT, UxC Uranium U308 Swap
+NFP, NFP, XCME, EC, Non-Farm Payroll
+#ES,  ES,  XCME, EQ, E-mini S&P 500 (Dollar)
+#EME, EME, XCME, EQ, E-mini S&P 500 (Euro)
+SP,  SP,  XCME, EQ, S&P 500
+#ME,  ME,  XCME, EQ, E-mini S&P MidCap 400
+MD,  MD,  XCME, EQ, S&P MidCap 400
+#SMC, SMC, XCME, EQ, E-mini S&P SmallCap 600
+SMP, SMP, XCME, EQ, S&P SmallCap 600
+#NQ,  NQ,  XCME, EQ, E-mini NASDAQ-100
+SG,  SG,  XCME, EQ, S&P 500/Growth
+SU,  SU,  XCME, EQ, S&P 500/Value
+#QN,  QN,  XCME, EQ, E-mini NASDAQ Composite
+#BQ,  BQ,  XCME, EQ, E-mini NASDAQ Biotech
+#YM,  YM,  XCBT, EQ, E-mini Dow ($5)
+11,  DJ,  XCBT, EQ, DJIA ($10)
+DO,  DO,  XCBT, EQ, Big Dow DJIA ($25)
+#EMF, EMF, XCME, EQ, E-mini S&P CNX Nifty (Nifty 50)
+#II,  II,  XCME, EQ, E-micro S&P CNX Nifty (Nifty 50)
+NK,  NK,  XCME, EQ, Nikkei 225 (Dollar)
+N1,  NIY, XCME, EQ, Nikkei 225 (Yen)
+PST, PST, XCME, EQ, TRAKRS PIMCO SPTR
+ED,  ED,  XCME, IR, Eurodollar
+EB,  EB,  XCME, IR, Euribor
+EM,  EM,  XCME, IR, 1-Month Eurodollar
+EY,  EY,  XCME, IR, Euroyen TIBOR
+OSP, OSP, XCME, IR, 3-Month Overnight Index Swaps (OIS)
+41,  FF,  XCBT, IR, 30-Day Federal Funds
+SKV, SKV, XCME, IR, US-UK 10-Year Sovys
+SEV, SEV, XCME, IR, US-DE 10-Year Sovys
+SFV, SFV, XCME, IR, US-FR 10-Year Sovys
+STV, STV, XCME, IR, US-IT 10-Year Sovys
+SDV, SDV, XCME, IR, US-ND 10-Year Sovys
+KEV, KEV, XCME, IR, UK-DE 10-Year Sovys
+KFV, KFV, XCME, IR, UK-FR 10-Year Sovys
+KTV, KTV, XCME, IR, UK-IT 10-Year Sovys
+KDV, KDV, XCME, IR, UK-ND 10-Year Sovys
+DFV, DFV, XCME, IR, DE-FR 10-Year Sovys
+DTV, DTV, XCME, IR, DE-IT 10-Year Sovys
+DNV, DNV, XCME, IR, DE-ND 10-Year Sovys
+UBE, UBE, XCBT, IR, Ultra T-Bond
+17,  US,  XCBT, IR, U.S. Treasury Bond
+21,  TY,  XCBT, IR, 10-Year U.S. Treasury Note
+25,  FV,  XCBT, IR, 5-Year U.S. Treasury Note
+3YR, 3YR, XCBT, IR, 3-Year U.S. Treasury Note
+26,  TU,  XCBT, IR, 2-Year U.S. Treasury Note
+TWO, TWO, XCBT, IR, OTR 2-Year U.S. Treasury Note
+FIV, FIV, XCBT, IR, OTR 5-Year U.S. Treasury Note
+TEN, TEN, XCBT, IR, OTR 10-Year U.S. Treasury Note
+TB,  TB,  XCME, IR, 13-Week T-Bill
+NG,  NG,  XCBT, IR, 5-Year Interest Rate Swap
+7I,  N7,  XCBT, IR, 7-Year Interest Rate Swap
+66,  NI,  XCBT, IR, 10-Year Interest Rate Swap
+I3,  NZ,  XCBT, IR, 30-Year Interest Rate Swap
+LBA, LBA, XCME, IR, CME Barclays Cap U.S. Agg Bond Index
+HC,  HC,  XCME, IR, Eurozone HICP

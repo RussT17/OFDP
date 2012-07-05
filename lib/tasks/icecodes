@@ -1,0 +1,21 @@
+#code,exchange,category,name
+1,             B,   XICE, EN, Brent Crude
+57,            MID, XICE, EN, Middle East Sour Crude
+41,            O,   XICE, EN, Heating Oil
+43,            N,   XICE, EN, NYH (RBOB) Gasoline
+7,             M,   XICE, EN, UK Natural Gas
+101,           TTF, XICE, EN, Dutch TTF Gas
+12,            Y,   XICE, EN, UK Base Electricity
+17,            P,   XICE, EN, UK Peak Electricity
+20,            C,   XICE, EN, ECX EUA
+81,            CER, XICE, EN, ECX CER
+120,           ERU, XICE, EN, ECX ERU
+135,           SUB, XICE, EN, FOB Indo sub-bit Coal
+21^2047^1931,  F,   XICE, EN, ASCI
+21^2048^1932,  MEC, XICE, EN, ASCI Differential
+113^2508^2769, GPM, XICE, EN, GASPOOL Natural Gas
+113^2510^2772, NGM, XICE, EN, NCG Natural Gas
+131^2863^3419, UCA, XICE, EN, Central Appalachian
+131^2864^3420, UCX, XICE, EN, CSX Coal
+131^2865^3421, UCP, XICE, EN, Powder River Basin Coal
+3^3425^4089,   ULS, XICE, EN, ICE Low Sulphur Gasoil

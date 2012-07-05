@@ -1,0 +1,75 @@
+#code,exchange,category,name
+#AR,  XICU, FX, Cross Currency Pairs Australian Dollar/New Zealand Dollar
+#AS,  XICU, FX, Cross Currency Pairs Australian Dollar/Canadian Dollar
+CC,  XICU, AG, Cocoa
+#CCC, XICU, AG, Cleared Cocoa Swap
+CI,  XICU, AG, Continuous Commodity Index
+CR,  XICU, AG, Reuters Jefferies/CRB Index
+CT,  XICU, AG, Cotton
+DX,  XICU, FX, ICE US Dollar Index
+#EZ,  XICU, FX, Euro Currency Pairs Euro/Czech Koruna
+#GN,  XICU, FX, Cross Currency Pairs British Pound Sterling/New Zealand Dollar
+#HR,  XICU, FX, Euro Currency Pairs Euro/Hungarian Forint
+#HY,  XICU, FX, Cross Currency Pairs Canadian Dollar/Japanese Yen
+#IAU, XICU, FX, Millions FX Australian Dollar / U.S. Dollar
+#IEJ, XICU, FX, Millions FX Euro / Japanese Yen
+#IEO, XICU, FX, Millions FX Euro / U.S. Dollar
+#IEP, XICU, FX, Millions FX Euro / Canadian Dollar
+#IGB, XICU, FX, Millions FX Euro / British Pound
+#IKX, XICU, FX, Millions FX U.S. Dollar / Swedish Krona
+#IMF, XICU, FX, Millions FX U.S. Dollar / Swiss Franc
+#IMP, XICU, FX, Millions FX British Pound / U.S. Dollar
+#IRK, XICU, FX, Millions FX Euro / Swedish Krona
+#IRZ, XICU, FX, Millions FX Euro / Swiss Franc
+#ISN, XICU, FX, Millions FX U.S. Dollar / Japanese Yen
+#ISV, XICU, FX, Millions FX U.S. Dollar / Canadian Dollar
+#KAU, XICU, FX, Dollar Based Currency Pairs Aus. Dollar/US Dollar (100)
+KC,  XICU, AG, Coffee
+#KCC, XICU, AG, Cleared Coffee C Swap
+#KCU, XICU, FX, Dollar Based Currency Pairs Colombian peso/US dollar
+#KEJ, XICU, FX, Euro Currency Pairs Euro/Japanese Yen (125)
+#KEO, XICU, FX, Dollar Based Currency Pairs Euro/US Dollar Regular (125)
+#KEP, XICU, FX, Euro Currency Pairs Euro/Canadian Dollar (125)
+#KGB, XICU, FX, Euro Currency Pairs Euro/British Pound (125)
+#KJ,  XICU, FX, Cross Currency Pairs Swedish Krona/Japanese Yen
+#KMF, XICU, FX, Dollar Based Currency Pairs Swiss franc/US dollar (125)
+KMP, XICU, FX, Dollar Based Currency Pairs Mexican peso/US dollar
+#KOL, XICU, FX, Euro Currency Pairs Euro/Norwegian Krone (125)
+#KRA, XICU, FX, Euro Currency Pairs Euro/Australian Dollar (125)
+#KRK, XICU, FX, Euro Currency Pairs Euro/Swedish Krona (125)
+#KRZ, XICU, FX, Euro Currency Pairs Euro/Swiss Franc (125)
+#KSN, XICU, FX, Dollar Based Currency Pairs Japanese yen/US dollar?(12.5)
+#KSV, XICU, FX, Dollar Based Currency Pairs Canadian dollar/US dollar?(100)
+#KX,  XICU, FX, Dollar Based Currency Pairs US Dollar/Swedish Krona
+#KY,  XICU, FX, Cross Currency Pairs Norwegian Krone/Japanese Yen
+#KZX, XICU, FX, Cross Currency Pairs New Zealand dollar/US dollar? (100)
+#KZY, XICU, FX, Cross Currency Pairs Swiss Franc/Japanese Yen (250)
+#MF,  XICU, FX, Dollar Based Currency Pairs US Dollar/Swiss Franc
+#MP,  XICU, FX, Dollar Based Currency Pairs British Pound/US Dollar
+#NJ,  XICU, FX, Cross Currency Pairs Norwegian Krone/Swedish Krona
+#NT,  XICU, FX, Dollar Based Currency Pairs US Dollar/Norw. Krone
+OJ,  XICU, AG, FCOJ-A
+ORE, XICU, MT, Iron Ore Swap (Platts) 62% Fe
+#PC,  XICU, FX, Cross Currency Pairs British Pound Sterling/Canadian Dollar
+#PK,  XICU, FX, Cross Currency Pairs British Pound Sterling/Norwegian Krone
+#PS,  XICU, FX, Cross Currency Pairs British Pound Sterling/Swedish Krona
+#PZ,  XICU, FX, Cross Currency Pairs British Pound Sterling/South African Rand
+#QA,  XICU, FX, Cross Currency Pairs British Pound Sterling/Australian Dollar
+#RC,  XICU, AG, Robusta
+RF,  XICU, EQ, Russell 1000 Index Mini TAS
+RG,  XICU, EQ, Russell 1000 Growth Index Mini
+RV,  XICU, EQ, Russell 1000 Value Index Mini
+SB,  XICU, AG, Sugar No. 11
+#SBC, XICU, AG, Cleared Sugar No. 11 Swap
+SF,  XICU, AG, Sugar No. 16
+#SN,  XICU, FX, Dollar Based Currency Pairs US Dollar/Japanese Yen
+#SS,  XICU, FX, Cross Currency Pairs British Pound Sterling/Swiss Franc
+#SV,  XICU, FX, Dollar Based Currency Pairs US Dollar/Canadian Dollar
+#SY,  XICU, FX, Cross Currency Pairs British Pound Sterling/Japanese Yen
+#TF,  XICU, EQ, Russell 2000 Index Mini TAS
+#VC,  XICU, FX, Dollar Based Currency Pairs US Dollar/Czech Koruna
+#VU,  XICU, FX, Dollar Based Currency Pairs US Dollar/Hungarian Forint
+#YA,  XICU, FX, Cross Currency Pairs Australian Dollar/Japanese Yen
+#YZ,  XICU, FX, Euro Currency Pairs Euro/South African Rand
+#ZJ,  XICU, FX, Cross Currency Pairs New Zealand Dollar/Japanese Yen
+#ZR,  XICU, FX, Dollar Based Currency Pairs US Dollar/S.African Rand
