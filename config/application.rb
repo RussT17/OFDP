@@ -58,5 +58,20 @@ module Ofdp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    MONTH_NAMES = {
+      'F' => 'January',
+      'G' => 'February',
+      'H' => 'March',
+      'J' => 'April',
+      'K' => 'May',
+      'M' => 'June',
+      'N' => 'July',
+      'Q' => 'August',
+      'U' => 'September',
+      'V' => 'October',
+      'X' => 'November',
+      'Z' => 'December'
+    }
   end
 end

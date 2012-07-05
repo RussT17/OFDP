@@ -20,12 +20,16 @@
 				Data URL
 			</th>
 		</tr>
-		<% @tickers.each_index do |i| %>
+		<% @contents.each do |c| %>
 		<tr>
-			<td><%= @tickers[i]%></td>
-			<td><%= @names[i]%></td>
-			<td><%= @descriptions[i]%></td>
-			<td><%= link_to @urls[i],@urls[i]%></td>
+			<% the_ticker = c['ticker'] + c['month'] + c['year'] %>
+			<td><%= the_ticker %></td>
+			<% the_name = TickerSymbol.where("symbol = '#{c['ticker']}'").where("exchange = '#{c['exchange']}'").first.name + ' ' +
+	      Ofdp::Application::MONTH_NAMES[c['month']] + ' ' + c['year'] + ' ' + '(' + c['ticker'] + c['month'] + c['year'] + ')' %>
+			<td><%= the_name %></td>
+			<td><%= 'Future Contract: ' + (/\s\(/).match(the_name).pre_match + ' Ticker: ' + the_ticker + ' Exchange: ' + c['exchange'] %></td>
+			<% the_url = futures_url + '?ticker=' + c['ticker'] + '&month=' + c['month'] + '&year=' + c['year'] + '&exchange=' + c['exchange'] %>
+			<td><%= link_to the_url, the_url%></td>
 		</tr>
 		<% end %>
 	</table>

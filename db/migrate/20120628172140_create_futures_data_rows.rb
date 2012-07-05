@@ -5,7 +5,7 @@ class CreateFuturesDataRows < ActiveRecord::Migration
       t.string :exchange
       t.string :ticker
       t.string :month
-      t.integer :year
+      t.string :year
       t.float :open
       t.float :high
       t.float :low

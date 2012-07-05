@@ -12,7 +12,7 @@
 				<select class='<%= f %>'>
 					<option value='none'>Unselected</option>
 					<% @all_options[f].each do |option|%>
-					<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option.to_s %>' <%= 'selected' if option.to_s == @selected[f].to_s %>><%= '-' if @valid_options[f].include?(option) %> <%= option.to_s %></option>
+					<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= '-' if @valid_options[f].include?(option) %> <%= option %></option>
 					<% end %>
 				</select>
 				<br>
