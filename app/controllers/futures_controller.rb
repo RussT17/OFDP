@@ -40,6 +40,6 @@ class FuturesController < ApplicationController
   end
   
   def table_of_contents
-    @contents = FuturesContent.select('*').map {|record| {'ticker' => record.ticker, 'month' => record.month, 'year' => record.year, 'exchange' => record.exchange}}
+    @contents = FuturesContent.order('id').page(params[:page])
   end
 end

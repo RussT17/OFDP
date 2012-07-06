@@ -43,3 +43,6 @@ gem 'jquery-rails'
 
 # Nokogiri
 gem 'nokogiri'
+
+# Paginate with kaminari
+gem 'kaminari'

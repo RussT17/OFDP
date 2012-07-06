@@ -8,18 +8,20 @@
 		<h1>Data Selector</h1>
 		<div id='futures-data-selection'>
 			<% @fields.each do |f| %>
-				<%= f.capitalize %>:
+				<div class='field'><%= f.capitalize %>:</div>
+				<div class='selection'>
 				<select class='<%= f %>'>
 					<option value='none'>Unselected</option>
 					<% @all_options[f].each do |option|%>
 					<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= '-' if @valid_options[f].include?(option) %> <%= option %></option>
 					<% end %>
 				</select>
-				<br>
+				</div>
 			<% end %>
-			<br>
 		</div>
+		<div>
 		<%= link_to "Reset Form",futures_path %>
+		</div>
 		<br><br>
 		<% if !@data.nil? %>
 			<% if @data.length > 0 %>
