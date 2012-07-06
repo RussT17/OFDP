@@ -188,7 +188,7 @@ namespace :scrape do
               print "," if n != 11
             end
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
-            FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create
+            FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
             print "\n"
           $stdout.flush
           end
@@ -304,46 +304,43 @@ namespace :scrape do
   
   desc "scrape all sources"
   task :all => [:cme,:ice,:icu]
-  
-  
-  
-  
-  desc "update table of contents based on current data"
-  task :update_contents => :environment do
-    puts "Determining table of contents entries..."
-    
-    #first we'll update the table of contents
-    contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {:ticker => record.ticker, :month => record.month, :year => record.year, :exchange => record.exchange}}
-    contents.delete_if {|c| TickerSymbol.where("symbol = '#{c[:ticker]}'").where("exchange = '#{c[:exchange]}'").length == 0}
-    
-    puts "Done."
-    puts "Adding entries to database..."
-    
-    #clear old table of contents
-    FuturesContent.delete_all
-    
-    #put new contents in the table of contents
-    contents.each_index {|i| FuturesContent.create(contents[i])}
-    puts "Done."
-  end
-  
-  desc "update choices based on current data"
-  task :update_choices => :environment do
-    puts "Updating dropdown choices..."
-    #now update dropdown choices
-    #first clear old choie table
-    FuturesChoice.delete_all
-    
-    #now add new choices
-    fields = ['ticker','month','year','exchange']
-    fields.each do |field|
-      choices = FuturesDataRow.uniq.pluck(field).sort
-      choices.each {|choice| FuturesChoice.create(:choice => choice, :type => field)}
-    end
-    puts "Done."
-  end
-  
-  desc "update choices and contents"
-  task :update_all => [:update_choices,:update_contents]
 end
+
+desc "update table of contents based on current data"
+task :update_contents => :environment do
+  puts "Determining table of contents entries..."
+  
+  #first we'll update the table of contents
+  contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {:ticker => record.ticker, :month => record.month, :year => record.year, :exchange => record.exchange}}
+  contents.delete_if {|c| TickerSymbol.where("symbol = '#{c[:ticker]}'").where("exchange = '#{c[:exchange]}'").length == 0}
+  
+  puts "Done."
+  puts "Adding entries to database..."
+  
+  #clear old table of contents
+  FuturesContent.delete_all
+  
+  #put new contents in the table of contents
+  contents.each_index {|i| FuturesContent.create(contents[i])}
+  puts "Done."
+end
+
+desc "update choices based on current data"
+task :update_choices => :environment do
+  puts "Updating dropdown choices..."
+  #now update dropdown choices
+  #first clear old choie table
+  FuturesChoice.delete_all
+  
+  #now add new choices
+  fields = ['ticker','month','year','exchange']
+  fields.each do |field|
+    choices = FuturesDataRow.uniq.pluck(field).sort
+    choices.each {|choice| FuturesChoice.create(:choice => choice, :type => field)}
+  end
+  puts "Done."
+end
+
+desc "update choices and contents"
+task :update_all => [:update_choices,:update_contents]
 end
