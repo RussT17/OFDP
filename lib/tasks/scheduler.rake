@@ -9,6 +9,8 @@ namespace :scrape do
 
     args.with_defaults(:date => Date.today-1)
     input_date = args.date
+    
+    fields = ['ticker','month','year','exchange']
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
@@ -101,7 +103,11 @@ namespace :scrape do
             end
             print "\n"
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
-            FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create
+            FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
+            FuturesChoice.where(:choice => ex, :field_type => 'exchange').first_or_create
+            FuturesChoice.where(:choice => cd, :field_type => 'ticker').first_or_create
+            FuturesChoice.where(:choice => mn, :field_type => 'month').first_or_create
+            FuturesChoice.where(:choice => yr, :field_type => 'year').first_or_create
             $stdout.flush
           end
           f+=1
@@ -121,6 +127,8 @@ namespace :scrape do
 
     args.with_defaults(:date => Date.today-1)
     input_date = args.date
+    
+    fields = ['ticker','month','year','exchange']
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
@@ -189,6 +197,10 @@ namespace :scrape do
             end
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
             FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
+            FuturesChoice.where(:choice => ex, :field_type => 'exchange').first_or_create
+            FuturesChoice.where(:choice => cd, :field_type => 'ticker').first_or_create
+            FuturesChoice.where(:choice => mn, :field_type => 'month').first_or_create
+            FuturesChoice.where(:choice => yr, :field_type => 'year').first_or_create
             print "\n"
           $stdout.flush
           end
@@ -210,6 +222,8 @@ namespace :scrape do
 
     args.with_defaults(:date => Date.today-1)
     input_date = args.date
+    
+    fields = ['ticker','month','year','exchange']
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
@@ -289,7 +303,11 @@ namespace :scrape do
               print "," if n!=10
             end
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
-            FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create
+            FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
+            FuturesChoice.where(:choice => ex, :field_type => 'exchange').first_or_create
+            FuturesChoice.where(:choice => cd, :field_type => 'ticker').first_or_create
+            FuturesChoice.where(:choice => mn, :field_type => 'month').first_or_create
+            FuturesChoice.where(:choice => yr, :field_type => 'year').first_or_create
             print "\n"
             $stdout.flush
           end
@@ -306,41 +324,43 @@ namespace :scrape do
   task :all => [:cme,:ice,:icu]
 end
 
-desc "update table of contents based on current data"
-task :update_contents => :environment do
-  puts "Determining table of contents entries..."
+namespace :update do
+  desc "update table of contents based on current data"
+  task :contents => :environment do
+    puts "Determining table of contents entries..."
   
-  #first we'll update the table of contents
-  contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {:ticker => record.ticker, :month => record.month, :year => record.year, :exchange => record.exchange}}
-  contents.delete_if {|c| TickerSymbol.where("symbol = '#{c[:ticker]}'").where("exchange = '#{c[:exchange]}'").length == 0}
+    #first we'll update the table of contents
+    contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {:ticker => record.ticker, :month => record.month, :year => record.year, :exchange => record.exchange}}
+    contents.delete_if {|c| TickerSymbol.where("symbol = '#{c[:ticker]}'").where("exchange = '#{c[:exchange]}'").length == 0}
   
-  puts "Done."
-  puts "Adding entries to database..."
+    puts "Done."
+    puts "Adding entries to database..."
   
-  #clear old table of contents
-  FuturesContent.delete_all
+    #clear old table of contents
+    FuturesContent.delete_all
   
-  #put new contents in the table of contents
-  contents.each_index {|i| FuturesContent.create(contents[i])}
-  puts "Done."
-end
-
-desc "update choices based on current data"
-task :update_choices => :environment do
-  puts "Updating dropdown choices..."
-  #now update dropdown choices
-  #first clear old choie table
-  FuturesChoice.delete_all
-  
-  #now add new choices
-  fields = ['ticker','month','year','exchange']
-  fields.each do |field|
-    choices = FuturesDataRow.uniq.pluck(field).sort
-    choices.each {|choice| FuturesChoice.create(:choice => choice, :type => field)}
+    #put new contents in the table of contents
+    contents.each_index {|i| FuturesContent.create(contents[i])}
+    puts "Done."
   end
-  puts "Done."
-end
 
-desc "update choices and contents"
-task :update_all => [:update_choices,:update_contents]
+  desc "update choices based on current data"
+  task :choices => :environment do
+    puts "Updating dropdown choices..."
+    #now update dropdown choices
+    #first clear old choie table
+    FuturesChoice.delete_all
+  
+    #now add new choices
+    fields = ['ticker','month','year','exchange']
+    fields.each do |field|
+      choices = FuturesDataRow.uniq.pluck(field).sort
+      choices.each {|choice| FuturesChoice.create(:choice => choice, :field_type => field)}
+    end
+    puts "Done."
+  end
+
+  desc "update choices and contents"
+  task :all => [:update_choices,:update_contents]
+end
 end

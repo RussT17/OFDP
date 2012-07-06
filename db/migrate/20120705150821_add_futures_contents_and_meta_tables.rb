@@ -9,7 +9,7 @@ class AddFuturesContentsAndMetaTables < ActiveRecord::Migration
     
     create_table :futures_choices do |t|
       t.string :choice
-      t.string :type
+      t.string :field_type
     end
   end
 

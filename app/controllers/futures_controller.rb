@@ -8,7 +8,7 @@ class FuturesController < ApplicationController
     @fields = ['ticker','month','year','exchange']
     
     #get all the possible options for each field from the database
-    @fields.each {|f| @all_options[f] = FuturesChoice.where("type = ?",f).pluck(:choice)}
+    @fields.each {|f| @all_options[f] = FuturesChoice.where("field_type = ?",f).pluck(:choice)}
     
     #keep track of which choices the user made
     @fields.each {|f| @selected[f] = params[f] if params[f] != 'none'}

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120705150821) do
 
   create_table "futures_choices", :force => true do |t|
     t.string "choice"
-    t.string "type"
+    t.string "field_type"
   end
 
   create_table "futures_contents", :force => true do |t|
