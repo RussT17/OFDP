@@ -1,10 +1,9 @@
 <div class='container'>
-<div class='filler'>
 	<div class='header'><div class='main-logo-small'></div></div>
-<%= render "shared/sidebar" %>
 
 <div class='page-content'>
-	<h1>Table of Contents</h1>
+	<h1 class='page-title'>Table of Contents</h1>
+	<%= link_to 'Data Selector', futures_path %><br><br>
 	<%= paginate @contents %><br>
 	<table border='1'>
 		<tr>
@@ -36,5 +35,4 @@
 	</table>
 </div>
 <div class='footer'></div>
-</div>
 </div>

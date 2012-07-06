@@ -1,11 +1,9 @@
 <div class='container'>
-<div class='filler'>
 	<div class='header'><div class='main-logo-small'></div></div>
-<%= render "shared/sidebar" %>
 
 <div class='page-content'>
-	<div class='data-selector'>
-		<h1>Data Selector</h1>
+		<h1 class='page-title'>Data Selector</h1>
+		<%= link_to 'Table of Contents', futures_contents_path %><br><br>
 		<div id='futures-data-selection'>
 			<% @fields.each do |f| %>
 				<div class='field'><%= f.capitalize %>:</div>
@@ -47,9 +45,7 @@
 			<% end %>
 		<% end %>
 	</div>
-</div>
 <div class='footer'></div>
-</div>
 </div>
 
 <script>

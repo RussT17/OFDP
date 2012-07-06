@@ -1,3 +1,5 @@
+#there is much repetition in this file, refactoring into methods is in order
+
 namespace :futures do
 namespace :scrape do
   desc "scrape CME and related sources (CBT,CEC,NYM), update contents accordingly"
