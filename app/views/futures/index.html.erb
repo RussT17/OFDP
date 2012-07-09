@@ -10,7 +10,7 @@
 				<select class='<%= f %>'>
 					<option value='none'>Unselected</option>
 					<% @all_options[f].each do |option|%>
-					<option class = '<%= 'invalid-option' if !@valid_options[f].include?(option) %>' value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= '-' if @valid_options[f].include?(option) %> <%= option %></option>
+					<option <%= 'disabled' if !@valid_options[f].include?(option) %> value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= option %></option>
 					<% end %>
 				</select>
 				</div>
@@ -50,6 +50,7 @@
 <script>
 $(document).ready(function() {
   $('#futures-data-selection select').change(function() {
+		$('div.selection select').attr('disabled','');
     var path = '<%= futures_path%>';
 		path = path + '?ticker=' + $('select.ticker option:selected').val();
 		path = path + '&month=' + $('select.month option:selected').val();
