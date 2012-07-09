@@ -1,26 +1,10 @@
-.main-logo {
-  background: url("<%= asset_path('logo-ofdp.png') %>") no-repeat;
-  width:423px;
-  height:193px;
-}
-
 .main-logo-small {
   background: url("<%= asset_path('logo-ofdp-smallest.png') %>") no-repeat;
   width:200px;
   height:91px;
   margin-left:10px;
   margin-top:0px;
-}
-
-.home-container * {
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
-}
-
-.home-container {
-  padding-top:125px;
-  background-color:white;
+  float:left;
 }
 
 html, body {
@@ -33,6 +17,12 @@ body {
   margin:0;
 }
 
+p {
+  line-height:1.3em;
+}
+
+/* Elements of all pages */
+
 .container {
   width:960px;
   margin-left:auto;
@@ -44,6 +34,7 @@ body {
 .header {
   background-color:#eeeeee;
   border-bottom:1px solid black;
+  height:94px;
 }
 
 .footer {
@@ -69,6 +60,12 @@ body {
   clear:both;
 }
 
+h1.page-title {
+  margin-bottom:0px;
+}
+
+/* Futures data selector */
+
 #futures-data-selection {
   width:225px;
   height:110px;
@@ -86,6 +83,30 @@ body {
   float:right;
 }
 
-h1.page-title {
-  margin-bottom:0px;
+/* Navbar */
+div.navbar{
+  height:36px;
+  width:500px;
+  margin-left:220px;
+  padding-top:57px;
+}
+
+div.tab{
+  height:36px;
+  width:85px;
+  float:left;
+  text-align:center;
+  background-color:#AAAAAA;
+  border:1px solid black;
+  margin-left:25px;
+}
+
+div.tab div{
+  margin-top:9px;
+}
+
+div.home-tab{
+}
+
+div.futures-tab{
 }
