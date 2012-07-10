@@ -119,6 +119,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   foreigner
   jquery-rails
+  json
   kaminari
   nokogiri
   pg
