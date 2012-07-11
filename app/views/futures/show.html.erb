@@ -1,0 +1,62 @@
+<div class='container'>
+	<%= render 'shared/header' %>
+<div class='page-content'>
+		<h1 class='page-title'>Data Selector</h1>
+		<%= link_to 'Table of Contents', futures_index_path %><br><br>
+		<div class='data-selector'>
+			<% @fields.each do |f| %>
+				<div class='field'><%= f.capitalize %>:</div>
+				<div class='selection'>
+				<select class='<%= f %>'>
+					<option value='none'>Unselected</option>
+					<% @all_options[f].each do |option|%>
+					<option <%= 'disabled' if !@valid_options[f].include?(option) %> value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= option %></option>
+					<% end %>
+				</select>
+				</div>
+			<% end %>
+		</div>
+		<div>
+		<%= link_to "Reset Form",futures_path %>
+		</div>
+		<br><br>
+		<% if !@data.nil? %>
+			<% if @data.length > 0 %>
+			<h3><%= @name %></h3>
+				<table border='1'>
+					<tr>
+						<th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Settle</th><th>Volume</th><th>Interest</th>
+					</tr>
+					<% @data.order("dt DESC").each do |row|%>
+					<tr>
+						<td><%= row.dt.to_s %></td>
+						<td><%= row.open.to_s %></td>
+						<td><%= row.high.to_s %></td>
+						<td><%= row.low.to_s %></td>
+						<td><%= row.settle.to_s %></td>
+						<td><%= row.volume.to_s %></td>
+						<td><%= row.interest.to_s %></td>
+					</tr>
+					<% end %>
+				</table>
+			<% else %>
+			<br><br>No data matches query.
+			<% end %>
+		<% end %>
+	</div>
+<div class='footer'></div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('.data-selector select').change(function() {
+		$('div.selection select').attr('disabled','');
+    var path = '<%= futures_path %>';
+		path = path + '?ticker=' + $('select.ticker option:selected').val();
+		path = path + '&month=' + $('select.month option:selected').val();
+		path = path + '&year=' + $('select.year option:selected').val();
+		path = path + '&exchange=' + $('select.exchange option:selected').val();
+    window.location = path;
+  });
+});
+</script>

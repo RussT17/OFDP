@@ -1,0 +1,32 @@
+<div class='container'>
+	<%= render 'shared/header' %>
+<div class='page-content'>
+	<h1 class='page-title'>Table of Contents</h1>
+	<%= paginate @contents %><br>
+	<table border='1'>
+		<tr>
+			<th>
+				Symbol
+			</th>
+			<th>
+				Option Name
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				Data URL
+			</th>
+		</tr>
+		<% for c in @contents %>
+		<tr><% type = c.is_call ? "Call" : "Put" %>
+			<td><%= c.symbol %></td>
+			<td><%= c.stock.name + ' ' + c.expiry_date.to_s + ' ' + type + ' ' + ' $' + c.strike_price.to_s + ' (' + c.symbol + ')'%></td>
+			<td><%= 'Underlying Asset: ' + c.stock.name + ' (' + 'Symbol: ' + c.stock.symbol + ', Exchange: ' + c.stock.exchange + ', Sector: ' + c.stock.sector + '), ' + type + ', Expiry Date: ' + c.expiry_date.to_s + ', Strike Price: $' + c.strike_price.to_s %></td>
+			<td><%= link_to stock_option_url(c), stock_option_url(c) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+<div class='footer'></div>
+</div>

@@ -1,7 +1,8 @@
 <div class='header'>
 	<a href='<%= root_path %>'><div class='main-logo-small'></div></a>
 	<div class='navbar'>
-		<a href='<%= root_path %>'><div class='tab home-tab'><div>Home</div></div></a>
-		<a href='<%= futures_path %>'><div class='tab futures-tab'><div>Futures</div></div></a>
+		<a href='<%= root_path %>'><div class='tab home-tab <%= 'on' if params[:controller] == 'home' %>'><div>Home</div></div></a>
+		<a href='<%= futures_path %>'><div class='tab futures-tab <%= 'on' if params[:controller] == 'futures' %>'><div>Futures</div></div></a>
+		<a href='<%= stock_options_path %>'><div class='tab futures-tab <%= 'on' if params[:controller] == 'stock_options' %>'><div>Stock Options</div></div></a>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 class FuturesController < ApplicationController
-  def index
+  def show
     @selected = Hash.new
     @all_options = Hash.new
     @valid_options = Hash.new
@@ -39,7 +39,7 @@ class FuturesController < ApplicationController
     end
   end
   
-  def table_of_contents
+  def index
     @contents = FuturesContent.order('id').page(params[:page])
   end
 end

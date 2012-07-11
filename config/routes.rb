@@ -1,6 +1,11 @@
 Ofdp::Application.routes.draw do
-  match "futures" => "futures#index"
-  match "futures/contents" => "futures#table_of_contents"
+  match "futures" => "futures#show"
+  match "futures/index" => "futures#index"
+  
+  resources :stock_options, :only => [:index,:show]
+  
+  #match "stock_options" => "stock_options#show"
+  #match "stock_options/index" => "stock_options#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
