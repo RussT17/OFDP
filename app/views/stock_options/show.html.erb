@@ -2,8 +2,24 @@
 	<%= render 'shared/header' %>
 	<div class='page-content'>
 		<h1 class='page-title'>Data</h1>
-		<%= link_to 'Table of Contents', stock_options_path %><br><br>
-
+		<%= link_to 'Table of Contents', stock_options_path %>
+		<h3><%= @title %></h3>
+		<table border='1'>
+			<tr>
+				<th>Date</th><th>Last Trade</th><th>Change</th><th>Bid</th><th>Ask</th><th>Volume</th><th>Interest</th>
+			</tr>
+			<% @rows.order("date DESC").each do |row|%>
+			<tr>
+				<td><%= row.date.to_s %></td>
+				<td><%= row.last_trade_price.to_s %></td>
+				<td><%= row.change.to_s %></td>
+				<td><%= row.bid.to_s %></td>
+				<td><%= row.ask.to_s %></td>
+				<td><%= row.volume.to_s %></td>
+				<td><%= row.open_interest.to_s %></td>
+			</tr>
+			<% end %>
+		</table>
 	</div>
 	<div class='footer'></div>
 </div>
