@@ -1,25 +1,8 @@
 <div class='container'>
 	<%= render 'shared/header' %>
 <div class='page-content'>
-		<h1 class='page-title'>Data Selector</h1>
-		<%= link_to 'Table of Contents', futures_index_path %><br><br>
-		<div class='data-selector'>
-			<% @fields.each do |f| %>
-				<div class='field'><%= f.capitalize %>:</div>
-				<div class='selection'>
-				<select class='<%= f %>'>
-					<option value='none'>Unselected</option>
-					<% @all_options[f].each do |option|%>
-					<option <%= 'disabled' if !@valid_options[f].include?(option) %> value='<%= option %>' <%= 'selected' if option == @selected[f] %>><%= option %></option>
-					<% end %>
-				</select>
-				</div>
-			<% end %>
-		</div>
-		<div>
-		<%= link_to "Reset Form",futures_path %>
-		</div>
-		<br><br>
+		<h1 class='page-title'>Data</h1>
+		<%= link_to 'Table of Contents', futures_index_path %>
 		<% if !@data.nil? %>
 			<% if @data.length > 0 %>
 			<h3><%= @name %></h3>
