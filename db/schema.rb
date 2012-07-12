@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120710205753) do
-
-  create_table "futures_choices", :force => true do |t|
-    t.string "choice"
-    t.string "field_type"
-  end
+ActiveRecord::Schema.define(:version => 20120712154554) do
 
   create_table "futures_contents", :force => true do |t|
     t.string "ticker"

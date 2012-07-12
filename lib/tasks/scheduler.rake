@@ -106,10 +106,6 @@ namespace :scrape do
             print "\n"
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
             FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
-            FuturesChoice.where(:choice => ex, :field_type => 'exchange').first_or_create
-            FuturesChoice.where(:choice => cd, :field_type => 'ticker').first_or_create
-            FuturesChoice.where(:choice => mn, :field_type => 'month').first_or_create
-            FuturesChoice.where(:choice => yr, :field_type => 'year').first_or_create
             $stdout.flush
           end
           f+=1
@@ -199,10 +195,6 @@ namespace :scrape do
             end
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
             FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
-            FuturesChoice.where(:choice => ex, :field_type => 'exchange').first_or_create
-            FuturesChoice.where(:choice => cd, :field_type => 'ticker').first_or_create
-            FuturesChoice.where(:choice => mn, :field_type => 'month').first_or_create
-            FuturesChoice.where(:choice => yr, :field_type => 'year').first_or_create
             print "\n"
           $stdout.flush
           end
@@ -306,10 +298,6 @@ namespace :scrape do
             end
             FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
             FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
-            FuturesChoice.where(:choice => ex, :field_type => 'exchange').first_or_create
-            FuturesChoice.where(:choice => cd, :field_type => 'ticker').first_or_create
-            FuturesChoice.where(:choice => mn, :field_type => 'month').first_or_create
-            FuturesChoice.where(:choice => yr, :field_type => 'year').first_or_create
             print "\n"
             $stdout.flush
           end
@@ -346,24 +334,6 @@ namespace :scrape do
       puts "Done."
     end
 
-    desc "update choices based on current data"
-    task :choices => :environment do
-      puts "Updating dropdown choices..."
-      #now update dropdown choices
-      #first clear old choie table
-      FuturesChoice.delete_all
-  
-      #now add new choices
-      fields = ['ticker','month','year','exchange']
-      fields.each do |field|
-        choices = FuturesDataRow.uniq.pluck(field).sort
-        choices.each {|choice| FuturesChoice.create(:choice => choice, :field_type => field)}
-      end
-      puts "Done."
-    end
-
-    desc "update choices and contents"
-    task :all => [:choices,:contents]
   end
 end
 
