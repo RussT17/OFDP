@@ -375,7 +375,7 @@ namespace :options do
             expiry_date = Date.strptime(option["symbol"][(y-5+x)..(y+x)],'%y%m%d')
             is_call = (option["type"] == 'C')
             option_record = stock.stock_options.where(:symbol => option["symbol"]).first_or_create(:expiry_date => expiry_date, :is_call => is_call, :strike_price => option["strikePrice"])
-            option_record.stock_option_data_rows.where(:date => Date.today).first_or_create(:last_trade_price => option["lastPrice"], :change => option["change"], :bid => option["bid"], :ask => option["ask"], :volume => option["vol"], :open_interest => option["openInt"])
+            option_record.stock_option_data_rows.where(:date => (Date.today - 1)).first_or_create(:last_trade_price => option["lastPrice"], :change => option["change"], :bid => option["bid"], :ask => option["ask"], :volume => option["vol"], :open_interest => option["openInt"])
           end
           puts "Found #{options.length.to_s}"
         else
