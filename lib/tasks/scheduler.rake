@@ -2,31 +2,32 @@
 
 namespace :futures do
 namespace :scrape do
+  require 'rubygems'
+  require 'nokogiri'
+  require 'open-uri'
+  require 'date'
+           
+  fields = ['ticker','month','year','exchange']
+  
   desc "scrape CME and related sources (CBT,CEC,NYM), update contents accordingly"
   task :cme, [:date] => :environment do |t, args|
-    require 'rubygems'
-    require 'nokogiri'
-    require 'open-uri'
-    require 'date'
 
     args.with_defaults(:date => Date.today-1)
-    input_date = args.date
-    
-    fields = ['ticker','month','year','exchange']
+    input_date = Date.parse(args.date.to_s)
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
       exit
     end
 
+    fmon = { 'JAN' => 'F', 'FEB' => 'G', 'MAR' => 'H', 'APR' => 'J', 'MAY' => 'K', 'JUN' => 'M',
+             'JLY' => 'N', 'AUG' => 'Q', 'SEP' => 'U', 'OCT' => 'V', 'NOV' => 'X', 'DEC' => 'Z' }
+
     dt = input_date
     du = sprintf("%02d/%02d/%04d", input_date.month, input_date.day, input_date.year)
 
     ur = 'http://www.cmegroup.com/CmeWS/mvc/xsltTransformer.do?xlstDoc=/XSLT/da/DailySettlement.xsl&url=/da/DailySettlement/V1/DSReport/ProductCode/%s/FOI/FUT/EXCHANGE/%s/Underlying/%s'
     ur = ur + '?tradeDate=' + du
-
-    fmon = { 'JAN' => 'F', 'FEB' => 'G', 'MAR' => 'H', 'APR' => 'J', 'MAY' => 'K', 'JUN' => 'M',
-             'JLY' => 'N', 'AUG' => 'Q', 'SEP' => 'U', 'OCT' => 'V', 'NOV' => 'X', 'DEC' => 'Z' }
 
     fnames = Hash.new     # exch.code => urlcode,outcode,exch,category,name
     File.open(Dir[Rails.root.join "lib/tasks/cmecodes"][0], "r") do |fp|
@@ -118,28 +119,21 @@ namespace :scrape do
   
   desc "scrape ICE, update contents accordingly"
   task :ice, [:date] => :environment do |t,args|
-    require 'rubygems'
-    require 'nokogiri'
-    require 'open-uri'
-    require 'date'
 
     args.with_defaults(:date => Date.today-1)
-    input_date = args.date
-    
-    fields = ['ticker','month','year','exchange']
+    input_date = Date.parse(args.date.to_s)
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
       exit
     end
 
-    dt = input_date
-    du = sprintf("%02d/%02d/%04d", input_date.month, input_date.day, input_date.year)
-
-    ur = 'https://www.theice.com/marketdata/reports/icefutureseurope/EndOfDay.shtml?tradeDay=%d&tradeMonth=%d&tradeYear=%d&contractKey=%s'
-
     fmon = { 'JAN' => 'F', 'FEB' => 'G', 'MAR' => 'H', 'APR' => 'J', 'MAY' => 'K', 'JUN' => 'M',
              'JUL' => 'N', 'AUG' => 'Q', 'SEP' => 'U', 'OCT' => 'V', 'NOV' => 'X', 'DEC' => 'Z' }
+
+    dt = input_date
+
+    ur = 'https://www.theice.com/marketdata/reports/icefutureseurope/EndOfDay.shtml?tradeDay=%d&tradeMonth=%d&tradeYear=%d&contractKey=%s'
 
     fnames = Hash.new     # exch.code => code,exch,category,name
     File.open(Dir[Rails.root.join "lib/tasks/icecodes"][0], "r") do |fp|
@@ -157,6 +151,7 @@ namespace :scrape do
       url = sprintf(ur, input_date.day, input_date.month-1, input_date.year, fn[1][0])
       url.gsub!(/\^/,'%5E')
       doc = Nokogiri::HTML(open(url))
+      puts url
       doc.css('table').each do |table|
         f=0
         table.css('tr').each do |tr|
@@ -209,15 +204,9 @@ namespace :scrape do
   
   desc "scrape ICU, update contents accordingly"
   task :icu, [:date] => :environment do |t,args|
-    require 'rubygems'
-    require 'nokogiri'
-    require 'open-uri'
-    require 'date'
 
     args.with_defaults(:date => Date.today-1)
-    input_date = args.date
-    
-    fields = ['ticker','month','year','exchange']
+    input_date = Date.parse(args.date.to_s)
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
@@ -225,7 +214,6 @@ namespace :scrape do
     end
 
     dt = input_date
-    du = sprintf("%02d/%02d/%04d", input_date.month, input_date.day, input_date.year)
 
     ur = 'https://www.theice.com/marketdata/nybotreports/getFuturesDMRResults.do?commodityChoice=%s&tradeDay=%d&tradeMonth=%d&tradeYear=%d&venueChoice=Electronic'
 
