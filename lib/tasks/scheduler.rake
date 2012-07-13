@@ -10,10 +10,10 @@ namespace :scrape do
   fields = ['ticker','month','year','exchange']
   
   desc "scrape CME and related sources (CBT,CEC,NYM), update contents accordingly"
-  task :cme, [:date] => :environment do |t, args|
+  task :cme, [:days_ago] => :environment do |t, args|
 
-    args.with_defaults(:date => Date.today-1)
-    input_date = Date.parse(args.date.to_s)
+    args.with_defaults(:days_ago => 0)
+    input_date = Date.today - args.days_ago
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
@@ -118,10 +118,10 @@ namespace :scrape do
   
   
   desc "scrape ICE, update contents accordingly"
-  task :ice, [:date] => :environment do |t,args|
+  task :ice, [:days_ago] => :environment do |t,args|
 
-    args.with_defaults(:date => Date.today-1)
-    input_date = Date.parse(args.date.to_s)
+    args.with_defaults(:days_ago => 0)
+    input_date = Date.today - args.days_ago
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
@@ -203,10 +203,10 @@ namespace :scrape do
 
   
   desc "scrape ICU, update contents accordingly"
-  task :icu, [:date] => :environment do |t,args|
+  task :icu, [:days_ago] => :environment do |t,args|
 
-    args.with_defaults(:date => Date.today-1)
-    input_date = Date.parse(args.date.to_s)
+    args.with_defaults(:days_ago => 0)
+    input_date = Date.today - args.days_ago
 
     if input_date.wday == 0 || input_date.wday == 6
       puts "# input date is a weekend; doing nothing"
