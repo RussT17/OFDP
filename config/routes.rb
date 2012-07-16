@@ -1,6 +1,5 @@
 Ofdp::Application.routes.draw do
-  match "futures" => "futures#show"
-  match "futures/index" => "futures#index"
+  resources :futures, :only => [:index,:show]
   
   resources :stock_options, :only => [:index,:show]
   

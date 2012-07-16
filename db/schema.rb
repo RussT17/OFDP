@@ -11,33 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712154554) do
+ActiveRecord::Schema.define(:version => 20120716145517) do
 
-  create_table "futures_contents", :force => true do |t|
-    t.string "ticker"
+  create_table "assets", :force => true do |t|
+    t.string "symbol"
     t.string "exchange"
-    t.string "year"
-    t.string "month"
+    t.string "name"
   end
 
-  create_table "futures_data_rows", :force => true do |t|
-    t.date   "dt"
-    t.string "exchange"
-    t.string "ticker"
-    t.string "month"
-    t.string "year"
-    t.float  "open"
-    t.float  "high"
-    t.float  "low"
-    t.float  "settle"
-    t.float  "volume"
-    t.float  "interest"
+  create_table "future_data_rows", :force => true do |t|
+    t.integer "future_id"
+    t.date    "date"
+    t.float   "open"
+    t.float   "high"
+    t.float   "low"
+    t.float   "settle"
+    t.integer "volume"
+    t.integer "interest"
+    t.integer "front_rank"
   end
 
-  add_index "futures_data_rows", ["exchange"], :name => "index_futures_data_rows_on_exchange"
-  add_index "futures_data_rows", ["month"], :name => "index_futures_data_rows_on_month"
-  add_index "futures_data_rows", ["ticker"], :name => "index_futures_data_rows_on_ticker"
-  add_index "futures_data_rows", ["year"], :name => "index_futures_data_rows_on_year"
+  create_table "futures", :force => true do |t|
+    t.integer "asset_id"
+    t.string  "month"
+    t.integer "year"
+  end
 
   create_table "stock_option_data_rows", :force => true do |t|
     t.integer "stock_option_id"
@@ -63,12 +61,6 @@ ActiveRecord::Schema.define(:version => 20120712154554) do
     t.string "name"
     t.string "sector"
     t.string "exchange"
-  end
-
-  create_table "ticker_symbols", :force => true do |t|
-    t.string "exchange"
-    t.string "symbol"
-    t.string "name"
   end
 
 end

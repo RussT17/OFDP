@@ -20,14 +20,14 @@
 		</tr>
 		<% for c in @contents %>
 		<tr>
-			<% the_ticker = c.ticker + c.month + c.year %>
+			<% the_ticker = c.asset.symbol + c.month + c.year.to_s %>
 			<td><%= the_ticker %></td>
-			<% the_name = TickerSymbol.where("symbol = '#{c.ticker}'").where("exchange = '#{c.exchange}'").first.name + ' ' +
-	      Ofdp::Application::MONTH_NAMES[c.month] + ' ' + c.year + ' ' + '(' + c.ticker + c.month + c.year + ')' %>
+			<% the_name = c.asset.name + ' ' + Ofdp::Application::MONTH_NAMES[c.month] + ' ' + c.year.to_s + ' ' + 
+			'(' + c.asset.symbol + c.month + c.year.to_s + ')' %>
 			<td><%= the_name %></td>
-			<td><%= 'Future Contract: ' + (/\s\(/).match(the_name).pre_match + ' Ticker: ' + the_ticker + ' Exchange: ' + c.exchange %></td>
-			<% the_url = futures_url + '?ticker=' + c.ticker + '&month=' + c.month + '&year=' + c.year + '&exchange=' + c.exchange %>
-			<td><%= link_to the_url, the_url %></td>
+			<td><%= 'Future Contract: ' + (/\s\(/).match(the_name).pre_match + ' Ticker: ' + the_ticker + 
+			' Exchange: ' + c.asset.exchange %></td>
+			<td><%= link_to future_url(c),future_url(c) %></td>
 		</tr>
 		<% end %>
 	</table>

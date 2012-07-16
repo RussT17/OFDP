@@ -1,5 +1,3 @@
-#there is much repetition among the futures scrapers, refactoring into methods is in order
-
 namespace :futures do
   namespace :scrape do
     require 'rubygems'
@@ -9,8 +7,14 @@ namespace :futures do
            
     fields = ['ticker','month','year','exchange']
   
-    desc "scrape all sources"
+    desc "scrape all sources (CME,ICE,ICU)"
     task :all, [:days_ago] => :environment do |t,args|
+
+        def add_to_database(ex,cd,yr,mn,dt,record)
+          the_asset = Asset.where(:exchange => ex, :symbol => cd).first_or_create
+          the_future = the_asset.futures.where(:year => yr.to_i, :month => mn).first_or_create
+          the_future.future_data_rows.where(:date => dt).first_or_create(record)
+        end
 
         args.with_defaults(:days_ago => '0')
         input_date = Date.today - args.days_ago.to_i
@@ -19,6 +23,8 @@ namespace :futures do
           puts "# input date is a weekend; doing nothing"
           exit
         end
+
+#First scrape CME
 
         fmon = { 'JAN' => 'F', 'FEB' => 'G', 'MAR' => 'H', 'APR' => 'J', 'MAY' => 'K', 'JUN' => 'M',
                  'JLY' => 'N', 'AUG' => 'Q', 'SEP' => 'U', 'OCT' => 'V', 'NOV' => 'X', 'DEC' => 'Z' }
@@ -39,7 +45,6 @@ namespace :futures do
           end
         fp.close
         end
-
         fnames.each do |fn|
           record = Hash.new
           url = sprintf(ur, fn[1][0], fn[1][2], fn[1][0])
@@ -105,8 +110,7 @@ namespace :futures do
                   print "," if n != 8
                 end
                 print "\n"
-                FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
-                FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
+                add_to_database(ex,cd,yr,mn,dt,record)
                 $stdout.flush
               end
               f+=1
@@ -139,7 +143,6 @@ namespace :futures do
           url = sprintf(ur, input_date.day, input_date.month-1, input_date.year, fn[1][0])
           url.gsub!(/\^/,'%5E')
           doc = Nokogiri::HTML(open(url))
-          puts url
           doc.css('table').each do |table|
             f=0
             table.css('tr').each do |tr|
@@ -176,10 +179,9 @@ namespace :futures do
                   printf "%s", x
                   print "," if n != 11
                 end
-                FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
-                FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
+                add_to_database(ex,cd,yr,mn,dt,record)
                 print "\n"
-              $stdout.flush
+                $stdout.flush
               end
               f+=1
             end  #rows
@@ -259,8 +261,7 @@ namespace :futures do
                   printf "%s", x
                   print "," if n!=10
                 end
-                FuturesDataRow.where(:dt => dt, :exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create(record)
-                FuturesContent.where(:exchange => ex, :ticker => cd, :month => mn, :year => yr).first_or_create unless TickerSymbol.where("symbol = '#{cd}'").where("exchange = '#{ex}'").length == 0
+                add_to_database(ex,cd,yr,mn,dt,record)
                 print "\n"
                 $stdout.flush
               end
@@ -269,28 +270,6 @@ namespace :futures do
           end  #table
         end  #fnames
     end
-  end
-
-  namespace :update do
-    desc "update table of contents based on current data"
-    task :contents => :environment do
-      puts "Determining table of contents entries..."
-  
-      #first we'll update the table of contents
-      contents = FuturesDataRow.select('ticker,month,year,exchange').uniq.map {|record| {:ticker => record.ticker, :month => record.month, :year => record.year, :exchange => record.exchange}}
-      contents.delete_if {|c| TickerSymbol.where("symbol = '#{c[:ticker]}'").where("exchange = '#{c[:exchange]}'").length == 0}
-  
-      puts "Done."
-      puts "Adding entries to database..."
-  
-      #clear old table of contents
-      FuturesContent.delete_all
-  
-      #put new contents in the table of contents
-      contents.each_index {|i| FuturesContent.create(contents[i])}
-      puts "Done."
-    end
-
   end
 end
 
