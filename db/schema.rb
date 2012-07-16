@@ -11,12 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716145517) do
+ActiveRecord::Schema.define(:version => 20120716164416) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
     t.string "exchange"
     t.string "name"
+  end
+
+  create_table "cfcs", :force => true do |t|
+    t.integer "asset_id"
+    t.integer "depth"
   end
 
   create_table "future_data_rows", :force => true do |t|
@@ -28,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120716145517) do
     t.float   "settle"
     t.integer "volume"
     t.integer "interest"
-    t.integer "front_rank"
+    t.integer "cfc_id"
   end
 
   create_table "futures", :force => true do |t|

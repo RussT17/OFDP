@@ -1,7 +1,6 @@
 class FuturesController < ApplicationController
   def show
     @the_future = Future.find(params[:id])
-    @rows = @the_future.future_data_rows
   end
   
   def index

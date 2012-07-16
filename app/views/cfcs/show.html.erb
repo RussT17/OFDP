@@ -2,15 +2,17 @@
 	<%= render 'shared/header' %>
 <div class='page-content'>
 		<h1 class='page-title'>Data</h1>
-		<%= link_to 'Table of Contents', futures_path %>
-		<h3><%= @the_future.asset.symbol + @the_future.month + @the_future.year.to_s %></h3>
+		<%= link_to 'Table of Contents', cfcs_path %>
+		<h3><%= @the_cfc.asset.symbol + @the_cfc.depth.to_s %></h3>
 		<table border='1'>
 			<tr>
-				<th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Settle</th><th>Volume</th><th>Interest</th>
+				<th>Date</th><th>Future Contract</th>
+				<th>Open</th><th>High</th><th>Low</th><th>Settle</th><th>Volume</th><th>Interest</th>
 			</tr>
-			<% @the_future.future_data_rows.order("date DESC").each do |row|%>
+			<% @the_cfc.future_data_rows.order("date DESC").each do |row|%>
 			<tr>
 				<td><%= row.date.to_s %></td>
+				<td><%= row.asset.symbol + row.future.month + row.future.year.to_s %>
 				<td><%= row.open.to_s %></td>
 				<td><%= row.high.to_s %></td>
 				<td><%= row.low.to_s %></td>

@@ -6,10 +6,10 @@
 	<table border='1'>
 		<tr>
 			<th>
-				Ticker Symbol
+				Symbol
 			</th>
 			<th>
-				Future Name
+				Name
 			</th>
 			<th>
 				Description
@@ -20,14 +20,12 @@
 		</tr>
 		<% for c in @contents %>
 		<tr>
-			<% the_ticker = c.asset.symbol + c.month + c.year.to_s %>
+			<% the_ticker = c.asset.symbol + c.depth.to_s %>
 			<td><%= the_ticker %></td>
-			<% the_name = c.asset.name + ' ' + Ofdp::Application::MONTH_NAMES[c.month] + ' ' + c.year.to_s + ' ' + 
-			'(' + the_ticker + ')' %>
+			<% the_name = c.asset.name.to_s + ' Continuous Contract Month: ' + c.depth.to_s + ' (' + the_ticker + ')' %>
 			<td><%= the_name %></td>
-			<td><%= 'Future Contract: ' + (/\s\(/).match(the_name).pre_match + ' Ticker: ' + the_ticker + 
-			' Exchange: ' + c.asset.exchange %></td>
-			<td><%= link_to future_url(c),future_url(c) %></td>
+			<td><%= 'Continuous Future Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + 'Month(s) before maturity' %></td>
+			<td><%= link_to cfc_url(c),cfc_url(c) %></td>
 		</tr>
 		<% end %>
 	</table>
