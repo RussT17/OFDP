@@ -7,7 +7,7 @@ class FutureDataRow < ActiveRecord::Base
     future.asset
   end
   
-  def self.increase_depth
+  def increase_depth
     current_depth = self.cfc.depth
     asset_id = self.cfc.asset_id
     target_cfc = Cfc.where(:asset_id => asset_id,:depth => current_depth + 1).first

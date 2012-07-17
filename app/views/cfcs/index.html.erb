@@ -24,7 +24,7 @@
 			<td><%= the_ticker %></td>
 			<% the_name = c.asset.name.to_s + ' Continuous Contract Month: ' + c.depth.to_s + ' (' + the_ticker + ')' %>
 			<td><%= the_name %></td>
-			<td><%= 'Continuous Future Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + 'Month(s) before maturity' %></td>
+			<td><%= 'Continuous Future Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + ' Month(s) before maturity' %></td>
 			<td><%= link_to cfc_url(c),cfc_url(c) %></td>
 		</tr>
 		<% end %>

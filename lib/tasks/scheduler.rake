@@ -268,14 +268,69 @@ namespace :futures do
           end  #rows
         end  #table
       end  #fnames
-    end
+      
+      #update CFC for the newly added data
+      Asset.all.each do |asset|
+        #first make cfc associations for all today's new entries
+        next if asset.name.nil?
+        puts "Updating CFC for " + asset.symbol
+        the_rows = asset.future_data_rows.where(:date => input_date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj}
+        the_rows.each_with_index do |the_row,i|
+          depth = i + 1
+          target_cfc = Cfc.where(:asset_id => the_row.asset.id,:depth => depth).first
+          if target_cfc
+            the_row.cfc = target_cfc
+          else
+            the_row.create_cfc(:asset_id => the_row.asset.id,:depth => depth)
+          end
+          the_row.save
+          puts "Asset: " + the_row.asset.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
+        end
+        
+        #now fix previous depths in cfcs according to the new data
+        #cycle through each cfc starting with front month
+        asset.cfcs.order("depth asc").each do |cfc|
+          puts "Verifying " + cfc.asset.symbol + cfc.depth.to_s
+          the_rows = cfc.future_data_rows.order("date desc")
+          #cycle through its rows starting with the freshest data before today
+          the_rows.each_index do |i|
+            next if i == 0
+            #for each row, if the future expiry date is further in the future than that of today's new addition, increase it's depth
+            #then check out the next row
+            if the_rows.first.future.date_obj < the_rows[i].future.date_obj
+              the_rows[i].increase_depth
+              puts "Increased depth of row with id " + the_rows[i].id.to_s
+            else
+              #if one row is clean we can break because so should be all following rows.
+              #this if condition exists in case we are dealing with a row that has just had its
+              #depth increased from another cfc, then we will have two rows with the same date and 
+              #must check both.
+              if the_rows[i+1].nil?
+                puts "CFC clean"
+                break
+              else
+                if the_rows[i].date != the_rows[i+1].date
+                  puts "CFC clean"
+                  break
+                end
+              end
+            end
+          end
+        end
+      end
+      
+    end #task
   end
   
   namespace :update do
     desc "create associations between the future data rows and the cfc table"
-    task :cfc => :environment do
+    task :cfc, [:asset] => :environment do
+      #update a specific asset, or if none specified updates all with names.
+      args.with_defaults(:asset => nil)
       Asset.all.each do |asset|
-        asset.future_data_rows.order("date desc").pluck(:date).each do |date|
+        next if asset.name.nil?
+        next if !args.asset.nil? and args.asset != asset.symbol
+        asset.future_data_rows.order("date desc").uniq.pluck(:date).each do |date|
           the_rows = asset.future_data_rows.where(:date => date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj}
           bump_count = 0
           the_rows.each_with_index do |the_row,i|
@@ -286,9 +341,6 @@ namespace :futures do
             if !next_row.nil?
               if next_row.future.date_obj < the_row.future.date_obj
                 bump_count = bump_count + 1
-                puts "ACTUALLY HAPPENED"
-                puts "ACTUALLY HAPPENED"
-                puts "ACTUALLY HAPPENED"
               end
             end
             depth = depth + bump_count
@@ -300,9 +352,9 @@ namespace :futures do
             end
             the_row.save
             puts "Asset: " + the_row.asset.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
+            t2 = Time.now
           end
-        end
-        
+        end     
       end
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716164416) do
+ActiveRecord::Schema.define(:version => 20120717132200) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20120716164416) do
     t.integer "interest"
     t.integer "cfc_id"
   end
+
+  add_index "future_data_rows", ["date"], :name => "index_future_data_rows_on_date"
 
   create_table "futures", :force => true do |t|
     t.integer "asset_id"
