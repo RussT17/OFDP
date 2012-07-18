@@ -277,10 +277,15 @@ namespace :futures do
         the_rows = asset.future_data_rows.where(:date => input_date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj}
         the_rows.each_with_index do |the_row,i|
           depth = i + 1
+          puts "Expiry: " + the_row.future.month + the_row.future.year.to_s if asset.symbol == "AD"
+          puts "Depth: " + depth.to_s if asset.symbol == "AD"
           target_cfc = Cfc.where(:asset_id => the_row.asset.id,:depth => depth).first
           if target_cfc
+            puts "Target id: " + target_cfc.id if asset.symbol = "AD"
+            puts "Depth of target: " + target_cfc.depth.to_s if asset.symbol == "AD"
             the_row.cfc = target_cfc
             the_row.save
+            puts "New cfc id: " + the_row.cfc_id.to_s if asset.symbol == "AD"
           else
             the_row.create_cfc(:asset_id => the_row.asset.id,:depth => depth)
           end
@@ -399,7 +404,7 @@ namespace :options do
             expiry_date = Date.strptime(option["symbol"][(y-5+x)..(y+x)],'%y%m%d')
             is_call = (option["type"] == 'C')
             option_record = stock.stock_options.where(:symbol => option["symbol"]).first_or_create(:expiry_date => expiry_date, :is_call => is_call, :strike_price => option["strikePrice"])
-            option_record.stock_option_data_rows.where(:date => (Date.today - 1)).first_or_create(:last_trade_price => option["lastPrice"], :change => option["change"], :bid => option["bid"], :ask => option["ask"], :volume => option["vol"], :open_interest => option["openInt"])
+            option_record.stock_option_data_rows.where(:date => (Date.today - 1)).first_or_create.update_attributes(:last_trade_price => option["lastPrice"], :change => option["change"], :bid => option["bid"], :ask => option["ask"], :volume => option["vol"], :open_interest => option["openInt"])
           end
           puts "Found #{options.length.to_s}"
         else
