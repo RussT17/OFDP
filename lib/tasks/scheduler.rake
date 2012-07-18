@@ -335,7 +335,7 @@ namespace :futures do
   
   namespace :update do
     desc "create associations between the future data rows and the cfc table"
-    task :cfc, [:asset] => :environment do
+    task :cfc, [:asset] => :environment do |t,args|
       #update a specific asset, or if none specified updates all with names.
       args.with_defaults(:asset => nil)
       Asset.all.each do |asset|
