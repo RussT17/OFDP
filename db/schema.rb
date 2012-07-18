@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717132200) do
+ActiveRecord::Schema.define(:version => 20120718164333) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -42,6 +42,53 @@ ActiveRecord::Schema.define(:version => 20120717132200) do
     t.integer "asset_id"
     t.string  "month"
     t.integer "year"
+  end
+
+  create_table "invalid_contract_months", :force => true do |t|
+    t.integer "asset_id"
+    t.string  "month"
+  end
+
+  create_table "metal_datasets", :force => true do |t|
+    t.integer "metal_id"
+    t.string  "table"
+    t.string  "name"
+  end
+
+  create_table "metals", :force => true do |t|
+    t.string "name"
+    t.string "source"
+  end
+
+  create_table "non_prec_prices", :force => true do |t|
+    t.integer "metal_dataset_id"
+    t.date    "date"
+    t.float   "buyer"
+    t.float   "seller"
+    t.float   "mean"
+  end
+
+  create_table "precious_fixings", :force => true do |t|
+    t.integer "metal_dataset_id"
+    t.date    "date"
+    t.float   "usd"
+    t.float   "gbp"
+    t.float   "eur"
+  end
+
+  create_table "precious_forwards", :force => true do |t|
+    t.integer "metal_dataset_id"
+    t.date    "date"
+    t.float   "gofo1"
+    t.float   "gofo2"
+    t.float   "gofo3"
+    t.float   "gofo6"
+    t.float   "gofo12"
+    t.float   "libor1"
+    t.float   "libor2"
+    t.float   "libor3"
+    t.float   "libor6"
+    t.float   "libor12"
   end
 
   create_table "stock_option_data_rows", :force => true do |t|
