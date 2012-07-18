@@ -322,18 +322,18 @@ namespace :futures do
     end #task
   end
   
-  namespace :update do
-    desc "purge invalid futures contracts based on invalid months table"
-    task :validate_futures do
-      Future.all.each do |future|
-        bad_months = future.asset.invalid_contract_months.map{|row| row.month}
-        if bad_months.include? future.month
-          puts future.asset.symbol + future.month + future.year.to_s
-          future.destroy
-        end
+  desc "purge invalid futures contracts based on invalid months table"
+  task :validate => :environment do
+    Future.all.each do |future|
+      bad_months = future.asset.invalid_contract_months.map{|row| row.month}
+      if bad_months.include? future.month
+        puts future.asset.symbol + future.month + future.year.to_s
+        future.destroy
       end
     end
-    
+  end
+  
+  namespace :update do
     desc "create associations between the future data rows and the cfc table"
     task :cfc, [:asset] => :environment do
       #update a specific asset, or if none specified updates all with names.
