@@ -301,7 +301,9 @@ namespace :futures do
         #cycle through each cfc starting with front month
         asset.cfcs.order("depth asc").each do |cfc|
           puts "Verifying " + cfc.asset.symbol + cfc.depth.to_s
-          the_rows = cfc.future_data_rows.order("date desc")
+          #limit 10 in the following line is for speed, assuming most errors caught here will be not be 
+          #over ten errors in a row.
+          the_rows = cfc.future_data_rows.where("date > ?",input_date - 30).order("date desc")
           #cycle through its rows starting with the freshest data before today
           the_rows.each_index do |i|
             next if i == 0
