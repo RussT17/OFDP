@@ -301,8 +301,7 @@ namespace :futures do
         #cycle through each cfc starting with front month
         asset.cfcs.order("depth asc").each do |cfc|
           puts "Verifying " + cfc.asset.symbol + cfc.depth.to_s
-          #limit 10 in the following line is for speed, assuming most errors caught here will be not be 
-          #over ten errors in a row.
+          #only fixes errors from the last 30 days
           the_rows = cfc.future_data_rows.where("date > ?",input_date - 30).order("date desc")
           #cycle through its rows starting with the freshest data before today
           the_rows.each_index do |i|
@@ -353,7 +352,7 @@ namespace :futures do
     end
   end
   
-  namespace :update do
+  namespace :update_cfcs do
     desc "create associations between the future data rows and the cfc table"
     task :cfc, [:asset] => :environment do |t,args|
       #update a specific asset, or if none specified updates all with names.
@@ -388,8 +387,7 @@ namespace :futures do
         end     
       end
     end
-  end
-   
+  end 
 end
 
 
@@ -444,22 +442,28 @@ end
 namespace :metals do
   namespace :scrape do
     namespace :history do
-      desc "Scrape the history of the LBMA gold and silver, fixings and forwards"
-      task :lbma => :environment do
-      end
       
-      desc "Scrape the history of the LME for non-precious metal data"
-      task :lbma => :environment do
+      desc "Scrape all metal price history from the LBMA and LME"
+      task :all => :environment do
+        "First scrape the history of the LBMA gold and silver, fixings and forwards"
+        
+        "Then scrape the history of the LME for non-precious metal prices"
+        
       end
     end
+    
     namespace :single do
-      desc "Scrape the LBMA gold and silver, fixings and forwards for the given date"
-      task :lbma => :environment do
-      end
       
-      desc "Scrape the LME for non-precious metal data for the given date"
-      task :lbma => :environment do
+      desc "Scrape all today's metal prices from the LBMA and LME"
+      task :all, [:days_ago] => :environment do |t,args|
+        args.with_defaults(:days_ago => 0)
+        date = Date.today - args.days_ago
+        "First scrape today's LBMA gold and silver, fixings and forwards"
+        
+        "Then scrape the LME for today's non-precious metal prices"
+        
       end
     end
+    
   end
 end
