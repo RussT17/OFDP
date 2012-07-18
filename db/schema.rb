@@ -11,12 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718164333) do
+ActiveRecord::Schema.define(:version => 20120718190613) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
     t.string "exchange"
     t.string "name"
+  end
+
+  create_table "bad_future_data_rows", :force => true do |t|
+    t.string  "exchange"
+    t.string  "symbol"
+    t.integer "year"
+    t.string  "month"
+    t.date    "date"
+    t.float   "open"
+    t.float   "high"
+    t.float   "low"
+    t.float   "settle"
+    t.float   "volume"
+    t.float   "interest"
   end
 
   create_table "cfcs", :force => true do |t|

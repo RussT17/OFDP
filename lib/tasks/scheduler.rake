@@ -12,7 +12,13 @@ namespace :futures do
       def add_to_database(ex,cd,yr,mn,dt,record)
         the_asset = Asset.where(:exchange => ex, :symbol => cd).first_or_create
         if the_asset.invalid_contract_months.map{|row| row.month}.include? mn
-          puts "THE FOLLOWING ENTRY WAS INVALID AND NOT INCLUDED: "
+          puts "THE FOLLOWING ENTRY WAS INVALID AND PUT IN BAD FUTURE DATA ROWS: "
+          record[:exchange] = ex
+          record[:symbol] = cd
+          record[:year] = yr
+          record[:month] = mn
+          record[:date] = dt
+          BadFutureDataRow.create(record)
           return
         end
         the_future = the_asset.futures.where(:year => yr.to_i, :month => mn).first_or_create
