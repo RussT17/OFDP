@@ -12,7 +12,7 @@ namespace :futures do
       def add_to_database(ex,cd,yr,mn,dt,record)
         the_asset = Asset.where(:exchange => ex, :symbol => cd).first_or_create
         the_future = the_asset.futures.where(:year => yr.to_i, :month => mn).first_or_create
-        the_future.future_data_rows.where(:date => dt).first_or_create(record)
+        the_future.future_data_rows.where(:date => dt).first_or_create().update_attributes(record)
       end
 
       args.with_defaults(:days_ago => '0')
@@ -280,10 +280,10 @@ namespace :futures do
           target_cfc = Cfc.where(:asset_id => the_row.asset.id,:depth => depth).first
           if target_cfc
             the_row.cfc = target_cfc
+            the_row.save
           else
             the_row.create_cfc(:asset_id => the_row.asset.id,:depth => depth)
           end
-          the_row.save
           puts "Asset: " + the_row.asset.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
         end
         
@@ -347,10 +347,10 @@ namespace :futures do
             target_cfc = Cfc.where(:asset_id => the_row.asset.id,:depth => depth).first
             if target_cfc
               the_row.cfc = target_cfc
+              the_row.save
             else
               the_row.create_cfc(:asset_id => the_row.asset.id,:depth => depth)
             end
-            the_row.save
             puts "Asset: " + the_row.asset.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
             t2 = Time.now
           end
@@ -405,6 +405,29 @@ namespace :options do
         else
           puts "None found"
         end
+      end
+    end
+  end
+end
+
+namespace :metals do
+  namespace :scrape do
+    namespace :history do
+      desc "Scrape the history of the LBMA gold and silver, fixings and forwards"
+      task :lbma => :environment do
+      end
+      
+      desc "Scrape the history of the LME for non-precious metal data"
+      task :lbma => :environment do
+      end
+    end
+    namespace :single do
+      desc "Scrape the LBMA gold and silver, fixings and forwards for the given date"
+      task :lbma => :environment do
+      end
+      
+      desc "Scrape the LME for non-precious metal data for the given date"
+      task :lbma => :environment do
       end
     end
   end
