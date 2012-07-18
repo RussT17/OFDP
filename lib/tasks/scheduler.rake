@@ -333,6 +333,13 @@ namespace :futures do
     end
   end
   
+  desc "delete cfc entries with no associated rows"
+  task :empty_cfcs => :environment do
+    Cfc.all.each do |cfc|
+      cfc.destroy if cfc.future_data_rows.empty?
+    end
+  end
+  
   namespace :update do
     desc "create associations between the future data rows and the cfc table"
     task :cfc, [:asset] => :environment do |t,args|
