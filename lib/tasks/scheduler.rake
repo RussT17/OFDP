@@ -395,6 +395,10 @@ namespace :options do
   namespace :scrape do
     desc "Scrape Yahoo Finance for options data for all ticker symbols in the table"
     task :yahoo => :environment do
+      if (Date.today - 1).wday == 0 || (Date.today - 1).wday == 6
+        puts "# input date is a weekend; doing nothing"
+        exit
+      end
       require 'net/http'
       require 'uri'
       require 'json'
