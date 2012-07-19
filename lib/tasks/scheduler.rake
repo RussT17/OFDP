@@ -448,6 +448,9 @@ namespace :metals do
       
       desc "Scrape all metal price history from the LBMA and LME"
       task :all => :environment do
+        
+        PreciousFixing.delete_all
+  
         #Gold Fixings
         metal_id = Metal.where(:name=>'Gold').first.id
         1968.upto(Date.today.year) do |year|
@@ -482,6 +485,41 @@ namespace :metals do
             end
           end
         end
+
+        #Silver Fixings
+        metal_id = Metal.where(:name=>'Silver').first.id
+        1968.upto(Date.today.year) do |year|
+          url = "http://www.lbma.org.uk/pages/index.cfm?page_id=54&title=silver_fixings&show=" + year.to_s + "&type=daily"
+          doc = Nokogiri::HTML(open(url))
+          table = doc.css('table.pricing_detail')
+          table.css('caption').remove
+          header = table.css('thead:nth-child(1)').remove
+          numcols = header.css('tr:nth-child(2) th').to_a.length
+          table.css('tr').to_a.each do |row|
+            row_data = Array.new
+            row.css('*:not(a)').each_with_index do |cell,i|
+              row_data[i] = cell.content
+            end
+            next if row_data[0] == ""
+            #since website uses two digit years which confuse ruby, let's sub in our
+            #four digit years instead
+            row_data[0] = row_data[0][0,row_data[0].length-2] + year.to_s
+            #turn blank entries and words like "day off for christmas" into nil cells
+            row_data.each_index do |j|
+              next if j == 0
+              temp = /[0-9.]+/.match(row_data[j]).to_s
+              row_data[j] = temp != "" ? temp.to_f : nil
+            end
+            if numcols == 3
+              puts MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.create_data_row(:date => Date.parse(row_data[0]), :usd => row_data[1], :gbp => row_data[2]) if !row_data[1,2].compact.empty?
+            end
+            if numcols == 4
+              puts MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.create_data_row(:date => Date.parse(row_data[0]), :usd => row_data[1], :gbp => row_data[2], :eur => row_data[3]) if !row_data[1,3].compact.empty?
+            end
+          end
+        end
+        
+        
       end
     end
     
@@ -528,6 +566,38 @@ namespace :metals do
             puts "Gold Fixing P.M. updated"
           end
         end  
+        
+        #Silver Fixings
+        metal_id = Metal.where(:name=>'Silver').first.id
+        url = "http://www.lbma.org.uk/pages/index.cfm?page_id=54&title=silver_fixings&show=" + date.year.to_s + "&type=daily"
+        doc = Nokogiri::HTML(open(url))
+        table = doc.css('table.pricing_detail')
+        table.css('tr').to_a.each do |row|
+          row_data = Array.new
+          row.css('*:not(a)').each_with_index do |cell,i|
+            row_data[i] = cell.content
+          end
+          next if row_data[0] == ""
+          #since website uses two digit years which confuse ruby, let's sub in our
+          #four digit years instead
+          row_data[0] = row_data[0][0,row_data[0].length-2] + date.year.to_s
+          #check if this is the correct date!
+          begin
+            next if Date.parse(row_data[0]) != date
+          rescue
+            next
+          end
+          #turn blank entries and words like "day off for christmas" into nil cells
+          row_data.each_index do |j|
+            next if j == 0
+            temp = /[0-9.]+/.match(row_data[j]).to_s
+            row_data[j] = temp != "" ? temp.to_f : nil
+          end
+          if !row_data[1,3].compact.empty?
+            MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.first_or_create_data_row(:date => Date.parse(row_data[0])).update_attributes(:usd => row_data[1], :gbp => row_data[2], :eur => row_data[3])
+            puts "Silver fixing updated"
+          end
+        end
       end
     end 
   end
