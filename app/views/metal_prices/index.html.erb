@@ -1,0 +1,28 @@
+<div class='container'>
+	<%= render 'shared/header' %>
+<div class='page-content'>
+	<h1 class='page-title'>Table of Contents</h1>
+	<%= paginate @contents %><br>
+	<table border='1'>
+		<tr>
+			<th>
+				Dataset Name
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				Data URL
+			</th>
+		</tr>
+		<% for c in @contents %>
+		<tr>
+			<td><%= c.metal.name + ' Price: ' + c.name %></td>
+			<td></td>
+			<td><%= link_to metal_price_url(c),metal_price_url(c) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+<div class='footer'></div>
+</div>

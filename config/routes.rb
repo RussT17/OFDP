@@ -2,6 +2,7 @@ Ofdp::Application.routes.draw do
   resources :futures, :only => [:index,:show]
   resources :cfcs, :only => [:index,:show]
   resources :stock_options, :only => [:index,:show]
+  resources :metal_prices, :only => [:index,:show]
   
   #match "stock_options" => "stock_options#show"
   #match "stock_options/index" => "stock_options#index"

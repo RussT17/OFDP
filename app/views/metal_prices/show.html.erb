@@ -1,0 +1,57 @@
+<div class='container'>
+	<%= render 'shared/header' %>
+	<div class='page-content'>
+		<h1 class='page-title'>Data</h1>
+		<%= link_to 'Table of Contents', metal_prices_path %>
+		<h3><%= @the_dataset.metal.name + ' Price: ' + @the_dataset.name %></h3>
+		<table border='1'>
+			<tr>
+				<% if @the_dataset.table == 'non_prec_prices' %>
+					<th>Date</th><th>Bid</th><th>Ask</th><th>Mid</th>
+				<% elsif @the_dataset.table == 'precious_fixings' %>
+					<th>Date</th><th>USD</th><th>GBP</th><th>EUR</th>
+				<% else %>
+					<th>Date</th>
+					<th>GOFO 1 Month</th>
+					<th>GOFO 2 Months</th>
+					<th>GOFO 3 Months</th>
+					<th>GOFO 6 Months</th>
+					<th>GOFO 12 Months</th>
+					<th>LIBOR 1 Month</th>
+					<th>LIBOR 2 Months</th>
+					<th>LIBOR 3 Months</th>
+					<th>LIBOR 6 Months</th>
+					<th>LIBOR 12 Months</th>
+				<% end %>
+			</tr>
+			<% @the_dataset.data_rows.order("date DESC").each do |row|%>
+			<tr>
+				<% if @the_dataset.table == 'non_prec_prices' %>
+				<td><%= row.date.to_s %></td>
+				<td><%= row.buyer.to_s %></td>
+				<td><%= row.seller.to_s %></td>
+				<td><%= row.mean.to_s %></td>
+				<% elsif @the_dataset.table == 'precious_fixings' %>
+				<td><%= row.date.to_s %></td>
+				<td><%= row.usd.to_s %></td>
+				<td><%= row.gbp.to_s %></td>
+				<td><%= row.eur.to_s %></td>
+				<% else %>
+				<td><%= row.date.to_s %></td>
+				<td><%= row.gofo1.to_s %></td>
+				<td><%= row.gofo2.to_s %></td>
+				<td><%= row.gofo3.to_s %></td>
+				<td><%= row.gofo6.to_s %></td>
+				<td><%= row.gofo12.to_s %></td>
+				<td><%= row.libor1.to_s %></td>
+				<td><%= row.libor2.to_s %></td>
+				<td><%= row.libor3.to_s %></td>
+				<td><%= row.libor6.to_s %></td>
+				<td><%= row.libor12.to_s %></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+	<div class='footer'></div>
+</div>
