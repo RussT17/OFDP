@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718190613) do
+ActiveRecord::Schema.define(:version => 20120720155349) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20120718190613) do
   create_table "metals", :force => true do |t|
     t.string "name"
     t.string "source"
+    t.string "data_path"
   end
 
   create_table "non_prec_prices", :force => true do |t|
