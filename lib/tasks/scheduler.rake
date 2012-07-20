@@ -523,6 +523,8 @@ namespace :metals do
           end
         end
         
+        #Gold forwards
+        #Silver forwards
         
       end
     end
