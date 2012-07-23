@@ -743,8 +743,9 @@ namespace :metals do
             temp = /[0-9.]+/.match(row_data[j]).to_s
             row_data[j] = temp != "" ? temp.to_f : nil
           end
+          1.upto(3) {|i| row_data[i] = row_data[i]/100 if !row_data[i].nil?}
           if !row_data[1,3].compact.empty?
-            MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.first_or_create_data_row(:date => Date.parse(row_data[0])).update_attributes(:usd => row_data[1]/100, :gbp => row_data[2]/100, :eur => row_data[3]/100)
+            MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.first_or_create_data_row(:date => Date.parse(row_data[0])).update_attributes(:usd => row_data[1], :gbp => row_data[2], :eur => row_data[3])
             puts "Silver fixing updated"
           end
         end
