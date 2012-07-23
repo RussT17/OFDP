@@ -453,6 +453,10 @@ namespace :metals do
       desc "Scrape all precious metal price history"
       task :precious => :environment do
     
+        puts "this task will start by deleting all existing precious metal data."
+        puts "continue? (enter to continue, ctrl-c to cancel)"
+        STDIN.gets
+        
         PreciousFixing.delete_all
         PreciousForward.delete_all
        
@@ -593,6 +597,50 @@ namespace :metals do
       
       desc "Scrape history of data on non-precious metals"
       task :nonprecious => :environment do
+        require 'spreadsheet'
+        require 'nokogiri'
+        require 'net/http'
+        require 'open-uri'
+        require 'date'
+        
+        doc = Nokogiri::HTML(open("http://www.lme.com/dataprices_historical.asp"))
+        links = doc.css('a.greenSmallBold')
+        links.to_a.each do |link|
+          if /Price/.match(link['onclick'])
+            path = link['href']
+            puts path
+            url = "http://www.lme.com" + link['href']
+            book = nil
+            open(url) do |f|
+              book = Spreadsheet.open f
+            end
+            Metal.where("source = 'lme'").each do |metal|
+              puts metal.name
+              sheet_name = case metal.name
+              when "NASAAC"
+                "NA Alloy"
+              when "Aluminium"
+                "Primary Aluminium"
+              when "Steel Billet"
+                "Global Steel"
+              else
+                metal.name
+              end
+              sheet = book.worksheet sheet_name
+              sheet.each 8 do |row|
+                if row[1].class.name == 'Date'
+                  date = row[1]
+                  metal.metal_datasets.each_with_index do |dataset,i|
+                    buyer = row[3*i + 2]
+                    seller = row[3*i + 3]
+                    puts dataset.name
+                    puts dataset.first_or_create_data_row(:date => date).update_attributes(:buyer => buyer, :seller => seller)
+                  end
+                end
+              end
+            end
+          end
+        end 
       end
     end
     
@@ -747,20 +795,20 @@ namespace :metals do
               temp = /[\-0-9.\,]+/.match(cell.content.gsub(/,/,"")).to_s.strip
               row_data[i] = temp != "" ? temp.to_f : nil
             end
-            puts metal.metal_datasets.where(:name => "Cash").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[6], :seller => row_data[7], :mean => (row_data[6] + row_data[7])/2) if !row_data[6].nil? and !row_data[7].nil?
-            puts metal.metal_datasets.where(:name => "3-Months").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[10], :seller => row_data[11], :mean => (row_data[10] + row_data[11])/2) if !row_data[10].nil? and !row_data[11].nil?
-            puts metal.metal_datasets.where(:name => "December 1").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[14], :seller => row_data[15], :mean => (row_data[14] + row_data[15])/2) if !row_data[14].nil? and !row_data[15].nil?
-            puts metal.metal_datasets.where(:name => "December 2").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[18], :seller => row_data[19], :mean => (row_data[18] + row_data[19])/2) if !row_data[18].nil? and !row_data[19].nil?
-            puts metal.metal_datasets.where(:name => "December 3").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[22], :seller => row_data[23], :mean => (row_data[22] + row_data[23])/2) if !row_data[22].nil? and !row_data[23].nil?
+            puts metal.metal_datasets.where(:name => "Cash").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[6], :seller => row_data[7]) if !row_data[6].nil? and !row_data[7].nil?
+            puts metal.metal_datasets.where(:name => "3-Months").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[10], :seller => row_data[11]) if !row_data[10].nil? and !row_data[11].nil?
+            puts metal.metal_datasets.where(:name => "December 1").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[14], :seller => row_data[15]) if !row_data[14].nil? and !row_data[15].nil?
+            puts metal.metal_datasets.where(:name => "December 2").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[18], :seller => row_data[19]) if !row_data[18].nil? and !row_data[19].nil?
+            puts metal.metal_datasets.where(:name => "December 3").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[22], :seller => row_data[23]) if !row_data[22].nil? and !row_data[23].nil?
           else
             row_data = Array.new
             table.css("td").to_a.each_with_index do |cell,i|
               temp = /[\-0-9.\,]+/.match(cell.content.gsub(/,/,"")).to_s.strip
               row_data[i] = temp != "" ? temp.to_f : nil
             end
-            puts metal.metal_datasets.where(:name => "Cash").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[14], :seller => row_data[20], :mean => (row_data[14] + row_data[20])/2) if !row_data[14].nil? and !row_data[20].nil?
-            puts metal.metal_datasets.where(:name => "3-Months").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[26], :seller => row_data[32], :mean => (row_data[26] + row_data[32])/2) if !row_data[26].nil? and !row_data[32].nil?
-            puts metal.metal_datasets.where(:name => "15-Months").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[38], :seller => row_data[44], :mean => (row_data[38] + row_data[44])/2) if !row_data[38].nil? and !row_data[44].nil?
+            puts metal.metal_datasets.where(:name => "Cash").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[14], :seller => row_data[20]) if !row_data[14].nil? and !row_data[20].nil?
+            puts metal.metal_datasets.where(:name => "3-Months").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[26], :seller => row_data[32]) if !row_data[26].nil? and !row_data[32].nil?
+            puts metal.metal_datasets.where(:name => "15-Months").first.first_or_create_data_row(:date => date).update_attributes(:buyer => row_data[38], :seller => row_data[44]) if !row_data[38].nil? and !row_data[44].nil?
           end
         end
       end

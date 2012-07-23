@@ -35,6 +35,9 @@ gem 'jquery-rails'
 # Parse JSON
 gem 'json'
 
+#Parse Excel
+gem 'spreadsheet'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

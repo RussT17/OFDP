@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720155349) do
+ActiveRecord::Schema.define(:version => 20120723153606) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20120720155349) do
     t.date    "date"
     t.float   "buyer"
     t.float   "seller"
-    t.float   "mean"
   end
 
   create_table "precious_fixings", :force => true do |t|
