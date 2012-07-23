@@ -452,7 +452,7 @@ namespace :metals do
       
       desc "Scrape all precious metal price history"
       task :precious => :environment do
-        
+    
         PreciousFixing.delete_all
         PreciousForward.delete_all
        
@@ -492,7 +492,7 @@ namespace :metals do
             end
           end
         end
-            
+          
         #Gold Forwards
         1989.upto(Date.today.year) do |year|
           url = "http://www.lbma.org.uk/pages/index.cfm?page_id=55&title=gold_forwards&show=" + year.to_s
@@ -517,11 +517,11 @@ namespace :metals do
             if year == 1989
               puts MetalDataset.where(:metal_id => metal_id, :name => 'Forward Offered Rates').first.create_data_row(:date => Date.parse(row_data[0]), 
                 :gofo1 => row_data[1], :gofo3 => row_data[2], :gofo6 => row_data[3], :gofo12 => row_data[4], :libor1 => row_data[9],
-                :libor3 => row_data[10], :libor6 => row_data[11], :libor12 => row_data[12]) if !row_data[1,4].compact.empty? and !row_data[9,12].compact.empty?
+                :libor3 => row_data[10], :libor6 => row_data[11], :libor12 => row_data[12]) if !row_data[1,4].compact.empty? or !row_data[9,12].compact.empty?
             else
               puts MetalDataset.where(:metal_id => metal_id, :name => 'Forward Offered Rates').first.create_data_row(:date => Date.parse(row_data[0]), 
                 :gofo1 => row_data[1], :gofo2 => row_data[2], :gofo3 => row_data[3], :gofo6 => row_data[4], :gofo12 => row_data[5], :libor1 => row_data[11],
-                :libor2 => row_data[12], :libor3 => row_data[13], :libor6 => row_data[14], :libor12 => row_data[15]) if !row_data[1,5].compact.empty? and !row_data[11,15].compact.empty?
+                :libor2 => row_data[12], :libor3 => row_data[13], :libor6 => row_data[14], :libor12 => row_data[15]) if !row_data[1,5].compact.empty? or !row_data[11,15].compact.empty?
             end
           end
         end
@@ -552,11 +552,12 @@ namespace :metals do
               temp = /[0-9.]+/.match(row_data[j]).to_s
               row_data[j] = temp != "" ? temp.to_f : nil
             end
+            1.upto(3) {|i| row_data[i] = row_data[i]/100 if !row_data[i].nil?}
             if numcols == 3
-              puts MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.create_data_row(:date => Date.parse(row_data[0]), :usd => row_data[1]/100, :gbp => row_data[2]/100) if !row_data[1,2].compact.empty?
+              puts MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.create_data_row(:date => Date.parse(row_data[0]), :usd => row_data[1], :gbp => row_data[2]) if !row_data[1,2].compact.empty?
             end
             if numcols == 4
-              puts MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.create_data_row(:date => Date.parse(row_data[0]), :usd => row_data[1]/100, :gbp => row_data[2]/100, :eur => row_data[3]/100) if !row_data[1,3].compact.empty?
+              puts MetalDataset.where(:metal_id => metal_id, :name => 'London Fixings').first.create_data_row(:date => Date.parse(row_data[0]), :usd => row_data[1], :gbp => row_data[2], :eur => row_data[3]) if !row_data[1,3].compact.empty?
             end
           end
         end
