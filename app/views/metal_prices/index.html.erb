@@ -17,8 +17,20 @@
 		</tr>
 		<% for c in @contents %>
 		<tr>
+			<% if c.metal.source == 'lme' %>
 			<td><%= c.metal.name + ' Price: ' + c.name %></td>
-			<td></td>
+			<td><%= "Historical " + c.name.downcase + ' ' + c.metal.name.downcase + ' price, scraped daily from the LME. Prices are given in $USD/Tonne.' %></td>
+			<% elsif c.name[0] == 'L' %>
+			<td><%= c.metal.name + ' Price: ' + c.name %></td>
+			<td><%= c.name + ' ' + c.metal.name.downcase + " price, scraped daily from the LBMA. Fixing levels are set per troy ounce." %></td>
+			<% else %>
+			<td><%= c.metal.name + ' ' + c.name %></td>
+				<% if c.metal.name == 'Gold' %>
+				<td><%= "Gold forward rates (GOFO), in percentages, scraped daily from the LBMA. LIBOR difference also included." %></td>
+				<% else %>
+				<td><%= "Silver forward rates (SIFO), in percentages, scraped daily from the LBMA. These rates are purely indicative and are not intended to be used as benchmarks for any transactions. LIBOR difference also included." %></td>
+				<% end %>
+			<% end %>
 			<td><%= link_to metal_price_url(c),metal_price_url(c) %></td>
 		</tr>
 		<% end %>
