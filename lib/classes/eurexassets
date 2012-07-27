@@ -1,0 +1,253 @@
+{:symbol=>"FGBS", :name=>"Euro-Schatz Futures", :link=>"INT/FIX"}
+{:symbol=>"FGBM", :name=>"Euro-Bobl Futures", :link=>"INT/FIX"}
+{:symbol=>"FGBL", :name=>"Euro-Bund Futures", :link=>"INT/FIX"}
+{:symbol=>"FGBX", :name=>"Euro-Buxl® Futures", :link=>"INT/FIX"}
+{:symbol=>"FBTS", :name=>"Short-Term Euro-BTP Futures", :link=>"INT/FIX"}
+{:symbol=>"FBTM", :name=>"Mid-Term Euro-BTP Futures", :link=>"INT/FIX"}
+{:symbol=>"FBTP", :name=>"Long-Term Euro-BTP Futures", :link=>"INT/FIX"}
+{:symbol=>"FOAT", :name=>"Euro-OAT Futures", :link=>"INT/FIX"}
+{:symbol=>"CONF", :name=>"CONF Futures", :link=>"INT/FIX"}
+{:symbol=>"FEO1", :name=>"One-Month EONIA Futures", :link=>"INT/MON"}
+{:symbol=>"FEU3", :name=>"Three-Month EURIBOR Futures", :link=>"INT/MON"}
+{:symbol=>"FDAX", :name=>"DAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"FDIV", :name=>"DivDAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"F2MX", :name=>"MDAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"FTDX", :name=>"TecDAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"FSMI", :name=>"SMI® Futures", :link=>"IDX/SMI"}
+{:symbol=>"FSMM", :name=>"SMIM® Futures", :link=>"IDX/SMI"}
+{:symbol=>"FSLI", :name=>"SLI Swiss Leader Index® Futures", :link=>"IDX/SLI"}
+{:symbol=>"FFOX", :name=>"OMXH25 Futures", :link=>"IDX/HEX"}
+{:symbol=>"FGTI", :name=>"Dow Jones Global Titans 50 Index (SM) Futures (EUR)", :link=>"IDX/DJS"}
+{:symbol=>"FT50", :name=>"Dow Jones Global Titans 50 Index (SM) Futures (USD)", :link=>"IDX/DJS"}
+{:symbol=>"FGSB", :name=>"Dow Jones Banks Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGSE", :name=>"Dow Jones Oil & Gas Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGSI", :name=>"Dow Jones Insurance Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGST", :name=>"Dow Jones Telecommunications Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGSU", :name=>"Dow Jones Utilities Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FESX", :name=>"EURO STOXX 50® Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FEXF", :name=>"EURO STOXX 50® ex Financials Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FEDV", :name=>"EURO STOXX® Select Dividend 30 Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FSTX", :name=>"STOXX® Europe 50 Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FMJP", :name=>"MSCI Japan Index Futures", :link=>"IDX/MSC"}
+{:symbol=>"FMRU", :name=>"MSCI Russia Index Futures", :link=>"IDX/MSC"}
+{:symbol=>"FRDX", :name=>"RDX® USD Index Futures", :link=>"IDX/RDX"}
+{:symbol=>"FSEN", :name=>"SENSEX Futures", :link=>"IDX/SEN"}
+{:symbol=>"A2BB", :name=>"ABB Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2EN", :name=>"AEGON Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2OM", :name=>"ALSTOM Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A1OM", :name=>"ALSTOM Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"A2SM", :name=>"ASML Holding Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2XA", :name=>"AXA Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A1XA", :name=>"AXA Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"A3IR", :name=>"Air Liquide Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2IR", :name=>"Air Liquide Dividend Futures [1100,0000]", :link=>"DID/EDF"}
+{:symbol=>"A2LV", :name=>"Allianz Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A1LV", :name=>"Allianz Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"A2AL", :name=>"Anglo American Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2TK", :name=>"Anheuser-Busch-InBev Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I1SP", :name=>"Arcelor Mittal Basket Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"I2SP", :name=>"Arcelor Mittal Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2SG", :name=>"Assicurazioni Generali Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2ZN", :name=>"AstraZeneca Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2AS", :name=>"BASF Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B1AS", :name=>"BASF Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"B2LT", :name=>"BHP Billiton Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2MW", :name=>"BMW Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2NP", :name=>"BNP Paribas Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2P", :name=>"BP Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2T", :name=>"BT Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B3BV", :name=>"Banco Bilbao Vizcaya Argentaria Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B1BV", :name=>"Banco Bilbao Vizcaya Argentaria Dividend Futures [104,0864]", :link=>"DID/EDF"}
+{:symbol=>"B2BV", :name=>"Banco Bilbao Vizcaya Argentaria Dividend Futures [1040,8644]", :link=>"DID/EDF"}
+{:symbol=>"S2SD", :name=>"Banco Santander Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S1SD", :name=>"Banco Santander Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"B2AR", :name=>"Barclays Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2AY", :name=>"Bayer Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2RG", :name=>"CRH Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2AR", :name=>"Carrefour Basket Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C3AR", :name=>"Carrefour Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2FR", :name=>"Cie Financière Richemont Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2SG", :name=>"Credit Suisse Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C3SG", :name=>"Credit Suisse Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"X2CA", :name=>"Crédit Agricole Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"X1CA", :name=>"Crédit Agricole Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"D2AI", :name=>"Daimler Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D1AI", :name=>"Daimler Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"B2SN", :name=>"Danone Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D2BK", :name=>"Deutsche Bank Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D3B1", :name=>"Deutsche Börse Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D2B1", :name=>"Deutsche Börse Dividend Futures [1023,4632]", :link=>"DID/EDF"}
+{:symbol=>"D2TE", :name=>"Deutsche Telekom Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D1TE", :name=>"Deutsche Telekom Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"D2GE", :name=>"Diageo Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E2OA", :name=>"E.ON Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E2NL", :name=>"Enel Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E2NT", :name=>"Eni Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E1NT", :name=>"Eni Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"E2SL", :name=>"Essilor International Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"F2TE", :name=>"France Télécom Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"F1TE", :name=>"France Télécom Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"G2ZF", :name=>"GDF Suez Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"G1ZF", :name=>"GDF Suez Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"G3SK", :name=>"GlaxoSmithKline Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"G2SK", :name=>"GlaxoSmithKline Dividend Futures [1003,5361]", :link=>"DID/EDF"}
+{:symbol=>"H2SB", :name=>"HSBC Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2NN", :name=>"ING Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2BE", :name=>"Iberdrola Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2XD", :name=>"Inditex Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I3ES", :name=>"Intesa Sanpaolo Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2ES", :name=>"Intesa Sanpaolo Dividend Futures [1062,1189]", :link=>"DID/EDF"}
+{:symbol=>"L2OR", :name=>"L'Oréal Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"M2OH", :name=>"LVMH Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"M2UV", :name=>"Münchener Rück Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"N2ES", :name=>"Nestlé Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"N2OA", :name=>"Nokia Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"N1OA", :name=>"Nokia Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"N2OV", :name=>"Novartis Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"P2HI", :name=>"Philips Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R3WE", :name=>"RWE Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R2WE", :name=>"RWE Dividend Futures [1003,3324]", :link=>"DID/EDF"}
+{:symbol=>"R2EP", :name=>"Repsol Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R1EP", :name=>"Repsol Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"R2TZ", :name=>"Rio Tinto Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R2OG", :name=>"Roche Holding Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R2DA", :name=>"Royal Dutch Shell Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"K2PN", :name=>"Royal KPN Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S3AP", :name=>"SAP Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2AP", :name=>"SAP Dividend Futures [1007,5627]", :link=>"DID/EDF"}
+{:symbol=>"G2OB", :name=>"Saint-Gobain Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2NW", :name=>"Sanofi Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S1NW", :name=>"Sanofi Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"S3ND", :name=>"Schneider Electric Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2ND", :name=>"Schneider Electric Dividend Futures [2000,0000]", :link=>"DID/EDF"}
+{:symbol=>"S2IE", :name=>"Siemens Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2GE", :name=>"Société Générale Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2RE", :name=>"Swiss Re Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2CM", :name=>"Swisscom Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T2OT", :name=>"TOTAL Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T2QI", :name=>"Telecom Italia Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T2NE", :name=>"Telefónica Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T1NE", :name=>"Telefónica Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"T2SC", :name=>"Tesco Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"U2BS", :name=>"UBS Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C3RI", :name=>"UniCredit Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2RI", :name=>"UniCredit Dividend Futures [151,8302]", :link=>"DID/EDF"}
+{:symbol=>"U2BL", :name=>"Unibail-Rodamco Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"U1BL", :name=>"Unibail-Rodamco Dividend Futures [113,9373]", :link=>"DID/EDF"}
+{:symbol=>"U2NI", :name=>"Unilever NV Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V2W3", :name=>"VW pref. Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2QU", :name=>"Vinci Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V3VU", :name=>"Vivendi Universal Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V2VU", :name=>"Vivendi Universal Dividend Futures [1033,3333]", :link=>"DID/EDF"}
+{:symbol=>"V3O", :name=>"Vodafone Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V2O", :name=>"Vodafone Group Dividend Futures [1023,0481]", :link=>"DID/EDF"}
+{:symbol=>"Z2UR", :name=>"Zurich Financial Services Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"FEXD", :name=>"EURO STOXX 50® Index Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FD3D", :name=>"EURO STOXX® Select Dividend 30 Index Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FDXD", :name=>"DAX® Price Index Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FDVD", :name=>"DivDAX® Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSMD", :name=>"SMI® Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEBD", :name=>"EURO STOXX® Banks Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEID", :name=>"EURO STOXX® Insurance Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEED", :name=>"EURO STOXX® Oil&Gas Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FETD", :name=>"EURO STOXX® Telecommunications Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEUD", :name=>"EURO STOXX® Utilities Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSBD", :name=>"STOXX® Europe 600 Banks Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSID", :name=>"STOXX® Europe 600 Insurance Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSED", :name=>"STOXX® Europe 600 Oil&Gas Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSTD", :name=>"STOXX® Europe 600 Telecommunications Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSUD", :name=>"STOXX® Europe 600 Utilities Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"EXSF", :name=>"iShares DAX® (DE) Futures", :link=>"ETF/BGI"}
+{:symbol=>"EUNF", :name=>"iShares EURO STOXX 50® Futures", :link=>"ETF/BGI"}
+{:symbol=>"XMTF", :name=>"CS ETF (CH) on SMI® Futures", :link=>"ETF/CSM"}
+{:symbol=>"FCCO", :name=>"Dow Jones-UBS Commodity Futures", :link=>"COM/CDX"}
+{:symbol=>"FCAG", :name=>"Dow Jones-UBS Agriculture Futures", :link=>"COM/CDX"}
+{:symbol=>"FCEN", :name=>"Dow Jones-UBS Energy Futures", :link=>"COM/CDX"}
+{:symbol=>"FCXE", :name=>"Dow Jones-UBS Ex Energy Futures", :link=>"COM/CDX"}
+{:symbol=>"FCGR", :name=>"Dow Jones-UBS Grains Futures", :link=>"COM/CDX"}
+{:symbol=>"FCIN", :name=>"Dow Jones-UBS Industrial Metals Futures", :link=>"COM/CDX"}
+{:symbol=>"FCLI", :name=>"Dow Jones-UBS Livestock Futures", :link=>"COM/CDX"}
+{:symbol=>"FCPE", :name=>"Dow Jones-UBS Petroleum Futures", :link=>"COM/CDX"}
+{:symbol=>"FCPR", :name=>"Dow Jones-UBS Precious Metals Futures", :link=>"COM/CDX"}
+{:symbol=>"FCSO", :name=>"Dow Jones-UBS Softs Futures", :link=>"COM/CDX"}
+{:symbol=>"FEPP", :name=>"European Processing Potato Futures", :link=>"COM/AGR"}
+{:symbol=>"FLPI", :name=>"London Potato Futures", :link=>"COM/AGR"}
+{:symbol=>"FPIG", :name=>"Piglet Futures", :link=>"COM/AGR"}
+{:symbol=>"FHOG", :name=>"Hog Futures", :link=>"COM/AGR"}
+{:symbol=>"FBUT", :name=>"Butter Futures", :link=>"COM/AGR"}
+{:symbol=>"FSMP", :name=>"Skimmed Milk Powder Futures", :link=>"COM/AGR"}
+{:symbol=>"FXGL", :name=>"Xetra-Gold® Futures", :link=>"COM/GOL"}
+{:symbol=>"FGFX", :name=>"Gold Futures", :link=>"COM/GOL"}
+{:symbol=>"FSFX", :name=>"Silver Futures", :link=>"COM/SIL"}
+{:symbol=>"FPHA", :name=>"ETFS Physical Gold Futures", :link=>"COM/ETC"}
+{:symbol=>"FCRU", :name=>"ETFS Crude Oil Futures", :link=>"COM/ETC"}
+{:symbol=>"FCER", :name=>"CER Futures EarlyDec", :link=>"COM/CO2"}
+{:symbol=>"F2CR", :name=>"CER Futures MidDec", :link=>"COM/CO2"}
+{:symbol=>"FEUA", :name=>"EUA Futures", :link=>"COM/CO2"}
+{:symbol=>"F2PE", :name=>"EUA Futures EarlyDec", :link=>"COM/CO2"}
+{:symbol=>"F2EA", :name=>"EUA Futures MidDec", :link=>"COM/CO2"}
+{:symbol=>"FEAA", :name=>"EUAA Futures", :link=>"COM/CO2"}
+{:symbol=>"FERU", :name=>"ERU Futures", :link=>"COM/CO2"}
+{:symbol=>"F1B1", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B2", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B3", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B4", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B5", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1BM", :name=>"Phelix Base® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F1BQ", :name=>"Phelix Base® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F1BY", :name=>"Phelix Base® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F1P1", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P2", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P3", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P4", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P5", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1PM", :name=>"Phelix Peak® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F1PQ", :name=>"Phelix Peak® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F1PY", :name=>"Phelix Peak® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F1OM", :name=>"Phelix Off-Peak® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F1OQ", :name=>"Phelix Off-Peak® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F1OY", :name=>"Phelix Off-Peak® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F7B1", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B2", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B3", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B4", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B5", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7BM", :name=>"French Base® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F7BQ", :name=>"French Base® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F7BY", :name=>"French Base® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F7P1", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P2", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P3", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P4", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P5", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7PM", :name=>"French Peak® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F7PQ", :name=>"French Peak® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F7PY", :name=>"French Peak® Year Futures", :link=>"COM/POW"}
+{:symbol=>"G0BM", :name=>"NCG Natural Gas Month Futures", :link=>"COM/GAS"}
+{:symbol=>"G0BQ", :name=>"NCG Natural Gas Quarter Futures", :link=>"COM/GAS"}
+{:symbol=>"G0BS", :name=>"NCG Natural Gas Season Futures", :link=>"COM/GAS"}
+{:symbol=>"G0BY", :name=>"NCG Natural Gas Year Futures", :link=>"COM/GAS"}
+{:symbol=>"G2BM", :name=>"GPL Natural Gas Month Futures", :link=>"COM/GAS"}
+{:symbol=>"G2BQ", :name=>"GPL Natural Gas Quarter Futures", :link=>"COM/GAS"}
+{:symbol=>"G2BY", :name=>"GPL Natural Gas Year Futures", :link=>"COM/GAS"}
+{:symbol=>"FT2M", :name=>"ARA Month Futures", :link=>"COM/COL"}
+{:symbol=>"FT2Q", :name=>"ARA Quarter Futures", :link=>"COM/COL"}
+{:symbol=>"FT2Y", :name=>"ARA Year Futures", :link=>"COM/COL"}
+{:symbol=>"FT4M", :name=>"RB Month Futures", :link=>"COM/COL"}
+{:symbol=>"FT4Q", :name=>"RB Quarter Futures", :link=>"COM/COL"}
+{:symbol=>"FT4Y", :name=>"RB Year Futures", :link=>"COM/COL"}
+{:symbol=>"HU12", :name=>"Hurricane Futures USA 10bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU22", :name=>"Hurricane Futures USA 20bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU32", :name=>"Hurricane Futures USA 30bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU42", :name=>"Hurricane Futures USA 40bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU52", :name=>"Hurricane Futures USA 50bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HF32", :name=>"Hurricane Futures Florida 30bn 2012", :link=>"WED/FLO/F12"}
+{:symbol=>"HF42", :name=>"Hurricane Futures Florida 40bn 2012", :link=>"WED/FLO/F12"}
+{:symbol=>"HF52", :name=>"Hurricane Futures Florida 50bn 2012", :link=>"WED/FLO/F12"}
+{:symbol=>"HG12", :name=>"Hurricane Futures Gulf 10bn 2012", :link=>"WED/GUL/G12"}
+{:symbol=>"HG22", :name=>"Hurricane Futures Gulf 20bn 2012", :link=>"WED/GUL/G12"}
+{:symbol=>"FVS", :name=>"VSTOXXMiniFutures", :link=>"VOL"}
+{:symbol=>"PUKA", :name=>"IPD® UK Annual All Property Index", :link=>"PRD"}
+{:symbol=>"PARE", :name=>"IPD UK Annual All Retail Index", :link=>"PRD"}
+{:symbol=>"PAOF", :name=>"IPD UK Annual All Office Index", :link=>"PRD"}
+{:symbol=>"PAIN", :name=>"IPD UK Annual All Industrial Index", :link=>"PRD"}

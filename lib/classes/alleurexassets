@@ -1,0 +1,1134 @@
+{:symbol=>"IIIF", :name=>"3i Group", :link=>"EQU/FUT"}
+{:symbol=>"MMMF", :name=>"3M", :link=>"EQU/FUT"}
+{:symbol=>"EAMG", :name=>"A2A", :link=>"EQU/FUT"}
+{:symbol=>"ARLF", :name=>"Aareal Bank", :link=>"EQU/FUT"}
+{:symbol=>"ABBF", :name=>"ABB", :link=>"EQU/FUT"}
+{:symbol=>"ABTF", :name=>"Abbott Laboratories", :link=>"EQU/FUT"}
+{:symbol=>"AYOF", :name=>"Abengoa", :link=>"EQU/FUT"}
+{:symbol=>"ABEK", :name=>"Abertis Infrastructuras", :link=>"EQU/FUT"}
+{:symbol=>"ABEJ", :name=>"Abertis Infrastructuras [105,0000]", :link=>"EQU/FUT"}
+{:symbol=>"ANAG", :name=>"Acciona", :link=>"EQU/FUT"}
+{:symbol=>"ACRH", :name=>"Accor", :link=>"EQU/FUT"}
+{:symbol=>"ACRI", :name=>"Accor", :link=>"EQU/FUT"}
+{:symbol=>"ACEF", :name=>"Acerinox", :link=>"EQU/FUT"}
+{:symbol=>"ACEP", :name=>"Acerinox [physical]", :link=>"EQU/FUT"}
+{:symbol=>"ACKF", :name=>"Ackermans & van Haaren", :link=>"EQU/FUT"}
+{:symbol=>"OCIG", :name=>"ACS Actividades de Construcción y Servicios", :link=>"EQU/FUT"}
+{:symbol=>"OCIP", :name=>"ACS Actividades de Construcción y Servicios [physical]", :link=>"EQU/FUT"}
+{:symbol=>"ATLH", :name=>"Actelion", :link=>"EQU/FUT"}
+{:symbol=>"ADEF", :name=>"Adecco", :link=>"EQU/FUT"}
+{:symbol=>"ADSG", :name=>"Adidas", :link=>"EQU/FUT"}
+{:symbol=>"FLNH", :name=>"Admiral Group", :link=>"EQU/FUT"}
+{:symbol=>"ADBF", :name=>"Adobe Systems", :link=>"EQU/FUT"}
+{:symbol=>"AENF", :name=>"AEGON", :link=>"EQU/FUT"}
+{:symbol=>"W7LF", :name=>"Aéroports de Paris", :link=>"EQU/FUT"}
+{:symbol=>"SQYF", :name=>"AFI Development", :link=>"EQU/FUT"}
+{:symbol=>"FO4G", :name=>"ageas", :link=>"EQU/FUT"}
+{:symbol=>"AEMF", :name=>"Agnico-Eagle Mines", :link=>"EQU/FUT"}
+{:symbol=>"AGBF", :name=>"Agrana Beteiligungs-AG", :link=>"EQU/FUT"}
+{:symbol=>"ATEF", :name=>"Agricultural Bank of Greece", :link=>"EQU/FUT"}
+{:symbol=>"AGUF", :name=>"Agrium", :link=>"EQU/FUT"}
+{:symbol=>"AHOG", :name=>"Ahold", :link=>"EQU/FUT"}
+{:symbol=>"AB1F", :name=>"Air Berlin", :link=>"EQU/FUT"}
+{:symbol=>"AFRF", :name=>"Air France-KLM", :link=>"EQU/FUT"}
+{:symbol=>"AIRJ", :name=>"Air Liquide", :link=>"EQU/FUT"}
+{:symbol=>"AIRI", :name=>"Air Liquide [110,0000]", :link=>"EQU/FUT"}
+{:symbol=>"AIXF", :name=>"Aixtron", :link=>"EQU/FUT"}
+{:symbol=>"AKUF", :name=>"Akzo Nobel", :link=>"EQU/FUT"}
+{:symbol=>"CGEF", :name=>"Alcatel-Lucent", :link=>"EQU/FUT"}
+{:symbol=>"ALVG", :name=>"Allianz", :link=>"EQU/FUT"}
+{:symbol=>"ALBF", :name=>"Allied Irish Banks", :link=>"EQU/FUT"}
+{:symbol=>"ACBF", :name=>"Alpha Bank", :link=>"EQU/FUT"}
+{:symbol=>"AOMG", :name=>"ALSTOM", :link=>"EQU/FUT"}
+{:symbol=>"AOXF", :name=>"alstria office REIT", :link=>"EQU/FUT"}
+{:symbol=>"MOFF", :name=>"Altria Group", :link=>"EQU/FUT"}
+{:symbol=>"AADF", :name=>"Amadeus FiRe", :link=>"EQU/FUT"}
+{:symbol=>"AI3F", :name=>"Amadeus IT Holding", :link=>"EQU/FUT"}
+{:symbol=>"AM8G", :name=>"AMAG Austria Metall", :link=>"EQU/FUT"}
+{:symbol=>"AM8F", :name=>"AMAG Austria Metall [104,2111]", :link=>"EQU/FUT"}
+{:symbol=>"AMZF", :name=>"Amazon.com", :link=>"EQU/FUT"}
+{:symbol=>"AMEF", :name=>"AMEC", :link=>"EQU/FUT"}
+{:symbol=>"AXPF", :name=>"American Express", :link=>"EQU/FUT"}
+{:symbol=>"AIGF", :name=>"American International Group", :link=>"EQU/FUT"}
+{:symbol=>"AMGF", :name=>"Amgen", :link=>"EQU/FUT"}
+{:symbol=>"AMLF", :name=>"Amlin", :link=>"EQU/FUT"}
+{:symbol=>"APCF", :name=>"Anadarko Petroleum", :link=>"EQU/FUT"}
+{:symbol=>"ANDF", :name=>"Andritz", :link=>"EQU/FUT"}
+{:symbol=>"AALG", :name=>"Anglo American", :link=>"EQU/FUT"}
+{:symbol=>"ITKG", :name=>"Anheuser-Busch-InBev", :link=>"EQU/FUT"}
+{:symbol=>"YT2F", :name=>"Antena 3 de Televisión", :link=>"EQU/FUT"}
+{:symbol=>"ANTH", :name=>"Antofagasta", :link=>"EQU/FUT"}
+{:symbol=>"APAF", :name=>"Apache", :link=>"EQU/FUT"}
+{:symbol=>"7AAF", :name=>"Aperam", :link=>"EQU/FUT"}
+{:symbol=>"APOF", :name=>"Apollo Group", :link=>"EQU/FUT"}
+{:symbol=>"AAPF", :name=>"Apple", :link=>"EQU/FUT"}
+{:symbol=>"AMAF", :name=>"Applied Materials", :link=>"EQU/FUT"}
+{:symbol=>"ISPG", :name=>"Arcelor Mittal", :link=>"EQU/FUT"}
+{:symbol=>"ADMF", :name=>"Archer Daniels Midland", :link=>"EQU/FUT"}
+{:symbol=>"V1SF", :name=>"Arkema", :link=>"EQU/FUT"}
+{:symbol=>"ARMF", :name=>"ARM Holdings", :link=>"EQU/FUT"}
+{:symbol=>"5ABF", :name=>"Asian Bamboo", :link=>"EQU/FUT"}
+{:symbol=>"ASMG", :name=>"ASML Holding", :link=>"EQU/FUT"}
+{:symbol=>"ASSF", :name=>"Assa Abloy", :link=>"EQU/FUT"}
+{:symbol=>"ACPF", :name=>"Asseco Poland", :link=>"EQU/FUT"}
+{:symbol=>"ASGG", :name=>"Assicurazioni Generali", :link=>"EQU/FUT"}
+{:symbol=>"ABFF", :name=>"Associated British Foods", :link=>"EQU/FUT"}
+{:symbol=>"ACIF", :name=>"Astaldi", :link=>"EQU/FUT"}
+{:symbol=>"AZNF", :name=>"AstraZeneca", :link=>"EQU/FUT"}
+{:symbol=>"ATSF", :name=>"AT&S Austria Technologie & Systemtechnik", :link=>"EQU/FUT"}
+{:symbol=>"TFFF", :name=>"AT&T", :link=>"EQU/FUT"}
+{:symbol=>"AOPH", :name=>"Atlantia", :link=>"EQU/FUT"}
+{:symbol=>"ATPF", :name=>"Atlantic Power", :link=>"EQU/FUT"}
+{:symbol=>"AXIF", :name=>"AtoS", :link=>"EQU/FUT"}
+{:symbol=>"ODDF", :name=>"Atrium European Real Estate", :link=>"EQU/FUT"}
+{:symbol=>"NDAF", :name=>"Aurubis", :link=>"EQU/FUT"}
+{:symbol=>"AULG", :name=>"Autogrill", :link=>"EQU/FUT"}
+{:symbol=>"ADPF", :name=>"Automatic Data Processing", :link=>"EQU/FUT"}
+{:symbol=>"AVF", :name=>"Aviva", :link=>"EQU/FUT"}
+{:symbol=>"AXAG", :name=>"AXA", :link=>"EQU/FUT"}
+{:symbol=>"SPRG", :name=>"Axel Springer", :link=>"EQU/FUT"}
+{:symbol=>"HDBH", :name=>"Azimut Holding", :link=>"EQU/FUT"}
+{:symbol=>"BAFF", :name=>"BAE Systems", :link=>"EQU/FUT"}
+{:symbol=>"BHIF", :name=>"Baker Hughes", :link=>"EQU/FUT"}
+{:symbol=>"BADF", :name=>"Balda", :link=>"EQU/FUT"}
+{:symbol=>"BIHF", :name=>"Balfour Beatty", :link=>"EQU/FUT"}
+{:symbol=>"BALF", :name=>"Bâloise Holding", :link=>"EQU/FUT"}
+{:symbol=>"BGPG", :name=>"BAM Groep", :link=>"EQU/FUT"}
+{:symbol=>"BCAG", :name=>"Banca Carige", :link=>"EQU/FUT"}
+{:symbol=>"MPIG", :name=>"Banca Monte die Paschi di Siena", :link=>"EQU/FUT"}
+{:symbol=>"BPEF", :name=>"Banca Popolare dell' Emilia Romana", :link=>"EQU/FUT"}
+{:symbol=>"BPMG", :name=>"Banca Popolare di Milano", :link=>"EQU/FUT"}
+{:symbol=>"BPSF", :name=>"Banca Popolare di Sondrio", :link=>"EQU/FUT"}
+{:symbol=>"BBVG", :name=>"Banco Bilbao Vizcaya Argentaria", :link=>"EQU/FUT"}
+{:symbol=>"BBVP", :name=>"Banco Bilbao Vizcaya Argentaria [physical]", :link=>"EQU/FUT"}
+{:symbol=>"BPIG", :name=>"Banco BPI", :link=>"EQU/FUT"}
+{:symbol=>"B4DF", :name=>"Banco Bradesco", :link=>"EQU/FUT"}
+{:symbol=>"BCPG", :name=>"Banco Comercial Português", :link=>"EQU/FUT"}
+{:symbol=>"BDSG", :name=>"Banco de Sabadell", :link=>"EQU/FUT"}
+{:symbol=>"BDVG", :name=>"Banco de Valencia", :link=>"EQU/FUT"}
+{:symbol=>"BATF", :name=>"Banco Espirito Santo", :link=>"EQU/FUT"}
+{:symbol=>"BPVH", :name=>"Banco Popolare", :link=>"EQU/FUT"}
+{:symbol=>"POPF", :name=>"Banco Popular Español", :link=>"EQU/FUT"}
+{:symbol=>"POPP", :name=>"Banco Popular Español [physical]", :link=>"EQU/FUT"}
+{:symbol=>"SANG", :name=>"Banco Santander", :link=>"EQU/FUT"}
+{:symbol=>"SANP", :name=>"Banco Santander [physical]", :link=>"EQU/FUT"}
+{:symbol=>"BHWF", :name=>"Bank Handlowy w Warszawie", :link=>"EQU/FUT"}
+{:symbol=>"BAKG", :name=>"Bankinter", :link=>"EQU/FUT"}
+{:symbol=>"BACF", :name=>"Bank of America", :link=>"EQU/FUT"}
+{:symbol=>"BGCG", :name=>"Bank of Greece", :link=>"EQU/FUT"}
+{:symbol=>"BIRF", :name=>"Bank of Ireland", :link=>"EQU/FUT"}
+{:symbol=>"BMOF", :name=>"Bank of Montreal", :link=>"EQU/FUT"}
+{:symbol=>"BKFF", :name=>"Bank of New York Mellon", :link=>"EQU/FUT"}
+{:symbol=>"BNSF", :name=>"Bank of Nova Scotia", :link=>"EQU/FUT"}
+{:symbol=>"BKPF", :name=>"Bank of Piraeus", :link=>"EQU/FUT"}
+{:symbol=>"PEOF", :name=>"Bank Pekao", :link=>"EQU/FUT"}
+{:symbol=>"BCVG", :name=>"Banque Cantonale Vaudoise", :link=>"EQU/FUT"}
+{:symbol=>"BARG", :name=>"Barclays", :link=>"EQU/FUT"}
+{:symbol=>"BDEF", :name=>"Barratt Developments", :link=>"EQU/FUT"}
+{:symbol=>"ABXF", :name=>"Barrick Gold Corporation", :link=>"EQU/FUT"}
+{:symbol=>"BCBF", :name=>"Barry Callebaut", :link=>"EQU/FUT"}
+{:symbol=>"BASG", :name=>"BASF", :link=>"EQU/FUT"}
+{:symbol=>"BSKF", :name=>"Basler Kantonalbank", :link=>"EQU/FUT"}
+{:symbol=>"B5AF", :name=>"Bauer", :link=>"EQU/FUT"}
+{:symbol=>"BAXF", :name=>"Baxter International", :link=>"EQU/FUT"}
+{:symbol=>"BAYF", :name=>"Bayer", :link=>"EQU/FUT"}
+{:symbol=>"B5XF", :name=>"Baytex Energy", :link=>"EQU/FUT"}
+{:symbol=>"BIOG", :name=>"BB Biotech", :link=>"EQU/FUT"}
+{:symbol=>"BCEF", :name=>"BCE", :link=>"EQU/FUT"}
+{:symbol=>"A4VF", :name=>"Bebidas das Américas", :link=>"EQU/FUT"}
+{:symbol=>"BC8F", :name=>"Bechtle [100,5083]", :link=>"EQU/FUT"}
+{:symbol=>"BC8G", :name=>"Bechtle [100,5083]", :link=>"EQU/FUT"}
+{:symbol=>"BDXF", :name=>"Becton, Dickinson & Co.", :link=>"EQU/FUT"}
+{:symbol=>"BEFF", :name=>"Befimmo", :link=>"EQU/FUT"}
+{:symbol=>"BEIG", :name=>"Beiersdorf", :link=>"EQU/FUT"}
+{:symbol=>"BEKF", :name=>"Bekaert", :link=>"EQU/FUT"}
+{:symbol=>"BX7F", :name=>"Belgacom", :link=>"EQU/FUT"}
+{:symbol=>"BDTF", :name=>"Bertrandt", :link=>"EQU/FUT"}
+{:symbol=>"BGFF", :name=>"BG Group", :link=>"EQU/FUT"}
+{:symbol=>"BLTF", :name=>"BHP Billiton", :link=>"EQU/FUT"}
+{:symbol=>"GBFH", :name=>"Bilfinger Berger", :link=>"EQU/FUT"}
+{:symbol=>"BIIF", :name=>"Biogen Idec", :link=>"EQU/FUT"}
+{:symbol=>"BMWF", :name=>"BMW", :link=>"EQU/FUT"}
+{:symbol=>"BM3F", :name=>"BMW pref.", :link=>"EQU/FUT"}
+{:symbol=>"BNPH", :name=>"BNP Paribas", :link=>"EQU/FUT"}
+{:symbol=>"BCOF", :name=>"Boeing", :link=>"EQU/FUT"}
+{:symbol=>"BMEG", :name=>"Bolsas y Mercados Españoles", :link=>"EQU/FUT"}
+{:symbol=>"KBWF", :name=>"Boskalis", :link=>"EQU/FUT"}
+{:symbol=>"GBBG", :name=>"Bourbon", :link=>"EQU/FUT"}
+{:symbol=>"BYGG", :name=>"Bouygues", :link=>"EQU/FUT"}
+{:symbol=>"BPF", :name=>"BP", :link=>"EQU/FUT"}
+{:symbol=>"BREF", :name=>"BRE Bank", :link=>"EQU/FUT"}
+{:symbol=>"BNRF", :name=>"Brenntag", :link=>"EQU/FUT"}
+{:symbol=>"BRQF", :name=>"BRISA", :link=>"EQU/FUT"}
+{:symbol=>"BMYF", :name=>"Bristol-Myers Squibb", :link=>"EQU/FUT"}
+{:symbol=>"BMTF", :name=>"British American Tobacco", :link=>"EQU/FUT"}
+{:symbol=>"BLNF", :name=>"British Land", :link=>"EQU/FUT"}
+{:symbol=>"BSYF", :name=>"British Sky Broadcasting", :link=>"EQU/FUT"}
+{:symbol=>"BKAF", :name=>"Brookfield Asset Management", :link=>"EQU/FUT"}
+{:symbol=>"BKOF", :name=>"Brookfield Office Properties", :link=>"EQU/FUT"}
+{:symbol=>"BTAF", :name=>"BT Group", :link=>"EQU/FUT"}
+{:symbol=>"BNZF", :name=>"Bunzl", :link=>"EQU/FUT"}
+{:symbol=>"BRBF", :name=>"Burberry", :link=>"EQU/FUT"}
+{:symbol=>"BUHF", :name=>"Burgenland Holding", :link=>"EQU/FUT"}
+{:symbol=>"BWTF", :name=>"BWT", :link=>"EQU/FUT"}
+{:symbol=>"CH1F", :name=>"C.H. Robinson Worldwide", :link=>"EQU/FUT"}
+{:symbol=>"GCCG", :name=>"C&C Group", :link=>"EQU/FUT"}
+{:symbol=>"CAEF", :name=>"CAE", :link=>"EQU/FUT"}
+{:symbol=>"CAIF", :name=>"CA IMMO", :link=>"EQU/FUT"}
+{:symbol=>"CNEF", :name=>"Cairn Energy", :link=>"EQU/FUT"}
+{:symbol=>"CRTG", :name=>"CaixaBank", :link=>"EQU/FUT"}
+{:symbol=>"CCJF", :name=>"Cameco", :link=>"EQU/FUT"}
+{:symbol=>"CMFF", :name=>"Canadian Imperial Bank of Commerce", :link=>"EQU/FUT"}
+{:symbol=>"CNIF", :name=>"Canadian National Railway", :link=>"EQU/FUT"}
+{:symbol=>"CNQF", :name=>"Canadian Natural Resources", :link=>"EQU/FUT"}
+{:symbol=>"PCRF", :name=>"Canadian Pacific Railway", :link=>"EQU/FUT"}
+{:symbol=>"CGMF", :name=>"Capgemini", :link=>"EQU/FUT"}
+{:symbol=>"CPIF", :name=>"Capita", :link=>"EQU/FUT"}
+{:symbol=>"LIIG", :name=>"Capital Shopping Centres Group", :link=>"EQU/FUT"}
+{:symbol=>"C1CG", :name=>"Cargotec", :link=>"EQU/FUT"}
+{:symbol=>"CCLF", :name=>"Carnival", :link=>"EQU/FUT"}
+{:symbol=>"CVCF", :name=>"Carnival", :link=>"EQU/FUT"}
+{:symbol=>"CPWF", :name=>"Carphone Warehouse Group", :link=>"EQU/FUT"}
+{:symbol=>"CARG", :name=>"Carrefour", :link=>"EQU/FUT"}
+{:symbol=>"CAJG", :name=>"Casino Guichard", :link=>"EQU/FUT"}
+{:symbol=>"CATF", :name=>"Caterpillar", :link=>"EQU/FUT"}
+{:symbol=>"CASH", :name=>"Cattolica di Assicurazioni", :link=>"EQU/FUT"}
+{:symbol=>"CLSF", :name=>"Celesio", :link=>"EQU/FUT"}
+{:symbol=>"CELF", :name=>"Celgene", :link=>"EQU/FUT"}
+{:symbol=>"CPLF", :name=>"Cementos Portland Valderrivas", :link=>"EQU/FUT"}
+{:symbol=>"CXDF", :name=>"Cenovus Energy", :link=>"EQU/FUT"}
+{:symbol=>"CNAF", :name=>"Centrica", :link=>"EQU/FUT"}
+{:symbol=>"CTNG", :name=>"centrotherm photovoltaics", :link=>"EQU/FUT"}
+{:symbol=>"GDGG", :name=>"CGGVeritas", :link=>"EQU/FUT"}
+{:symbol=>"SWGF", :name=>"Charles Schwab", :link=>"EQU/FUT"}
+{:symbol=>"VCNF", :name=>"Charles Vögele", :link=>"EQU/FUT"}
+{:symbol=>"CHKF", :name=>"Chesapeake Energy", :link=>"EQU/FUT"}
+{:symbol=>"CVXF", :name=>"Chevron", :link=>"EQU/FUT"}
+{:symbol=>"CDIF", :name=>"Christian Dior", :link=>"EQU/FUT"}
+{:symbol=>"CFRI", :name=>"Cie Financière Richemont", :link=>"EQU/FUT"}
+{:symbol=>"CPVG", :name=>"CIMPOR Cimentos de Portugal", :link=>"EQU/FUT"}
+{:symbol=>"CSCF", :name=>"Cisco Systems", :link=>"EQU/FUT"}
+{:symbol=>"CITG", :name=>"Citigroup", :link=>"EQU/FUT"}
+{:symbol=>"CLNF", :name=>"Clariant", :link=>"EQU/FUT"}
+{:symbol=>"CNHF", :name=>"CNH Global", :link=>"EQU/FUT"}
+{:symbol=>"XNPF", :name=>"CNP Assurances", :link=>"EQU/FUT"}
+{:symbol=>"COBF", :name=>"Cobham", :link=>"EQU/FUT"}
+{:symbol=>"CEEF", :name=>"Coca-Cola Enterprises", :link=>"EQU/FUT"}
+{:symbol=>"HCBG", :name=>"Coca-Cola Hellenic Bottling", :link=>"EQU/FUT"}
+{:symbol=>"CLFF", :name=>"Colgate-Palmolive", :link=>"EQU/FUT"}
+{:symbol=>"EFCG", :name=>"Colruyt", :link=>"EQU/FUT"}
+{:symbol=>"CMCF", :name=>"Comcast", :link=>"EQU/FUT"}
+{:symbol=>"CBKG", :name=>"Commerzbank", :link=>"EQU/FUT"}
+{:symbol=>"CPGF", :name=>"Compass Group", :link=>"EQU/FUT"}
+{:symbol=>"CGYG", :name=>"Conergy", :link=>"EQU/FUT"}
+{:symbol=>"COFF", :name=>"Confinimmo", :link=>"EQU/FUT"}
+{:symbol=>"COPF", :name=>"ConocoPhillips Basket", :link=>"EQU/FUT"}
+{:symbol=>"CONH", :name=>"Continental", :link=>"EQU/FUT"}
+{:symbol=>"CORF", :name=>"conwert Immobilien Invest", :link=>"EQU/FUT"}
+{:symbol=>"CL6G", :name=>"Corio", :link=>"EQU/FUT"}
+{:symbol=>"GLWF", :name=>"Corning", :link=>"EQU/FUT"}
+{:symbol=>"CSVG", :name=>"Corporación Financiera Alba", :link=>"EQU/FUT"}
+{:symbol=>"COSF", :name=>"Costco Wholesale", :link=>"EQU/FUT"}
+{:symbol=>"COVF", :name=>"Covidien", :link=>"EQU/FUT"}
+{:symbol=>"XCAH", :name=>"Crédit Agricole", :link=>"EQU/FUT"}
+{:symbol=>"CEMF", :name=>"Credito Emiliano", :link=>"EQU/FUT"}
+{:symbol=>"CSGG", :name=>"Credit Suisse Group", :link=>"EQU/FUT"}
+{:symbol=>"CSGH", :name=>"Credit Suisse Group", :link=>"EQU/FUT"}
+{:symbol=>"CRGG", :name=>"CRH", :link=>"EQU/FUT"}
+{:symbol=>"CE2F", :name=>"CropEnergies", :link=>"EQU/FUT"}
+{:symbol=>"CSMG", :name=>"CSM", :link=>"EQU/FUT"}
+{:symbol=>"CSXF", :name=>"CSX", :link=>"EQU/FUT"}
+{:symbol=>"CVSF", :name=>"CVS Caremark", :link=>"EQU/FUT"}
+{:symbol=>"DIEF", :name=>"D'Ieteren", :link=>"EQU/FUT"}
+{:symbol=>"DMGF", :name=>"Daily Mail and General Trust", :link=>"EQU/FUT"}
+{:symbol=>"DAIF", :name=>"Daimler", :link=>"EQU/FUT"}
+{:symbol=>"DHRF", :name=>"Danaher", :link=>"EQU/FUT"}
+{:symbol=>"BSNH", :name=>"Danone", :link=>"EQU/FUT"}
+{:symbol=>"DRIF", :name=>"Darden Restaurants", :link=>"EQU/FUT"}
+{:symbol=>"DSYF", :name=>"Dassault Systèmes", :link=>"EQU/FUT"}
+{:symbol=>"DCCF", :name=>"DCC", :link=>"EQU/FUT"}
+{:symbol=>"DEFF", :name=>"Deere & Co.", :link=>"EQU/FUT"}
+{:symbol=>"DHZF", :name=>"Delhaize Group", :link=>"EQU/FUT"}
+{:symbol=>"DELF", :name=>"Dell", :link=>"EQU/FUT"}
+{:symbol=>"DBKG", :name=>"Deutsche Bank", :link=>"EQU/FUT"}
+{:symbol=>"DB1H", :name=>"Deutsche Börse", :link=>"EQU/FUT"}
+{:symbol=>"DB1G", :name=>"Deutsche Börse [102,3463]", :link=>"EQU/FUT"}
+{:symbol=>"DEQF", :name=>"Deutsche EuroShop", :link=>"EQU/FUT"}
+{:symbol=>"DPWF", :name=>"Deutsche Post", :link=>"EQU/FUT"}
+{:symbol=>"DTEF", :name=>"Deutsche Telekom", :link=>"EQU/FUT"}
+{:symbol=>"DWNF", :name=>"Deutsche Wohnen", :link=>"EQU/FUT"}
+{:symbol=>"DVNF", :name=>"Devon Energy", :link=>"EQU/FUT"}
+{:symbol=>"DVFF", :name=>"DeVry", :link=>"EQU/FUT"}
+{:symbol=>"DXBF", :name=>"Dexia", :link=>"EQU/FUT"}
+{:symbol=>"DGEF", :name=>"Diageo", :link=>"EQU/FUT"}
+{:symbol=>"DLGF", :name=>"Dialog Semiconductor", :link=>"EQU/FUT"}
+{:symbol=>"DTVF", :name=>"DIRECTV", :link=>"EQU/FUT"}
+{:symbol=>"DIAF", :name=>"Distribuidora Internacional de Alimentacion", :link=>"EQU/FUT"}
+{:symbol=>"DSGF", :name=>"Dixons Retail PLC", :link=>"EQU/FUT"}
+{:symbol=>"DFFF", :name=>"Dominion Resources", :link=>"EQU/FUT"}
+{:symbol=>"DOUF", :name=>"Douglas Holding", :link=>"EQU/FUT"}
+{:symbol=>"D9FF", :name=>"Drax Group", :link=>"EQU/FUT"}
+{:symbol=>"DUKF", :name=>"Duke Energy", :link=>"EQU/FUT"}
+{:symbol=>"DDFF", :name=>"DuPont", :link=>"EQU/FUT"}
+{:symbol=>"DUEF", :name=>"Dürr", :link=>"EQU/FUT"}
+{:symbol=>"EOAH", :name=>"E.ON", :link=>"EQU/FUT"}
+{:symbol=>"EADF", :name=>"EADS", :link=>"EQU/FUT"}
+{:symbol=>"EBAF", :name=>"eBay", :link=>"EQU/FUT"}
+{:symbol=>"AZUK", :name=>"Ebro Foods", :link=>"EQU/FUT"}
+{:symbol=>"EDNF", :name=>"Edison", :link=>"EQU/FUT"}
+{:symbol=>"EF3G", :name=>"Eiffage", :link=>"EQU/FUT"}
+{:symbol=>"DRXF", :name=>"Elan Corporation", :link=>"EQU/FUT"}
+{:symbol=>"ELOF", :name=>"Eldorado Gold Corporation", :link=>"EQU/FUT"}
+{:symbol=>"E2FF", :name=>"Electricité de France", :link=>"EQU/FUT"}
+{:symbol=>"LLYF", :name=>"Eli Lilly & Co.", :link=>"EQU/FUT"}
+{:symbol=>"EIAG", :name=>"Elisa Corporation", :link=>"EQU/FUT"}
+{:symbol=>"ZILG", :name=>"ElringKlinger", :link=>"EQU/FUT"}
+{:symbol=>"ERJF", :name=>"Embraer", :link=>"EQU/FUT"}
+{:symbol=>"EMCF", :name=>"EMC", :link=>"EQU/FUT"}
+{:symbol=>"EMRF", :name=>"Emerson Electric", :link=>"EQU/FUT"}
+{:symbol=>"EG4F", :name=>"Enagás", :link=>"EQU/FUT"}
+{:symbol=>"EN3F", :name=>"Enbridge", :link=>"EQU/FUT"}
+{:symbol=>"PCDF", :name=>"Encana", :link=>"EQU/FUT"}
+{:symbol=>"ENLG", :name=>"Enel", :link=>"EQU/FUT"}
+{:symbol=>"EDPF", :name=>"Energias de Portugal", :link=>"EQU/FUT"}
+{:symbol=>"ERFF", :name=>"Enerplus", :link=>"EQU/FUT"}
+{:symbol=>"ENTG", :name=>"Eni", :link=>"EQU/FUT"}
+{:symbol=>"ETIF", :name=>"Enterprise Inns", :link=>"EQU/FUT"}
+{:symbol=>"EOGF", :name=>"EOG Resources", :link=>"EQU/FUT"}
+{:symbol=>"ERAF", :name=>"Eramet", :link=>"EQU/FUT"}
+{:symbol=>"ER9F", :name=>"ERG", :link=>"EQU/FUT"}
+{:symbol=>"ERCG", :name=>"Ericsson", :link=>"EQU/FUT"}
+{:symbol=>"EBOF", :name=>"Erste Bank", :link=>"EQU/FUT"}
+{:symbol=>"EFXF", :name=>"Essilor International", :link=>"EQU/FUT"}
+{:symbol=>"ELEF", :name=>"Euler Hermes", :link=>"EQU/FUT"}
+{:symbol=>"ENRF", :name=>"Eurasian Natural Resources", :link=>"EQU/FUT"}
+{:symbol=>"RFXH", :name=>"Eurazeo", :link=>"EQU/FUT"}
+{:symbol=>"E3BF", :name=>"Eutelsat Communications", :link=>"EQU/FUT"}
+{:symbol=>"EVNF", :name=>"EVN", :link=>"EQU/FUT"}
+{:symbol=>"EXCF", :name=>"Exelon", :link=>"EQU/FUT"}
+{:symbol=>"IILG", :name=>"EXOR", :link=>"EQU/FUT"}
+{:symbol=>"EXPF", :name=>"Experian", :link=>"EQU/FUT"}
+{:symbol=>"ESRF", :name=>"Express Scripts", :link=>"EQU/FUT"}
+{:symbol=>"XOMF", :name=>"ExxonMobil", :link=>"EQU/FUT"}
+{:symbol=>"FBF", :name=>"Facebook", :link=>"EQU/FUT"}
+{:symbol=>"FCCG", :name=>"FCC Fomento de Construcciones y Contratas", :link=>"EQU/FUT"}
+{:symbol=>"FDXF", :name=>"FedEx", :link=>"EQU/FUT"}
+{:symbol=>"UFGG", :name=>"Ferrovial", :link=>"EQU/FUT"}
+{:symbol=>"FIAG", :name=>"Fiat", :link=>"EQU/FUT"}
+{:symbol=>"FIMF", :name=>"Fiat Industrial", :link=>"EQU/FUT"}
+{:symbol=>"FIEF", :name=>"Fielmann", :link=>"EQU/FUT"}
+{:symbol=>"FMNG", :name=>"Finmeccanica", :link=>"EQU/FUT"}
+{:symbol=>"FGPF", :name=>"FirstGroup", :link=>"EQU/FUT"}
+{:symbol=>"FLUF", :name=>"Flughafen Wien", :link=>"EQU/FUT"}
+{:symbol=>"SOAH", :name=>"Fondiaria-Sai", :link=>"EQU/FUT"}
+{:symbol=>"FOTG", :name=>"Fortum", :link=>"EQU/FUT"}
+{:symbol=>"FTEF", :name=>"France Télécom", :link=>"EQU/FUT"}
+{:symbol=>"FNVF", :name=>"Franco-Nevada Corporation", :link=>"EQU/FUT"}
+{:symbol=>"FRAG", :name=>"Fraport", :link=>"EQU/FUT"}
+{:symbol=>"FNTF", :name=>"Freenet", :link=>"EQU/FUT"}
+{:symbol=>"FCXG", :name=>"Freeport-McMoRan Copper & Gold", :link=>"EQU/FUT"}
+{:symbol=>"FREG", :name=>"Fresenius", :link=>"EQU/FUT"}
+{:symbol=>"FMEH", :name=>"Fresenius Medical Care", :link=>"EQU/FUT"}
+{:symbol=>"FPEF", :name=>"Fuchs Petrolub", :link=>"EQU/FUT"}
+{:symbol=>"FUGF", :name=>"Fugro", :link=>"EQU/FUT"}
+{:symbol=>"G4AF", :name=>"Gafisa", :link=>"EQU/FUT"}
+{:symbol=>"GFJF", :name=>"Gagfah", :link=>"EQU/FUT"}
+{:symbol=>"GALF", :name=>"Galp Energia", :link=>"EQU/FUT"}
+{:symbol=>"GTQF", :name=>"Gamesa", :link=>"EQU/FUT"}
+{:symbol=>"GAMF", :name=>"GAM Holding", :link=>"EQU/FUT"}
+{:symbol=>"GANG", :name=>"Gas Natural SDG", :link=>"EQU/FUT"}
+{:symbol=>"GAZG", :name=>"Gazprom", :link=>"EQU/FUT"}
+{:symbol=>"SCFF", :name=>"Gazprom Neft", :link=>"EQU/FUT"}
+{:symbol=>"GZFG", :name=>"GDF Suez", :link=>"EQU/FUT"}
+{:symbol=>"G1AF", :name=>"GEA Group", :link=>"EQU/FUT"}
+{:symbol=>"GBRI", :name=>"Geberit", :link=>"EQU/FUT"}
+{:symbol=>"LDVF", :name=>"Gemalto", :link=>"EQU/FUT"}
+{:symbol=>"GDFF", :name=>"General Dynamics", :link=>"EQU/FUT"}
+{:symbol=>"GECF", :name=>"General Electric", :link=>"EQU/FUT"}
+{:symbol=>"AMBF", :name=>"Generali Deutschland Holding", :link=>"EQU/FUT"}
+{:symbol=>"GISF", :name=>"General Mills", :link=>"EQU/FUT"}
+{:symbol=>"GEOF", :name=>"Geox", :link=>"EQU/FUT"}
+{:symbol=>"GGBF", :name=>"Gerdau", :link=>"EQU/FUT"}
+{:symbol=>"GXIF", :name=>"Gerresheimer", :link=>"EQU/FUT"}
+{:symbol=>"GWIF", :name=>"Gerry Weber", :link=>"EQU/FUT"}
+{:symbol=>"GTNF", :name=>"Getin Holding", :link=>"EQU/FUT"}
+{:symbol=>"VGAF", :name=>"Gildan Activewear", :link=>"EQU/FUT"}
+{:symbol=>"GLDF", :name=>"Gildemeister", :link=>"EQU/FUT"}
+{:symbol=>"GILF", :name=>"Gilead Sciences", :link=>"EQU/FUT"}
+{:symbol=>"GIVG", :name=>"Givaudan", :link=>"EQU/FUT"}
+{:symbol=>"GKNF", :name=>"GKN", :link=>"EQU/FUT"}
+{:symbol=>"GSKG", :name=>"GlaxoSmithKline", :link=>"EQU/FUT"}
+{:symbol=>"GLEF", :name=>"Glencore International", :link=>"EQU/FUT"}
+{:symbol=>"GTCF", :name=>"Globe Trade Centre", :link=>"EQU/FUT"}
+{:symbol=>"GGOF", :name=>"Goldcorp", :link=>"EQU/FUT"}
+{:symbol=>"GOSF", :name=>"Goldman Sachs Group", :link=>"EQU/FUT"}
+{:symbol=>"GOOF", :name=>"Google", :link=>"EQU/FUT"}
+{:symbol=>"GN5F", :name=>"Grafton Group", :link=>"EQU/FUT"}
+{:symbol=>"MIMF", :name=>"Granite Real Estate", :link=>"EQU/FUT"}
+{:symbol=>"OZTF", :name=>"Grifols", :link=>"EQU/FUT"}
+{:symbol=>"GFSF", :name=>"Group 4 Securicor", :link=>"EQU/FUT"}
+{:symbol=>"EAIF", :name=>"Groupe Bruxelles Lambert", :link=>"EQU/FUT"}
+{:symbol=>"LTSF", :name=>"Grupa Lotos", :link=>"EQU/FUT"}
+{:symbol=>"PIQF", :name=>"Gruppa Kompaniy PIK", :link=>"EQU/FUT"}
+{:symbol=>"HALF", :name=>"Halliburton", :link=>"EQU/FUT"}
+{:symbol=>"HHLF", :name=>"Hamburger Hafen und Logistik", :link=>"EQU/FUT"}
+{:symbol=>"HMSG", :name=>"Hammerson", :link=>"EQU/FUT"}
+{:symbol=>"HNRG", :name=>"Hannover Rück", :link=>"EQU/FUT"}
+{:symbol=>"HWDF", :name=>"Harry Winston Diamond Corporation", :link=>"EQU/FUT"}
+{:symbol=>"HAVF", :name=>"Havas", :link=>"EQU/FUT"}
+{:symbol=>"HAVG", :name=>"Havas", :link=>"EQU/FUT"}
+{:symbol=>"HEFG", :name=>"HeidelbergCement", :link=>"EQU/FUT"}
+{:symbol=>"HDDG", :name=>"Heidelberger Druckmaschinen", :link=>"EQU/FUT"}
+{:symbol=>"HNKF", :name=>"Heineken", :link=>"EQU/FUT"}
+{:symbol=>"HEHF", :name=>"Heineken Holding", :link=>"EQU/FUT"}
+{:symbol=>"HESF", :name=>"Henkel", :link=>"EQU/FUT"}
+{:symbol=>"HENG", :name=>"Henkel pref.", :link=>"EQU/FUT"}
+{:symbol=>"HE9F", :name=>"Hera", :link=>"EQU/FUT"}
+{:symbol=>"HMIH", :name=>"Hermes International", :link=>"EQU/FUT"}
+{:symbol=>"HMIG", :name=>"Hermes International [101,8975]", :link=>"EQU/FUT"}
+{:symbol=>"AHCF", :name=>"Hess", :link=>"EQU/FUT"}
+{:symbol=>"HPQF", :name=>"Hewlett-Packard", :link=>"EQU/FUT"}
+{:symbol=>"HOTF", :name=>"Hochtief", :link=>"EQU/FUT"}
+{:symbol=>"HOLH", :name=>"Holcim", :link=>"EQU/FUT"}
+{:symbol=>"HOMF", :name=>"Home Retail Group", :link=>"EQU/FUT"}
+{:symbol=>"HONF", :name=>"Honeywell International", :link=>"EQU/FUT"}
+{:symbol=>"HSBG", :name=>"HSBC", :link=>"EQU/FUT"}
+{:symbol=>"OCKF", :name=>"Hudbay Minerals", :link=>"EQU/FUT"}
+{:symbol=>"BOSF", :name=>"Hugo Boss", :link=>"EQU/FUT"}
+{:symbol=>"HUKF", :name=>"Huhtamaki", :link=>"EQU/FUT"}
+{:symbol=>"IALF", :name=>"IAMGOLD", :link=>"EQU/FUT"}
+{:symbol=>"IBEG", :name=>"Iberdrola", :link=>"EQU/FUT"}
+{:symbol=>"IBEP", :name=>"Iberdrola [physical]", :link=>"EQU/FUT"}
+{:symbol=>"IBMF", :name=>"IBM", :link=>"EQU/FUT"}
+{:symbol=>"ICAF", :name=>"Icade", :link=>"EQU/FUT"}
+{:symbol=>"ICAG", :name=>"Icade", :link=>"EQU/FUT"}
+{:symbol=>"IAPF", :name=>"Icap", :link=>"EQU/FUT"}
+{:symbol=>"NKFG", :name=>"Imerys", :link=>"EQU/FUT"}
+{:symbol=>"IMIF", :name=>"IMI", :link=>"EQU/FUT"}
+{:symbol=>"IMOG", :name=>"IMMOFINANZ", :link=>"EQU/FUT"}
+{:symbol=>"IMPF", :name=>"Imperial Oil", :link=>"EQU/FUT"}
+{:symbol=>"IMTG", :name=>"Imperial Tobacco", :link=>"EQU/FUT"}
+{:symbol=>"INCF", :name=>"Inchcape", :link=>"EQU/FUT"}
+{:symbol=>"IPDG", :name=>"Independent News & Media", :link=>"EQU/FUT"}
+{:symbol=>"IXDI", :name=>"Inditex", :link=>"EQU/FUT"}
+{:symbol=>"IXDP", :name=>"Inditex [physical]", :link=>"EQU/FUT"}
+{:symbol=>"IDAF", :name=>"Indra Sistemas", :link=>"EQU/FUT"}
+{:symbol=>"IFXG", :name=>"Infineon", :link=>"EQU/FUT"}
+{:symbol=>"INFF", :name=>"Informa", :link=>"EQU/FUT"}
+{:symbol=>"INNG", :name=>"ING", :link=>"EQU/FUT"}
+{:symbol=>"ISAF", :name=>"Inmarsat", :link=>"EQU/FUT"}
+{:symbol=>"INTF", :name=>"Intel", :link=>"EQU/FUT"}
+{:symbol=>"IHGF", :name=>"Intercontinental Hotels Group", :link=>"EQU/FUT"}
+{:symbol=>"INRF", :name=>"International Consolidated Airlines Group", :link=>"EQU/FUT"}
+{:symbol=>"IGTF", :name=>"International Game Technology", :link=>"EQU/FUT"}
+{:symbol=>"IPRF", :name=>"International Power", :link=>"EQU/FUT"}
+{:symbol=>"IT1F", :name=>"Intertek", :link=>"EQU/FUT"}
+{:symbol=>"IESI", :name=>"Intesa Sanpaolo", :link=>"EQU/FUT"}
+{:symbol=>"ISYF", :name=>"Invensys", :link=>"EQU/FUT"}
+{:symbol=>"INVF", :name=>"Investec", :link=>"EQU/FUT"}
+{:symbol=>"ITAH", :name=>"Italcementi", :link=>"EQU/FUT"}
+{:symbol=>"ITMF", :name=>"Italmobiliare", :link=>"EQU/FUT"}
+{:symbol=>"I5UF", :name=>"Itaú Unibanco", :link=>"EQU/FUT"}
+{:symbol=>"ESIF", :name=>"ITT Educational Services", :link=>"EQU/FUT"}
+{:symbol=>"ITVF", :name=>"ITV", :link=>"EQU/FUT"}
+{:symbol=>"IHMF", :name=>"Ivanhoe Mines", :link=>"EQU/FUT"}
+{:symbol=>"IVGG", :name=>"IVG Immobilien", :link=>"EQU/FUT"}
+{:symbol=>"JBHF", :name=>"J.B. Hunt Transport Services", :link=>"EQU/FUT"}
+{:symbol=>"DCSG", :name=>"JCDecaux", :link=>"EQU/FUT"}
+{:symbol=>"JEMF", :name=>"Jerónimo Martins", :link=>"EQU/FUT"}
+{:symbol=>"JNJF", :name=>"Johnson & Johnson", :link=>"EQU/FUT"}
+{:symbol=>"JCIF", :name=>"Johnson Controls", :link=>"EQU/FUT"}
+{:symbol=>"JMAF", :name=>"Johnson Matthey", :link=>"EQU/FUT"}
+{:symbol=>"JPMF", :name=>"JPMorgan Chase", :link=>"EQU/FUT"}
+{:symbol=>"SBRF", :name=>"J Sainsbury", :link=>"EQU/FUT"}
+{:symbol=>"BAEI", :name=>"Julius Bär Gruppe", :link=>"EQU/FUT"}
+{:symbol=>"BAEH", :name=>"Julius Bär Gruppe [101,1377 ]", :link=>"EQU/FUT"}
+{:symbol=>"JUNF", :name=>"Jungheinrich", :link=>"EQU/FUT"}
+{:symbol=>"JEGF", :name=>"Just Energy Group", :link=>"EQU/FUT"}
+{:symbol=>"SDXH", :name=>"K+S", :link=>"EQU/FUT"}
+{:symbol=>"KABF", :name=>"Kaba Holding", :link=>"EQU/FUT"}
+{:symbol=>"KDHF", :name=>"Kabel Deutschland Holding", :link=>"EQU/FUT"}
+{:symbol=>"KTCF", :name=>"Kapsch TrafficCom", :link=>"EQU/FUT"}
+{:symbol=>"KAZF", :name=>"Kazakhmys", :link=>"EQU/FUT"}
+{:symbol=>"KDBG", :name=>"KBC Groep", :link=>"EQU/FUT"}
+{:symbol=>"KELF", :name=>"Kellogg Co.", :link=>"EQU/FUT"}
+{:symbol=>"KERF", :name=>"Kernel Holding", :link=>"EQU/FUT"}
+{:symbol=>"KYGG", :name=>"Kerry Group", :link=>"EQU/FUT"}
+{:symbol=>"KEKG", :name=>"Kesko", :link=>"EQU/FUT"}
+{:symbol=>"KGHF", :name=>"KGHM Polska Miedz", :link=>"EQU/FUT"}
+{:symbol=>"KMBF", :name=>"Kimberly-Clark", :link=>"EQU/FUT"}
+{:symbol=>"KGFF", :name=>"Kingfisher", :link=>"EQU/FUT"}
+{:symbol=>"KRXF", :name=>"Kingspan Group", :link=>"EQU/FUT"}
+{:symbol=>"KINF", :name=>"Kinross Gold Corporation", :link=>"EQU/FUT"}
+{:symbol=>"LIFH", :name=>"Klépierre", :link=>"EQU/FUT"}
+{:symbol=>"KCOH", :name=>"Klöckner & Co", :link=>"EQU/FUT"}
+{:symbol=>"KC4H", :name=>"KONE", :link=>"EQU/FUT"}
+{:symbol=>"DSMF", :name=>"Koninklijke DSM", :link=>"EQU/FUT"}
+{:symbol=>"KBCF", :name=>"Kontron", :link=>"EQU/FUT"}
+{:symbol=>"KFTF", :name=>"Kraft Foods", :link=>"EQU/FUT"}
+{:symbol=>"KRNF", :name=>"Krones", :link=>"EQU/FUT"}
+{:symbol=>"KUDG", :name=>"Kudelski", :link=>"EQU/FUT"}
+{:symbol=>"KNIH", :name=>"Kühne & Nagel", :link=>"EQU/FUT"}
+{:symbol=>"IWKF", :name=>"KUKA", :link=>"EQU/FUT"}
+{:symbol=>"KUNF", :name=>"Kuoni Reisen", :link=>"EQU/FUT"}
+{:symbol=>"LORF", :name=>"L'Oréal", :link=>"EQU/FUT"}
+{:symbol=>"LADF", :name=>"Ladbrokes", :link=>"EQU/FUT"}
+{:symbol=>"CILF", :name=>"Lafarge", :link=>"EQU/FUT"}
+{:symbol=>"LAGF", :name=>"Lagardère", :link=>"EQU/FUT"}
+{:symbol=>"LANG", :name=>"Land Securities Group", :link=>"EQU/FUT"}
+{:symbol=>"LXSF", :name=>"LANXESS", :link=>"EQU/FUT"}
+{:symbol=>"LVSF", :name=>"Las Vegas Sands Corporation", :link=>"EQU/FUT"}
+{:symbol=>"LDKF", :name=>"LDK Solar", :link=>"EQU/FUT"}
+{:symbol=>"LGEF", :name=>"Legal & General", :link=>"EQU/FUT"}
+{:symbol=>"LRCF", :name=>"Legrand", :link=>"EQU/FUT"}
+{:symbol=>"LENF", :name=>"Lenzing", :link=>"EQU/FUT"}
+{:symbol=>"LEOF", :name=>"LEONI", :link=>"EQU/FUT"}
+{:symbol=>"LING", :name=>"Linde", :link=>"EQU/FUT"}
+{:symbol=>"LISF", :name=>"Lindt & Sprüngli", :link=>"EQU/FUT"}
+{:symbol=>"LLOG", :name=>"Lloyds Banking Group", :link=>"EQU/FUT"}
+{:symbol=>"LMTF", :name=>"Lockheed Martin", :link=>"EQU/FUT"}
+{:symbol=>"LOQF", :name=>"LogicaCMG", :link=>"EQU/FUT"}
+{:symbol=>"LOGF", :name=>"Logitech", :link=>"EQU/FUT"}
+{:symbol=>"LSEF", :name=>"London Stock Exchange", :link=>"EQU/FUT"}
+{:symbol=>"LMIF", :name=>"Lonmin", :link=>"EQU/FUT"}
+{:symbol=>"LONF", :name=>"Lonza Group", :link=>"EQU/FUT"}
+{:symbol=>"N4GG", :name=>"Lottomatica", :link=>"EQU/FUT"}
+{:symbol=>"LOWF", :name=>"Lowe's", :link=>"EQU/FUT"}
+{:symbol=>"LWBF", :name=>"Lubelski Wegiel Bogdanka", :link=>"EQU/FUT"}
+{:symbol=>"LHAF", :name=>"Lufthansa", :link=>"EQU/FUT"}
+{:symbol=>"LUKF", :name=>"Lukoil", :link=>"EQU/FUT"}
+{:symbol=>"LUXG", :name=>"Luxottica Group", :link=>"EQU/FUT"}
+{:symbol=>"MOHF", :name=>"LVMH", :link=>"EQU/FUT"}
+{:symbol=>"MMTG", :name=>"M6 Metropole Television", :link=>"EQU/FUT"}
+{:symbol=>"MGIF", :name=>"Magna International", :link=>"EQU/FUT"}
+{:symbol=>"MAGF", :name=>"Magnit", :link=>"EQU/FUT"}
+{:symbol=>"MHQF", :name=>"Magnitogorsk Iron & Steel Works", :link=>"EQU/FUT"}
+{:symbol=>"EMGG", :name=>"Man Group", :link=>"EQU/FUT"}
+{:symbol=>"MA3F", :name=>"MAN pref.", :link=>"EQU/FUT"}
+{:symbol=>"MANG", :name=>"MAN St.", :link=>"EQU/FUT"}
+{:symbol=>"MLUF", :name=>"Manulife Financial", :link=>"EQU/FUT"}
+{:symbol=>"CMAI", :name=>"MAPFRE", :link=>"EQU/FUT"}
+{:symbol=>"MROF", :name=>"Marathon Oil", :link=>"EQU/FUT"}
+{:symbol=>"MIGF", :name=>"Marfin Investment Group", :link=>"EQU/FUT"}
+{:symbol=>"MKSF", :name=>"Marks & Spencer", :link=>"EQU/FUT"}
+{:symbol=>"MARF", :name=>"Marriott International Basket", :link=>"EQU/FUT"}
+{:symbol=>"MAFF", :name=>"MasterCard", :link=>"EQU/FUT"}
+{:symbol=>"ETXF", :name=>"Maurel & Prom", :link=>"EQU/FUT"}
+{:symbol=>"MYMF", :name=>"Mayr-Melnhof Karton", :link=>"EQU/FUT"}
+{:symbol=>"MCDF", :name=>"McDonald's", :link=>"EQU/FUT"}
+{:symbol=>"MECF", :name=>"Mechel", :link=>"EQU/FUT"}
+{:symbol=>"MDSF", :name=>"Mediaset", :link=>"EQU/FUT"}
+{:symbol=>"RWWF", :name=>"Mediaset España Communicación", :link=>"EQU/FUT"}
+{:symbol=>"ME9G", :name=>"Mediobanca", :link=>"EQU/FUT"}
+{:symbol=>"MUNG", :name=>"Mediolanum", :link=>"EQU/FUT"}
+{:symbol=>"MDTF", :name=>"Medtronic", :link=>"EQU/FUT"}
+{:symbol=>"MRKG", :name=>"Merck", :link=>"EQU/FUT"}
+{:symbol=>"MCCF", :name=>"Merck & Co.", :link=>"EQU/FUT"}
+{:symbol=>"METF", :name=>"MetLife", :link=>"EQU/FUT"}
+{:symbol=>"MEOF", :name=>"Metro", :link=>"EQU/FUT"}
+{:symbol=>"ME3F", :name=>"Metro pref.", :link=>"EQU/FUT"}
+{:symbol=>"VLMH", :name=>"Metso", :link=>"EQU/FUT"}
+{:symbol=>"MGMF", :name=>"MGM Resorts International", :link=>"EQU/FUT"}
+{:symbol=>"MLXF", :name=>"Michelin", :link=>"EQU/FUT"}
+{:symbol=>"MSTF", :name=>"Microsoft", :link=>"EQU/FUT"}
+{:symbol=>"MABF", :name=>"Mitchells & Butlers", :link=>"EQU/FUT"}
+{:symbol=>"MLPF", :name=>"MLP", :link=>"EQU/FUT"}
+{:symbol=>"MKYF", :name=>"Mobil'niye TeleSistemy", :link=>"EQU/FUT"}
+{:symbol=>"MOSH", :name=>"Mobistar", :link=>"EQU/FUT"}
+{:symbol=>"MOOF", :name=>"Monsanto", :link=>"EQU/FUT"}
+{:symbol=>"DWDF", :name=>"Morgan Stanley", :link=>"EQU/FUT"}
+{:symbol=>"MTXF", :name=>"MTU Aero Engines Holding", :link=>"EQU/FUT"}
+{:symbol=>"MU2G", :name=>"Münchener Rück", :link=>"EQU/FUT"}
+{:symbol=>"MVVF", :name=>"MVV Energie", :link=>"EQU/FUT"}
+{:symbol=>"NAGF", :name=>"National Bank of Greece", :link=>"EQU/FUT"}
+{:symbol=>"NGFF", :name=>"National Grid", :link=>"EQU/FUT"}
+{:symbol=>"NO8F", :name=>"National Oilwell Varco", :link=>"EQU/FUT"}
+{:symbol=>"KNFH", :name=>"Natixis", :link=>"EQU/FUT"}
+{:symbol=>"NP6G", :name=>"Neopost", :link=>"EQU/FUT"}
+{:symbol=>"NEFF", :name=>"Neste Oil", :link=>"EQU/FUT"}
+{:symbol=>"NESG", :name=>"Nestlé", :link=>"EQU/FUT"}
+{:symbol=>"NEMF", :name=>"Newmont Mining", :link=>"EQU/FUT"}
+{:symbol=>"NWSF", :name=>"News Corporation", :link=>"EQU/FUT"}
+{:symbol=>"CXYF", :name=>"Nexen", :link=>"EQU/FUT"}
+{:symbol=>"FPLF", :name=>"NextEra Energy", :link=>"EQU/FUT"}
+{:symbol=>"NXTF", :name=>"Next Retail", :link=>"EQU/FUT"}
+{:symbol=>"NKEF", :name=>"NIKE", :link=>"EQU/FUT"}
+{:symbol=>"NOBH", :name=>"Nobel Biocare", :link=>"EQU/FUT"}
+{:symbol=>"NO3F", :name=>"Nokia", :link=>"EQU/FUT"}
+{:symbol=>"NREF", :name=>"Nokian Renkaat", :link=>"EQU/FUT"}
+{:symbol=>"NDBF", :name=>"Nordea Bank", :link=>"EQU/FUT"}
+{:symbol=>"NDXF", :name=>"Nordex", :link=>"EQU/FUT"}
+{:symbol=>"NSCF", :name=>"Norfolk Southern", :link=>"EQU/FUT"}
+{:symbol=>"NNIG", :name=>"Norilsk Nickel", :link=>"EQU/FUT"}
+{:symbol=>"NHYG", :name=>"Norsk Hydro", :link=>"EQU/FUT"}
+{:symbol=>"NTRF", :name=>"Northern Trust", :link=>"EQU/FUT"}
+{:symbol=>"NOVF", :name=>"Novartis", :link=>"EQU/FUT"}
+{:symbol=>"N10F", :name=>"Novatek", :link=>"EQU/FUT"}
+{:symbol=>"N7MF", :name=>"Novolipetsk Steel", :link=>"EQU/FUT"}
+{:symbol=>"NCSF", :name=>"Novorossiysk Commercial Sea Port", :link=>"EQU/FUT"}
+{:symbol=>"NUEF", :name=>"Nucor", :link=>"EQU/FUT"}
+{:symbol=>"OBKF", :name=>"Oberbank", :link=>"EQU/FUT"}
+{:symbol=>"OXYF", :name=>"Occidental Petroleum", :link=>"EQU/FUT"}
+{:symbol=>"OERG", :name=>"OC Oerlikon Corporation", :link=>"EQU/FUT"}
+{:symbol=>"OMLF", :name=>"Old Mutual", :link=>"EQU/FUT"}
+{:symbol=>"OMVF", :name=>"OMV", :link=>"EQU/FUT"}
+{:symbol=>"GF8F", :name=>"OPAP", :link=>"EQU/FUT"}
+{:symbol=>"ORCF", :name=>"Oracle", :link=>"EQU/FUT"}
+{:symbol=>"ORPF", :name=>"Orpea", :link=>"EQU/FUT"}
+{:symbol=>"OK3F", :name=>"Oshkosh", :link=>"EQU/FUT"}
+{:symbol=>"PSTF", :name=>"Österreichische Post", :link=>"EQU/FUT"}
+{:symbol=>"OTEF", :name=>"OTE", :link=>"EQU/FUT"}
+{:symbol=>"OUTF", :name=>"Outokumpu", :link=>"EQU/FUT"}
+{:symbol=>"PALF", :name=>"Palfinger", :link=>"EQU/FUT"}
+{:symbol=>"PWTF", :name=>"Panalpina Welttransport", :link=>"EQU/FUT"}
+{:symbol=>"PARH", :name=>"Pargesa Holding", :link=>"EQU/FUT"}
+{:symbol=>"PGHF", :name=>"Parners Group Holding", :link=>"EQU/FUT"}
+{:symbol=>"PBGF", :name=>"PBG", :link=>"EQU/FUT"}
+{:symbol=>"PSOF", :name=>"Pearson", :link=>"EQU/FUT"}
+{:symbol=>"P5PF", :name=>"Pembina Pipeline", :link=>"EQU/FUT"}
+{:symbol=>"P8KF", :name=>"Pengrowth Energy Corporation", :link=>"EQU/FUT"}
+{:symbol=>"PNNF", :name=>"Pennon Group", :link=>"EQU/FUT"}
+{:symbol=>"PWEF", :name=>"Penn West Petroleum", :link=>"EQU/FUT"}
+{:symbol=>"PEPF", :name=>"PepsiCo", :link=>"EQU/FUT"}
+{:symbol=>"ILBG", :name=>"Permanent TSB Group Holdings", :link=>"EQU/FUT"}
+{:symbol=>"PERH", :name=>"Pernod-Ricard", :link=>"EQU/FUT"}
+{:symbol=>"PSNF", :name=>"Persimmon", :link=>"EQU/FUT"}
+{:symbol=>"P2FG", :name=>"Petrofac", :link=>"EQU/FUT"}
+{:symbol=>"PBRF", :name=>"Petróleo Brasileiro", :link=>"EQU/FUT"}
+{:symbol=>"PEUG", :name=>"Peugeot", :link=>"EQU/FUT"}
+{:symbol=>"PFVF", :name=>"Pfeiffer Vacuum", :link=>"EQU/FUT"}
+{:symbol=>"PFEF", :name=>"Pfizer", :link=>"EQU/FUT"}
+{:symbol=>"PFLF", :name=>"Pfleiderer", :link=>"EQU/FUT"}
+{:symbol=>"PGEF", :name=>"PGE Polska Grupa Energetyczna", :link=>"EQU/FUT"}
+{:symbol=>"GO1F", :name=>"Pharmstandard", :link=>"EQU/FUT"}
+{:symbol=>"PMFF", :name=>"Philip Morris International", :link=>"EQU/FUT"}
+{:symbol=>"PH1F", :name=>"Philips", :link=>"EQU/FUT"}
+{:symbol=>"PSAF", :name=>"Phoenix Solar", :link=>"EQU/FUT"}
+{:symbol=>"PILH", :name=>"Pirelli & C", :link=>"EQU/FUT"}
+{:symbol=>"PKOF", :name=>"PKO Bank Polski", :link=>"EQU/FUT"}
+{:symbol=>"OKBF", :name=>"Pohjola Bank", :link=>"EQU/FUT"}
+{:symbol=>"PGNF", :name=>"Polskie Górnictwo Naftowe i Gazownictwo", :link=>"EQU/FUT"}
+{:symbol=>"PKNF", :name=>"Polski Koncern Naftowy Orlen", :link=>"EQU/FUT"}
+{:symbol=>"PORK", :name=>"Porsche", :link=>"EQU/FUT"}
+{:symbol=>"PTCH", :name=>"Portugal Telecom SGPS", :link=>"EQU/FUT"}
+{:symbol=>"PNLF", :name=>"PostNL", :link=>"EQU/FUT"}
+{:symbol=>"POCF", :name=>"PotashCorp", :link=>"EQU/FUT"}
+{:symbol=>"PZUF", :name=>"Powszechny Zaklad Ubezpieczen", :link=>"EQU/FUT"}
+{:symbol=>"PPXF", :name=>"PPR", :link=>"EQU/FUT"}
+{:symbol=>"PRAF", :name=>"Praktiker", :link=>"EQU/FUT"}
+{:symbol=>"PXFF", :name=>"Praxair", :link=>"EQU/FUT"}
+{:symbol=>"PREF", :name=>"Precision Drilling Corporation", :link=>"EQU/FUT"}
+{:symbol=>"PFDF", :name=>"Premier Foods", :link=>"EQU/FUT"}
+{:symbol=>"PGFF", :name=>"Procter & Gamble", :link=>"EQU/FUT"}
+{:symbol=>"BINF", :name=>"Progessive Waste Solutions", :link=>"EQU/FUT"}
+{:symbol=>"PSMF", :name=>"ProSiebenSat.1 Media", :link=>"EQU/FUT"}
+{:symbol=>"PFGF", :name=>"Provident Financial", :link=>"EQU/FUT"}
+{:symbol=>"PRUF", :name=>"Prudential", :link=>"EQU/FUT"}
+{:symbol=>"PLLF", :name=>"Prudential Financial", :link=>"EQU/FUT"}
+{:symbol=>"PRYF", :name=>"Prysmian", :link=>"EQU/FUT"}
+{:symbol=>"PSPG", :name=>"PSP Swiss Property", :link=>"EQU/FUT"}
+{:symbol=>"PU4F", :name=>"Publicis Groupe", :link=>"EQU/FUT"}
+{:symbol=>"PU8F", :name=>"Public Power", :link=>"EQU/FUT"}
+{:symbol=>"PUBF", :name=>"Punch Taverns Basket", :link=>"EQU/FUT"}
+{:symbol=>"QIAF", :name=>"Qiagen", :link=>"EQU/FUT"}
+{:symbol=>"QCOF", :name=>"QUALCOMM", :link=>"EQU/FUT"}
+{:symbol=>"RAWG", :name=>"Raiffeisen Bank International", :link=>"EQU/FUT"}
+{:symbol=>"RGRF", :name=>"Randgold Resources", :link=>"EQU/FUT"}
+{:symbol=>"RSHG", :name=>"Randstad Holding", :link=>"EQU/FUT"}
+{:symbol=>"RAAF", :name=>"Rational", :link=>"EQU/FUT"}
+{:symbol=>"RKKH", :name=>"Rautaruukki", :link=>"EQU/FUT"}
+{:symbol=>"RTNF", :name=>"Raytheon", :link=>"EQU/FUT"}
+{:symbol=>"RBFF", :name=>"Reckitt Benckiser", :link=>"EQU/FUT"}
+{:symbol=>"RE9F", :name=>"Recordati", :link=>"EQU/FUT"}
+{:symbol=>"RE2G", :name=>"Red Eléctrica Corporación", :link=>"EQU/FUT"}
+{:symbol=>"ELVG", :name=>"Reed Elsevier NV", :link=>"EQU/FUT"}
+{:symbol=>"RELF", :name=>"Reed Elsevier plc", :link=>"EQU/FUT"}
+{:symbol=>"RCOF", :name=>"Rémy Cointreau", :link=>"EQU/FUT"}
+{:symbol=>"RNLF", :name=>"Renault", :link=>"EQU/FUT"}
+{:symbol=>"RTOF", :name=>"Rentokil Initial", :link=>"EQU/FUT"}
+{:symbol=>"REPF", :name=>"Repsol", :link=>"EQU/FUT"}
+{:symbol=>"REPP", :name=>"Repsol [physical]", :link=>"EQU/FUT"}
+{:symbol=>"RIMF", :name=>"Research in Motion", :link=>"EQU/FUT"}
+{:symbol=>"REXF", :name=>"Rexam", :link=>"EQU/FUT"}
+{:symbol=>"RHMG", :name=>"Rheinmetall", :link=>"EQU/FUT"}
+{:symbol=>"RHIF", :name=>"RHI", :link=>"EQU/FUT"}
+{:symbol=>"RHKG", :name=>"RHÖN-KLINIKUM", :link=>"EQU/FUT"}
+{:symbol=>"RIOG", :name=>"Rio Tinto", :link=>"EQU/FUT"}
+{:symbol=>"ROGF", :name=>"Roche Holding", :link=>"EQU/FUT"}
+{:symbol=>"RCIF", :name=>"Rogers Communication", :link=>"EQU/FUT"}
+{:symbol=>"RRFF", :name=>"Rolls-Royce", :link=>"EQU/FUT"}
+{:symbol=>"ROIF", :name=>"Rosenbauer International", :link=>"EQU/FUT"}
+{:symbol=>"OJSG", :name=>"Rosneft", :link=>"EQU/FUT"}
+{:symbol=>"RTLF", :name=>"Rostelekom", :link=>"EQU/FUT"}
+{:symbol=>"RYFF", :name=>"Royal Bank of Canada", :link=>"EQU/FUT"}
+{:symbol=>"RBSG", :name=>"Royal Bank of Scotland", :link=>"EQU/FUT"}
+{:symbol=>"RCLF", :name=>"Royal Caribbean Cruises", :link=>"EQU/FUT"}
+{:symbol=>"R6CF", :name=>"Royal Dutch Shell", :link=>"EQU/FUT"}
+{:symbol=>"RDBF", :name=>"Royal Dutch Shell B", :link=>"EQU/FUT"}
+{:symbol=>"KPNF", :name=>"Royal KPN", :link=>"EQU/FUT"}
+{:symbol=>"RSAF", :name=>"RSA Insurance Group", :link=>"EQU/FUT"}
+{:symbol=>"RG2F", :name=>"RusGidro", :link=>"EQU/FUT"}
+{:symbol=>"RWEG", :name=>"RWE", :link=>"EQU/FUT"}
+{:symbol=>"RWEF", :name=>"RWE [100,3332]", :link=>"EQU/FUT"}
+{:symbol=>"RW3G", :name=>"RWE pref.", :link=>"EQU/FUT"}
+{:symbol=>"RY4H", :name=>"Ryanair", :link=>"EQU/FUT"}
+{:symbol=>"SABF", :name=>"SABMiller", :link=>"EQU/FUT"}
+{:symbol=>"VHMG", :name=>"Sacyr Vallehermoso", :link=>"EQU/FUT"}
+{:symbol=>"SEJF", :name=>"Safran", :link=>"EQU/FUT"}
+{:symbol=>"GOBG", :name=>"Saint-Gobain", :link=>"EQU/FUT"}
+{:symbol=>"SPEH", :name=>"Saipem", :link=>"EQU/FUT"}
+{:symbol=>"FOOF", :name=>"salesforce.com", :link=>"EQU/FUT"}
+{:symbol=>"SZGG", :name=>"Salzgitter", :link=>"EQU/FUT"}
+{:symbol=>"SMPF", :name=>"Sampo", :link=>"EQU/FUT"}
+{:symbol=>"S5SF", :name=>"Saneamento Básico do Estado", :link=>"EQU/FUT"}
+{:symbol=>"SNWF", :name=>"Sanofi", :link=>"EQU/FUT"}
+{:symbol=>"SWSF", :name=>"Sanoma", :link=>"EQU/FUT"}
+{:symbol=>"SAPI", :name=>"SAP", :link=>"EQU/FUT"}
+{:symbol=>"SBNF", :name=>"Sberbank Rossii", :link=>"EQU/FUT"}
+{:symbol=>"IHCG", :name=>"SBM Offshore", :link=>"EQU/FUT"}
+{:symbol=>"SING", :name=>"Schindler Holding (PS)", :link=>"EQU/FUT"}
+{:symbol=>"SLBF", :name=>"Schlumberger", :link=>"EQU/FUT"}
+{:symbol=>"SNDH", :name=>"Schneider Electric", :link=>"EQU/FUT"}
+{:symbol=>"SBOG", :name=>"Schoeller-Bleckmann Oilfield Equipment", :link=>"EQU/FUT"}
+{:symbol=>"SDRF", :name=>"Schroders", :link=>"EQU/FUT"}
+{:symbol=>"SCOI", :name=>"SCOR", :link=>"EQU/FUT"}
+{:symbol=>"SP7F", :name=>"Seat Pagine Gialle", :link=>"EQU/FUT"}
+{:symbol=>"SGRF", :name=>"Segro", :link=>"EQU/FUT"}
+{:symbol=>"SEWF", :name=>"Semperit", :link=>"EQU/FUT"}
+{:symbol=>"SRPF", :name=>"Serco Group", :link=>"EQU/FUT"}
+{:symbol=>"SESF", :name=>"SES Global", :link=>"EQU/FUT"}
+{:symbol=>"SVTF", :name=>"Severn Trent", :link=>"EQU/FUT"}
+{:symbol=>"RTSG", :name=>"Severstal", :link=>"EQU/FUT"}
+{:symbol=>"SGLF", :name=>"SGL Carbon", :link=>"EQU/FUT"}
+{:symbol=>"SGSK", :name=>"SGS", :link=>"EQU/FUT"}
+{:symbol=>"SGSJ", :name=>"SGS [10,2107]", :link=>"EQU/FUT"}
+{:symbol=>"SHPF", :name=>"Shire", :link=>"EQU/FUT"}
+{:symbol=>"S4DF", :name=>"Siderúrgica Nacional", :link=>"EQU/FUT"}
+{:symbol=>"SIEF", :name=>"Siemens", :link=>"EQU/FUT"}
+{:symbol=>"SIKG", :name=>"Sika", :link=>"EQU/FUT"}
+{:symbol=>"S9YF", :name=>"Silvercorp Metals", :link=>"EQU/FUT"}
+{:symbol=>"SIIF", :name=>"Silver Wheaton", :link=>"EQU/FUT"}
+{:symbol=>"KO7F", :name=>"Sistema", :link=>"EQU/FUT"}
+{:symbol=>"SKAI", :name=>"Skanska", :link=>"EQU/FUT"}
+{:symbol=>"SKYF", :name=>"Sky Deutschland", :link=>"EQU/FUT"}
+{:symbol=>"SMAF", :name=>"SMA Solar Technology", :link=>"EQU/FUT"}
+{:symbol=>"NPWF", :name=>"Smith & Nephew", :link=>"EQU/FUT"}
+{:symbol=>"SMIF", :name=>"Smiths Group", :link=>"EQU/FUT"}
+{:symbol=>"SNFF", :name=>"Snam", :link=>"EQU/FUT"}
+{:symbol=>"BIFH", :name=>"Société BIC", :link=>"EQU/FUT"}
+{:symbol=>"BIFG", :name=>"Société BIC [102,3508]", :link=>"EQU/FUT"}
+{:symbol=>"SGEI", :name=>"Société Générale", :link=>"EQU/FUT"}
+{:symbol=>"SJ7F", :name=>"Sodexho", :link=>"EQU/FUT"}
+{:symbol=>"SOWG", :name=>"Software AG", :link=>"EQU/FUT"}
+{:symbol=>"SLRF", :name=>"Solaria Energía y Medio Ambiente", :link=>"EQU/FUT"}
+{:symbol=>"SWVH", :name=>"Solarworld", :link=>"EQU/FUT"}
+{:symbol=>"SOLF", :name=>"Solvay", :link=>"EQU/FUT"}
+{:symbol=>"SONG", :name=>"Sonova", :link=>"EQU/FUT"}
+{:symbol=>"SOFF", :name=>"Southern Company", :link=>"EQU/FUT"}
+{:symbol=>"SSEF", :name=>"SSE", :link=>"EQU/FUT"}
+{:symbol=>"SAZG", :name=>"Stada Arzneimittel", :link=>"EQU/FUT"}
+{:symbol=>"STAG", :name=>"Standard Chartered", :link=>"EQU/FUT"}
+{:symbol=>"SLFF", :name=>"Standard Life", :link=>"EQU/FUT"}
+{:symbol=>"S3AF", :name=>"Stantec", :link=>"EQU/FUT"}
+{:symbol=>"SBUF", :name=>"Starbucks", :link=>"EQU/FUT"}
+{:symbol=>"S1VF", :name=>"Starwood Hotels & Resorts Worldwide", :link=>"EQU/FUT"}
+{:symbol=>"STTF", :name=>"State Street", :link=>"EQU/FUT"}
+{:symbol=>"SGMF", :name=>"STMicroelectronics", :link=>"EQU/FUT"}
+{:symbol=>"STCF", :name=>"Stockmann", :link=>"EQU/FUT"}
+{:symbol=>"ENUF", :name=>"Stora Enso", :link=>"EQU/FUT"}
+{:symbol=>"STRF", :name=>"STRABAG", :link=>"EQU/FUT"}
+{:symbol=>"STMF", :name=>"Straumann Holding", :link=>"EQU/FUT"}
+{:symbol=>"SZUG", :name=>"Südzucker", :link=>"EQU/FUT"}
+{:symbol=>"SEVF", :name=>"Suez Environnement", :link=>"EQU/FUT"}
+{:symbol=>"SUNG", :name=>"Sulzer", :link=>"EQU/FUT"}
+{:symbol=>"SUEF", :name=>"Suncor Energy", :link=>"EQU/FUT"}
+{:symbol=>"LIEF", :name=>"Sun Life Financial", :link=>"EQU/FUT"}
+{:symbol=>"SGNF", :name=>"Surgutneftegaz", :link=>"EQU/FUT"}
+{:symbol=>"UHFF", :name=>"Swatch B", :link=>"EQU/FUT"}
+{:symbol=>"UHRF", :name=>"Swatch Group", :link=>"EQU/FUT"}
+{:symbol=>"SWMF", :name=>"Swedish Match", :link=>"EQU/FUT"}
+{:symbol=>"SCMH", :name=>"Swisscom", :link=>"EQU/FUT"}
+{:symbol=>"SLHG", :name=>"Swiss Life Holding", :link=>"EQU/FUT"}
+{:symbol=>"SREG", :name=>"Swiss Re", :link=>"EQU/FUT"}
+{:symbol=>"SYMF", :name=>"Symantec", :link=>"EQU/FUT"}
+{:symbol=>"SY1F", :name=>"Symrise", :link=>"EQU/FUT"}
+{:symbol=>"SYNG", :name=>"Syngenta", :link=>"EQU/FUT"}
+{:symbol=>"SYSG", :name=>"Synthes", :link=>"EQU/FUT"}
+{:symbol=>"TAGF", :name=>"TAG Immobilien", :link=>"EQU/FUT"}
+{:symbol=>"TLMF", :name=>"Talisman Energy", :link=>"EQU/FUT"}
+{:symbol=>"TGTF", :name=>"Target", :link=>"EQU/FUT"}
+{:symbol=>"TATF", :name=>"Tate & Lyle", :link=>"EQU/FUT"}
+{:symbol=>"TTFF", :name=>"Tatneft", :link=>"EQU/FUT"}
+{:symbol=>"TPEF", :name=>"TAURON Polska Energia", :link=>"EQU/FUT"}
+{:symbol=>"TWFF", :name=>"Taylor Wimpey", :link=>"EQU/FUT"}
+{:symbol=>"TNMF", :name=>"Technicolor", :link=>"EQU/FUT"}
+{:symbol=>"THPG", :name=>"Technip", :link=>"EQU/FUT"}
+{:symbol=>"TEKF", :name=>"Teck Resources", :link=>"EQU/FUT"}
+{:symbol=>"TQIF", :name=>"Telecom Italia", :link=>"EQU/FUT"}
+{:symbol=>"TQRF", :name=>"Telecom Italia RNC", :link=>"EQU/FUT"}
+{:symbol=>"TEFF", :name=>"Telefónica", :link=>"EQU/FUT"}
+{:symbol=>"TEFP", :name=>"Telefónica [physical]", :link=>"EQU/FUT"}
+{:symbol=>"TA1F", :name=>"Telekom Austria", :link=>"EQU/FUT"}
+{:symbol=>"TPSF", :name=>"Telekomunikacja Polska", :link=>"EQU/FUT"}
+{:symbol=>"TEQF", :name=>"Telenor", :link=>"EQU/FUT"}
+{:symbol=>"TLSG", :name=>"TeliaSonera", :link=>"EQU/FUT"}
+{:symbol=>"TUNF", :name=>"TELUS", :link=>"EQU/FUT"}
+{:symbol=>"TENG", :name=>"Tenaris", :link=>"EQU/FUT"}
+{:symbol=>"UEIF", :name=>"Terna", :link=>"EQU/FUT"}
+{:symbol=>"TSCF", :name=>"Tesco", :link=>"EQU/FUT"}
+{:symbol=>"TXNF", :name=>"Texas Instruments", :link=>"EQU/FUT"}
+{:symbol=>"FSEF", :name=>"TF1", :link=>"EQU/FUT"}
+{:symbol=>"CSFF", :name=>"Thalès", :link=>"EQU/FUT"}
+{:symbol=>"KOFF", :name=>"The Coca-Cola Company", :link=>"EQU/FUT"}
+{:symbol=>"HDFF", :name=>"The Home Depot", :link=>"EQU/FUT"}
+{:symbol=>"PNCF", :name=>"The PNC Financial Services Group", :link=>"EQU/FUT"}
+{:symbol=>"SGKF", :name=>"The Sage Group", :link=>"EQU/FUT"}
+{:symbol=>"TRVF", :name=>"The Travelers Companies", :link=>"EQU/FUT"}
+{:symbol=>"TOCF", :name=>"Thomson Reuters", :link=>"EQU/FUT"}
+{:symbol=>"TKAG", :name=>"ThyssenKrupp", :link=>"EQU/FUT"}
+{:symbol=>"TTEF", :name=>"Tieto", :link=>"EQU/FUT"}
+{:symbol=>"TWXF", :name=>"Time Warner", :link=>"EQU/FUT"}
+{:symbol=>"THIF", :name=>"Tim Hortons", :link=>"EQU/FUT"}
+{:symbol=>"TICG", :name=>"Titan Cement", :link=>"EQU/FUT"}
+{:symbol=>"TNEF", :name=>"TNT Express", :link=>"EQU/FUT"}
+{:symbol=>"TDFF", :name=>"Toronto-Dominion Bank", :link=>"EQU/FUT"}
+{:symbol=>"TOTG", :name=>"TOTAL", :link=>"EQU/FUT"}
+{:symbol=>"TZ1F", :name=>"TransAlta", :link=>"EQU/FUT"}
+{:symbol=>"TRSF", :name=>"TransCanada", :link=>"EQU/FUT"}
+{:symbol=>"RIGF", :name=>"Transocean", :link=>"EQU/FUT"}
+{:symbol=>"TPKG", :name=>"Travis Perkins", :link=>"EQU/FUT"}
+{:symbol=>"TMKF", :name=>"Trubnaya Metallurgicheskaya Kompaniya", :link=>"EQU/FUT"}
+{:symbol=>"TUIF", :name=>"TUI", :link=>"EQU/FUT"}
+{:symbol=>"TLWF", :name=>"Tullow Oil", :link=>"EQU/FUT"}
+{:symbol=>"TVNF", :name=>"TVN", :link=>"EQU/FUT"}
+{:symbol=>"USBF", :name=>"U.S. Bancorp", :link=>"EQU/FUT"}
+{:symbol=>"BPDH", :name=>"UBI Banca", :link=>"EQU/FUT"}
+{:symbol=>"UBMF", :name=>"UBM", :link=>"EQU/FUT"}
+{:symbol=>"UBRF", :name=>"UBM Realitätenentwicklung", :link=>"EQU/FUT"}
+{:symbol=>"UBSH", :name=>"UBS", :link=>"EQU/FUT"}
+{:symbol=>"UNCF", :name=>"UCB", :link=>"EQU/FUT"}
+{:symbol=>"NVJG", :name=>"Umicore", :link=>"EQU/FUT"}
+{:symbol=>"UBLG", :name=>"Unibail-Rodamco", :link=>"EQU/FUT"}
+{:symbol=>"CR5I", :name=>"UniCredit", :link=>"EQU/FUT"}
+{:symbol=>"UNIH", :name=>"Unilever NV", :link=>"EQU/FUT"}
+{:symbol=>"ULVF", :name=>"Unilever plc", :link=>"EQU/FUT"}
+{:symbol=>"UNPF", :name=>"Union Pacific", :link=>"EQU/FUT"}
+{:symbol=>"UNFG", :name=>"Unipol Gruppo Finanziario", :link=>"EQU/FUT"}
+{:symbol=>"UN9F", :name=>"Uniqa Group", :link=>"EQU/FUT"}
+{:symbol=>"UNHF", :name=>"UnitedHealth Group", :link=>"EQU/FUT"}
+{:symbol=>"UTDG", :name=>"United Internet", :link=>"EQU/FUT"}
+{:symbol=>"UPSF", :name=>"United Parcel Service", :link=>"EQU/FUT"}
+{:symbol=>"UTXF", :name=>"United Technologies", :link=>"EQU/FUT"}
+{:symbol=>"UUFF", :name=>"United Utilities Group", :link=>"EQU/FUT"}
+{:symbol=>"RPLF", :name=>"UPM-Kymmene", :link=>"EQU/FUT"}
+{:symbol=>"M6BF", :name=>"Uralkali", :link=>"EQU/FUT"}
+{:symbol=>"V4LF", :name=>"Vale", :link=>"EQU/FUT"}
+{:symbol=>"BVFF", :name=>"Valeant Pharmaceuticals International", :link=>"EQU/FUT"}
+{:symbol=>"VSAF", :name=>"Valeo", :link=>"EQU/FUT"}
+{:symbol=>"VLOF", :name=>"Valero Energy", :link=>"EQU/FUT"}
+{:symbol=>"VATF", :name=>"Valiant Holding", :link=>"EQU/FUT"}
+{:symbol=>"VALF", :name=>"Validus Holdings", :link=>"EQU/FUT"}
+{:symbol=>"VACH", :name=>"Vallourec", :link=>"EQU/FUT"}
+{:symbol=>"VR9F", :name=>"Vedanta Resources", :link=>"EQU/FUT"}
+{:symbol=>"VVDG", :name=>"Veolia Environnement", :link=>"EQU/FUT"}
+{:symbol=>"VERF", :name=>"Verbund", :link=>"EQU/FUT"}
+{:symbol=>"VZFF", :name=>"Verizon", :link=>"EQU/FUT"}
+{:symbol=>"WSTG", :name=>"VIENNA INSURANCE GROUP AG Wiener Versicherung Gruppe", :link=>"EQU/FUT"}
+{:symbol=>"SQUG", :name=>"Vinci", :link=>"EQU/FUT"}
+{:symbol=>"BIXF", :name=>"Viohalco", :link=>"EQU/FUT"}
+{:symbol=>"VISF", :name=>"VISA", :link=>"EQU/FUT"}
+{:symbol=>"VVUG", :name=>"Vivendi Universal", :link=>"EQU/FUT"}
+{:symbol=>"VVUF", :name=>"Vivendi Universal [103,3333]", :link=>"EQU/FUT"}
+{:symbol=>"VODG", :name=>"Vodafone Group", :link=>"EQU/FUT"}
+{:symbol=>"VASG", :name=>"Voestalpine", :link=>"EQU/FUT"}
+{:symbol=>"VOLF", :name=>"Volvo", :link=>"EQU/FUT"}
+{:symbol=>"VKWF", :name=>"Vorarlberger Kraftwerke", :link=>"EQU/FUT"}
+{:symbol=>"VOSF", :name=>"Vossloh", :link=>"EQU/FUT"}
+{:symbol=>"VTBF", :name=>"VTB Bank", :link=>"EQU/FUT"}
+{:symbol=>"VOWG", :name=>"VW", :link=>"EQU/FUT"}
+{:symbol=>"VO3G", :name=>"VW pref.", :link=>"EQU/FUT"}
+{:symbol=>"WCHF", :name=>"Wacker Chemie", :link=>"EQU/FUT"}
+{:symbol=>"WAGF", :name=>"Walgreen Co.", :link=>"EQU/FUT"}
+{:symbol=>"WMTF", :name=>"Wal-Mart Stores", :link=>"EQU/FUT"}
+{:symbol=>"DISF", :name=>"Walt Disney", :link=>"EQU/FUT"}
+{:symbol=>"MTAH", :name=>"Wärtsilä", :link=>"EQU/FUT"}
+{:symbol=>"WLPF", :name=>"Wellpoint", :link=>"EQU/FUT"}
+{:symbol=>"WFCF", :name=>"Wells Fargo", :link=>"EQU/FUT"}
+{:symbol=>"MFXG", :name=>"WENDEL Investissement", :link=>"EQU/FUT"}
+{:symbol=>"MFXH", :name=>"WENDEL Investissement", :link=>"EQU/FUT"}
+{:symbol=>"WERG", :name=>"Wereldhave", :link=>"EQU/FUT"}
+{:symbol=>"WTBF", :name=>"Whitbread", :link=>"EQU/FUT"}
+{:symbol=>"WIBG", :name=>"Wienerberger", :link=>"EQU/FUT"}
+{:symbol=>"WMHF", :name=>"William Hill", :link=>"EQU/FUT"}
+{:symbol=>"WINH", :name=>"Wincor Nixdorf", :link=>"EQU/FUT"}
+{:symbol=>"WDIF", :name=>"Wirecard", :link=>"EQU/FUT"}
+{:symbol=>"MRWF", :name=>"WM Morrison Supermarkets", :link=>"EQU/FUT"}
+{:symbol=>"WLYF", :name=>"Wolseley", :link=>"EQU/FUT"}
+{:symbol=>"WOSF", :name=>"Wolters Kluwer", :link=>"EQU/FUT"}
+{:symbol=>"WPPF", :name=>"WPP", :link=>"EQU/FUT"}
+{:symbol=>"WYNF", :name=>"Wynn Resorts", :link=>"EQU/FUT"}
+{:symbol=>"PJPF", :name=>"X5 Retail Group", :link=>"EQU/FUT"}
+{:symbol=>"XIXF", :name=>"Xilinx", :link=>"EQU/FUT"}
+{:symbol=>"XTAG", :name=>"Xstrata", :link=>"EQU/FUT"}
+{:symbol=>"YHOF", :name=>"Yahoo!", :link=>"EQU/FUT"}
+{:symbol=>"RNYF", :name=>"Yamana Gold", :link=>"EQU/FUT"}
+{:symbol=>"YELF", :name=>"Yell Group", :link=>"EQU/FUT"}
+{:symbol=>"YITF", :name=>"YIT", :link=>"EQU/FUT"}
+{:symbol=>"YUMF", :name=>"Yum! Brands", :link=>"EQU/FUT"}
+{:symbol=>"ZDOH", :name=>"Zardoya-Otis", :link=>"EQU/FUT"}
+{:symbol=>"ZDCG", :name=>"Zodiac Aerospace", :link=>"EQU/FUT"}
+{:symbol=>"ZAGF", :name=>"Zumtobel", :link=>"EQU/FUT"}
+{:symbol=>"ZURF", :name=>"Zurich Insurance Group", :link=>"EQU/FUT"}
+{:symbol=>"FGBS", :name=>"Euro-Schatz Futures", :link=>"INT/FIX"}
+{:symbol=>"FGBM", :name=>"Euro-Bobl Futures", :link=>"INT/FIX"}
+{:symbol=>"FGBL", :name=>"Euro-Bund Futures", :link=>"INT/FIX"}
+{:symbol=>"FGBX", :name=>"Euro-Buxl® Futures", :link=>"INT/FIX"}
+{:symbol=>"FBTS", :name=>"Short-Term Euro-BTP Futures", :link=>"INT/FIX"}
+{:symbol=>"FBTM", :name=>"Mid-Term Euro-BTP Futures", :link=>"INT/FIX"}
+{:symbol=>"FBTP", :name=>"Long-Term Euro-BTP Futures", :link=>"INT/FIX"}
+{:symbol=>"FOAT", :name=>"Euro-OAT Futures", :link=>"INT/FIX"}
+{:symbol=>"CONF", :name=>"CONF Futures", :link=>"INT/FIX"}
+{:symbol=>"FEO1", :name=>"One-Month EONIA Futures", :link=>"INT/MON"}
+{:symbol=>"FEU3", :name=>"Three-Month EURIBOR Futures", :link=>"INT/MON"}
+{:symbol=>"FDAX", :name=>"DAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"FDIV", :name=>"DivDAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"F2MX", :name=>"MDAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"FTDX", :name=>"TecDAX® Futures", :link=>"IDX/DAX"}
+{:symbol=>"FSMI", :name=>"SMI® Futures", :link=>"IDX/SMI"}
+{:symbol=>"FSMM", :name=>"SMIM® Futures", :link=>"IDX/SMI"}
+{:symbol=>"FSLI", :name=>"SLI Swiss Leader Index® Futures", :link=>"IDX/SLI"}
+{:symbol=>"FFOX", :name=>"OMXH25 Futures", :link=>"IDX/HEX"}
+{:symbol=>"FGTI", :name=>"Dow Jones Global Titans 50 Index (SM) Futures (EUR)", :link=>"IDX/DJS"}
+{:symbol=>"FT50", :name=>"Dow Jones Global Titans 50 Index (SM) Futures (USD)", :link=>"IDX/DJS"}
+{:symbol=>"FGSB", :name=>"Dow Jones Banks Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGSE", :name=>"Dow Jones Oil & Gas Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGSI", :name=>"Dow Jones Insurance Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGST", :name=>"Dow Jones Telecommunications Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FGSU", :name=>"Dow Jones Utilities Titans 30 Index (SM) Futures", :link=>"IDX/DJS"}
+{:symbol=>"FESX", :name=>"EURO STOXX 50® Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FEXF", :name=>"EURO STOXX 50® ex Financials Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FEDV", :name=>"EURO STOXX® Select Dividend 30 Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FSTX", :name=>"STOXX® Europe 50 Index Futures", :link=>"IDX/STX/BLC"}
+{:symbol=>"FMJP", :name=>"MSCI Japan Index Futures", :link=>"IDX/MSC"}
+{:symbol=>"FMRU", :name=>"MSCI Russia Index Futures", :link=>"IDX/MSC"}
+{:symbol=>"FRDX", :name=>"RDX® USD Index Futures", :link=>"IDX/RDX"}
+{:symbol=>"FSEN", :name=>"SENSEX Futures", :link=>"IDX/SEN"}
+{:symbol=>"A2BB", :name=>"ABB Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2EN", :name=>"AEGON Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2OM", :name=>"ALSTOM Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A1OM", :name=>"ALSTOM Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"A2SM", :name=>"ASML Holding Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2XA", :name=>"AXA Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A1XA", :name=>"AXA Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"A3IR", :name=>"Air Liquide Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2IR", :name=>"Air Liquide Dividend Futures [1100,0000]", :link=>"DID/EDF"}
+{:symbol=>"A2LV", :name=>"Allianz Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A1LV", :name=>"Allianz Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"A2AL", :name=>"Anglo American Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2TK", :name=>"Anheuser-Busch-InBev Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I1SP", :name=>"Arcelor Mittal Basket Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"I2SP", :name=>"Arcelor Mittal Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2SG", :name=>"Assicurazioni Generali Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"A2ZN", :name=>"AstraZeneca Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2AS", :name=>"BASF Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B1AS", :name=>"BASF Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"B2LT", :name=>"BHP Billiton Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2MW", :name=>"BMW Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2NP", :name=>"BNP Paribas Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2P", :name=>"BP Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2T", :name=>"BT Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B3BV", :name=>"Banco Bilbao Vizcaya Argentaria Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B1BV", :name=>"Banco Bilbao Vizcaya Argentaria Dividend Futures [104,0864]", :link=>"DID/EDF"}
+{:symbol=>"B2BV", :name=>"Banco Bilbao Vizcaya Argentaria Dividend Futures [1040,8644]", :link=>"DID/EDF"}
+{:symbol=>"S2SD", :name=>"Banco Santander Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S1SD", :name=>"Banco Santander Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"B2AR", :name=>"Barclays Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"B2AY", :name=>"Bayer Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2RG", :name=>"CRH Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2AR", :name=>"Carrefour Basket Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C3AR", :name=>"Carrefour Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2FR", :name=>"Cie Financière Richemont Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2SG", :name=>"Credit Suisse Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C3SG", :name=>"Credit Suisse Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"X2CA", :name=>"Crédit Agricole Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"X1CA", :name=>"Crédit Agricole Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"D2AI", :name=>"Daimler Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D1AI", :name=>"Daimler Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"B2SN", :name=>"Danone Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D2BK", :name=>"Deutsche Bank Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D3B1", :name=>"Deutsche Börse Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D2B1", :name=>"Deutsche Börse Dividend Futures [1023,4632]", :link=>"DID/EDF"}
+{:symbol=>"D2TE", :name=>"Deutsche Telekom Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"D1TE", :name=>"Deutsche Telekom Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"D2GE", :name=>"Diageo Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E2OA", :name=>"E.ON Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E2NL", :name=>"Enel Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E2NT", :name=>"Eni Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"E1NT", :name=>"Eni Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"E2SL", :name=>"Essilor International Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"F2TE", :name=>"France Télécom Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"F1TE", :name=>"France Télécom Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"G2ZF", :name=>"GDF Suez Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"G1ZF", :name=>"GDF Suez Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"G3SK", :name=>"GlaxoSmithKline Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"G2SK", :name=>"GlaxoSmithKline Dividend Futures [1003,5361]", :link=>"DID/EDF"}
+{:symbol=>"H2SB", :name=>"HSBC Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2NN", :name=>"ING Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2BE", :name=>"Iberdrola Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2XD", :name=>"Inditex Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I3ES", :name=>"Intesa Sanpaolo Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"I2ES", :name=>"Intesa Sanpaolo Dividend Futures [1062,1189]", :link=>"DID/EDF"}
+{:symbol=>"L2OR", :name=>"L'Oréal Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"M2OH", :name=>"LVMH Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"M2UV", :name=>"Münchener Rück Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"N2ES", :name=>"Nestlé Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"N2OA", :name=>"Nokia Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"N1OA", :name=>"Nokia Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"N2OV", :name=>"Novartis Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"P2HI", :name=>"Philips Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R3WE", :name=>"RWE Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R2WE", :name=>"RWE Dividend Futures [1003,3324]", :link=>"DID/EDF"}
+{:symbol=>"R2EP", :name=>"Repsol Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R1EP", :name=>"Repsol Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"R2TZ", :name=>"Rio Tinto Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R2OG", :name=>"Roche Holding Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"R2DA", :name=>"Royal Dutch Shell Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"K2PN", :name=>"Royal KPN Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S3AP", :name=>"SAP Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2AP", :name=>"SAP Dividend Futures [1007,5627]", :link=>"DID/EDF"}
+{:symbol=>"G2OB", :name=>"Saint-Gobain Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2NW", :name=>"Sanofi Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S1NW", :name=>"Sanofi Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"S3ND", :name=>"Schneider Electric Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2ND", :name=>"Schneider Electric Dividend Futures [2000,0000]", :link=>"DID/EDF"}
+{:symbol=>"S2IE", :name=>"Siemens Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2GE", :name=>"Société Générale Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2RE", :name=>"Swiss Re Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2CM", :name=>"Swisscom Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T2OT", :name=>"TOTAL Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T2QI", :name=>"Telecom Italia Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T2NE", :name=>"Telefónica Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"T1NE", :name=>"Telefónica Dividend Futures [100]", :link=>"DID/EDF"}
+{:symbol=>"T2SC", :name=>"Tesco Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"U2BS", :name=>"UBS Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C3RI", :name=>"UniCredit Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"C2RI", :name=>"UniCredit Dividend Futures [151,8302]", :link=>"DID/EDF"}
+{:symbol=>"U2BL", :name=>"Unibail-Rodamco Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"U1BL", :name=>"Unibail-Rodamco Dividend Futures [113,9373]", :link=>"DID/EDF"}
+{:symbol=>"U2NI", :name=>"Unilever NV Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V2W3", :name=>"VW pref. Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"S2QU", :name=>"Vinci Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V3VU", :name=>"Vivendi Universal Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V2VU", :name=>"Vivendi Universal Dividend Futures [1033,3333]", :link=>"DID/EDF"}
+{:symbol=>"V3O", :name=>"Vodafone Group Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"V2O", :name=>"Vodafone Group Dividend Futures [1023,0481]", :link=>"DID/EDF"}
+{:symbol=>"Z2UR", :name=>"Zurich Financial Services Dividend Futures", :link=>"DID/EDF"}
+{:symbol=>"FEXD", :name=>"EURO STOXX 50® Index Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FD3D", :name=>"EURO STOXX® Select Dividend 30 Index Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FDXD", :name=>"DAX® Price Index Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FDVD", :name=>"DivDAX® Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSMD", :name=>"SMI® Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEBD", :name=>"EURO STOXX® Banks Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEID", :name=>"EURO STOXX® Insurance Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEED", :name=>"EURO STOXX® Oil&Gas Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FETD", :name=>"EURO STOXX® Telecommunications Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FEUD", :name=>"EURO STOXX® Utilities Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSBD", :name=>"STOXX® Europe 600 Banks Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSID", :name=>"STOXX® Europe 600 Insurance Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSED", :name=>"STOXX® Europe 600 Oil&Gas Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSTD", :name=>"STOXX® Europe 600 Telecommunications Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"FSUD", :name=>"STOXX® Europe 600 Utilities Dividend Futures", :link=>"DID/EXD"}
+{:symbol=>"EXSF", :name=>"iShares DAX® (DE) Futures", :link=>"ETF/BGI"}
+{:symbol=>"EUNF", :name=>"iShares EURO STOXX 50® Futures", :link=>"ETF/BGI"}
+{:symbol=>"XMTF", :name=>"CS ETF (CH) on SMI® Futures", :link=>"ETF/CSM"}
+{:symbol=>"FCCO", :name=>"Dow Jones-UBS Commodity Futures", :link=>"COM/CDX"}
+{:symbol=>"FCAG", :name=>"Dow Jones-UBS Agriculture Futures", :link=>"COM/CDX"}
+{:symbol=>"FCEN", :name=>"Dow Jones-UBS Energy Futures", :link=>"COM/CDX"}
+{:symbol=>"FCXE", :name=>"Dow Jones-UBS Ex Energy Futures", :link=>"COM/CDX"}
+{:symbol=>"FCGR", :name=>"Dow Jones-UBS Grains Futures", :link=>"COM/CDX"}
+{:symbol=>"FCIN", :name=>"Dow Jones-UBS Industrial Metals Futures", :link=>"COM/CDX"}
+{:symbol=>"FCLI", :name=>"Dow Jones-UBS Livestock Futures", :link=>"COM/CDX"}
+{:symbol=>"FCPE", :name=>"Dow Jones-UBS Petroleum Futures", :link=>"COM/CDX"}
+{:symbol=>"FCPR", :name=>"Dow Jones-UBS Precious Metals Futures", :link=>"COM/CDX"}
+{:symbol=>"FCSO", :name=>"Dow Jones-UBS Softs Futures", :link=>"COM/CDX"}
+{:symbol=>"FEPP", :name=>"European Processing Potato Futures", :link=>"COM/AGR"}
+{:symbol=>"FLPI", :name=>"London Potato Futures", :link=>"COM/AGR"}
+{:symbol=>"FPIG", :name=>"Piglet Futures", :link=>"COM/AGR"}
+{:symbol=>"FHOG", :name=>"Hog Futures", :link=>"COM/AGR"}
+{:symbol=>"FBUT", :name=>"Butter Futures", :link=>"COM/AGR"}
+{:symbol=>"FSMP", :name=>"Skimmed Milk Powder Futures", :link=>"COM/AGR"}
+{:symbol=>"FXGL", :name=>"Xetra-Gold® Futures", :link=>"COM/GOL"}
+{:symbol=>"FGFX", :name=>"Gold Futures", :link=>"COM/GOL"}
+{:symbol=>"FSFX", :name=>"Silver Futures", :link=>"COM/SIL"}
+{:symbol=>"FPHA", :name=>"ETFS Physical Gold Futures", :link=>"COM/ETC"}
+{:symbol=>"FCRU", :name=>"ETFS Crude Oil Futures", :link=>"COM/ETC"}
+{:symbol=>"FCER", :name=>"CER Futures EarlyDec", :link=>"COM/CO2"}
+{:symbol=>"F2CR", :name=>"CER Futures MidDec", :link=>"COM/CO2"}
+{:symbol=>"FEUA", :name=>"EUA Futures", :link=>"COM/CO2"}
+{:symbol=>"F2PE", :name=>"EUA Futures EarlyDec", :link=>"COM/CO2"}
+{:symbol=>"F2EA", :name=>"EUA Futures MidDec", :link=>"COM/CO2"}
+{:symbol=>"FEAA", :name=>"EUAA Futures", :link=>"COM/CO2"}
+{:symbol=>"FERU", :name=>"ERU Futures", :link=>"COM/CO2"}
+{:symbol=>"F1B1", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B2", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B3", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B4", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1B5", :name=>"Phelix Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1BM", :name=>"Phelix Base® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F1BQ", :name=>"Phelix Base® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F1BY", :name=>"Phelix Base® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F1P1", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P2", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P3", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P4", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1P5", :name=>"Phelix Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F1PM", :name=>"Phelix Peak® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F1PQ", :name=>"Phelix Peak® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F1PY", :name=>"Phelix Peak® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F1OM", :name=>"Phelix Off-Peak® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F1OQ", :name=>"Phelix Off-Peak® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F1OY", :name=>"Phelix Off-Peak® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F7B1", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B2", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B3", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B4", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7B5", :name=>"French Base® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7BM", :name=>"French Base® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F7BQ", :name=>"French Base® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F7BY", :name=>"French Base® Year Futures", :link=>"COM/POW"}
+{:symbol=>"F7P1", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P2", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P3", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P4", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7P5", :name=>"French Peak® Week Futures", :link=>"COM/POW"}
+{:symbol=>"F7PM", :name=>"French Peak® Month Futures", :link=>"COM/POW"}
+{:symbol=>"F7PQ", :name=>"French Peak® Quarter Futures", :link=>"COM/POW"}
+{:symbol=>"F7PY", :name=>"French Peak® Year Futures", :link=>"COM/POW"}
+{:symbol=>"G0BM", :name=>"NCG Natural Gas Month Futures", :link=>"COM/GAS"}
+{:symbol=>"G0BQ", :name=>"NCG Natural Gas Quarter Futures", :link=>"COM/GAS"}
+{:symbol=>"G0BS", :name=>"NCG Natural Gas Season Futures", :link=>"COM/GAS"}
+{:symbol=>"G0BY", :name=>"NCG Natural Gas Year Futures", :link=>"COM/GAS"}
+{:symbol=>"G2BM", :name=>"GPL Natural Gas Month Futures", :link=>"COM/GAS"}
+{:symbol=>"G2BQ", :name=>"GPL Natural Gas Quarter Futures", :link=>"COM/GAS"}
+{:symbol=>"G2BY", :name=>"GPL Natural Gas Year Futures", :link=>"COM/GAS"}
+{:symbol=>"FT2M", :name=>"ARA Month Futures", :link=>"COM/COL"}
+{:symbol=>"FT2Q", :name=>"ARA Quarter Futures", :link=>"COM/COL"}
+{:symbol=>"FT2Y", :name=>"ARA Year Futures", :link=>"COM/COL"}
+{:symbol=>"FT4M", :name=>"RB Month Futures", :link=>"COM/COL"}
+{:symbol=>"FT4Q", :name=>"RB Quarter Futures", :link=>"COM/COL"}
+{:symbol=>"FT4Y", :name=>"RB Year Futures", :link=>"COM/COL"}
+{:symbol=>"HU12", :name=>"Hurricane Futures USA 10bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU22", :name=>"Hurricane Futures USA 20bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU32", :name=>"Hurricane Futures USA 30bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU42", :name=>"Hurricane Futures USA 40bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HU52", :name=>"Hurricane Futures USA 50bn 2012", :link=>"WED/USA/U12"}
+{:symbol=>"HF32", :name=>"Hurricane Futures Florida 30bn 2012", :link=>"WED/FLO/F12"}
+{:symbol=>"HF42", :name=>"Hurricane Futures Florida 40bn 2012", :link=>"WED/FLO/F12"}
+{:symbol=>"HF52", :name=>"Hurricane Futures Florida 50bn 2012", :link=>"WED/FLO/F12"}
+{:symbol=>"HG12", :name=>"Hurricane Futures Gulf 10bn 2012", :link=>"WED/GUL/G12"}
+{:symbol=>"HG22", :name=>"Hurricane Futures Gulf 20bn 2012", :link=>"WED/GUL/G12"}
+{:symbol=>"FVS", :name=>"VSTOXXMiniFutures", :link=>"VOL"}
+{:symbol=>"PUKA", :name=>"IPD® UK Annual All Property Index", :link=>"PRD"}
+{:symbol=>"PARE", :name=>"IPD UK Annual All Retail Index", :link=>"PRD"}
+{:symbol=>"PAOF", :name=>"IPD UK Annual All Office Index", :link=>"PRD"}
+{:symbol=>"PAIN", :name=>"IPD UK Annual All Industrial Index", :link=>"PRD"}

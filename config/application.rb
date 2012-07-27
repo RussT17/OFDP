@@ -59,6 +59,9 @@ module Ofdp
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
+    #autoload the classes in lib
+    config.autoload_paths += Dir["#{config.root}/lib/classes/**/"]
+    
     MONTH_NAMES = {
       'F' => 'January',
       'G' => 'February',

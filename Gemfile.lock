@@ -42,6 +42,7 @@ GEM
     eventmachine (0.12.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffi (1.1.0)
     foreigner (1.2.0)
       activerecord (>= 3.0.0)
     hike (1.2.1)
@@ -110,6 +111,9 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    typhoeus (0.4.2)
+      ffi (~> 1.0)
+      mime-types (~> 1.18)
     tzinfo (0.3.33)
     uglifier (1.2.6)
       execjs (>= 0.3.0)
@@ -130,4 +134,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spreadsheet
   thin
+  typhoeus
   uglifier (>= 1.0.3)

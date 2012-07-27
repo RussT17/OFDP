@@ -50,5 +50,8 @@ gem 'spreadsheet'
 # Nokogiri
 gem 'nokogiri'
 
+#Typhoeus, parallel http requests
+gem 'typhoeus'
+
 # Paginate with kaminari
 gem 'kaminari'
