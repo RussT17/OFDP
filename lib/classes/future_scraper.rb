@@ -4,6 +4,9 @@ require 'open-uri'
 require 'date'
 require 'typhoeus'
 
+#The decision of which futures to scrape comes from the files in the lib/classes folder.
+#This works differently for options.
+
 class FutureScraper
   def initialize
     @source_hashes = Array.new
@@ -59,7 +62,7 @@ class FutureScraper
   
   def update_cfcs
     #only updates the cfcs if the asset has a proper name in the database
-    updated_assets.each {|hash| hash[:asset].update_cfc(hash[:date]) if !hash[:asset].name.nil?}
+    updated_assets.each {|hash| hash[:asset].update_cfc_on(hash[:date]) if !hash[:asset].name.nil?}
     @submitted_entries = Array.new
   end
   
@@ -114,7 +117,7 @@ class FutureScraper
             yr = '20' + s[4,2]
             cd = fn[1][1]
             ex = fn[1][2][1,4]
-            entry = FutureEntry.new
+            entry = Entry.new
             entry.exchange = ex
             entry.symbol = cd
             entry.month = mn
@@ -220,7 +223,7 @@ class FutureScraper
             cd = fn[1][1]
             ex = fn[1][2]
             ex = ex[1,3]
-            entry = FutureEntry.new
+            entry = Entry.new
             entry.exchange = ex
             entry.symbol = cd
             entry.month = mn
@@ -312,7 +315,7 @@ class FutureScraper
             cd = fn[1][0]
             ex = fn[1][1]
             ex = ex[1,3]
-            entry = FutureEntry.new
+            entry = Entry.new
             entry.exchange = ex
             entry.symbol = cd
             entry.month = mn
@@ -398,7 +401,7 @@ class FutureScraper
     
     assets.each do |asset|
       asset[:data_requests].each_with_index do |request,i|
-        entry = FutureEntry.new
+        entry = Entry.new
         doc = Nokogiri::HTML(request.response.body)
         row = doc.css('div.content div.content table:nth-of-type(3) tr.row-odd')
         cells = row.css('td').to_a
@@ -423,65 +426,14 @@ class FutureScraper
     return entries
   end
   
-  class FutureEntry
+  class Entry < DataEntry
     def initialize
       @submitted = false
       @record = Hash.new
     end
     
     attr_reader :asset
-    attr_writer :date, :exchange, :symbol, :year, :month, :open, :high, :low, :settle, :volume, :interest
-    
-    def date
-      @record[:date]
-    end
-    def exchange
-      @record[:exchange]
-    end
-    def symbol
-      @record[:symbol]
-    end
-    def year
-      @record[:year]
-    end
-    def month
-      @record[:month]
-    end
-    def open
-      @record[:open]
-    end
-    def high
-      @record[:high]
-    end
-    def low
-      @record[:low]
-    end
-    def settle
-      @record[:settle]
-    end
-    def volume
-      @record[:volume]
-    end
-    def interest
-      @record[:interest]
-    end
-    
-    def save
-      @record = {
-        date: @date,
-        exchange: @exchange,
-        symbol: @symbol,
-        year: @year,
-        month: @month,
-        open: @open,
-        high: @high,
-        low: @low,
-        settle: @settle,
-        volume: @volume,
-        interest: @interest
-      }
-      puts "Record " + to_s + " saved"
-    end
+    entry_attr_accessor :date, :exchange, :symbol, :year, :month, :open, :high, :low, :settle, :volume, :interest
     
     def submitted?
       @submitted

@@ -1,133 +1,40 @@
 namespace :futures do
   namespace :scrape do
-    
     desc "scrape american sources (CME,ICE,ICU)"
     task :set1, [:days_ago] => :environment do |t,args|
       args.with_defaults(:days_ago => '0')
       input_date = Date.today - args.days_ago.to_i
       if input_date.wday == 0 || input_date.wday == 6
         puts "# input date is a weekend; doing nothing"
-        exit
+      else
+        scraper = FutureScraper.new
+        scraper.add_source(:cme,input_date)
+        scraper.add_source(:icu,input_date)
+        scraper.add_source(:ice,input_date)
+        scraper.full_run
       end
-      scraper = FutureScraper.new
-      scraper.add_source(:cme,input_date)
-      scraper.add_source(:icu,input_date)
-      scraper.add_source(:ice,input_date)
-      scraper.full_run
     end
     
     desc "scrape eurex"
     task :eur => :environment do
-      
-    end
-    
-  end
-  
-  desc "purge invalid futures contracts based on invalid months table"
-  task :validate => :environment do
-    Future.all.each do |future|
-      bad_months = future.asset.invalid_contract_months.map{|row| row.month}
-      if bad_months.include? future.month
-        puts future.asset.symbol + future.month + future.year.to_s
-        future.destroy
-      end
-    end
-  end
-  
-  desc "delete cfc entries with no associated rows"
-  task :empty_cfcs => :environment do
-    Cfc.all.each do |cfc|
-      cfc.destroy if cfc.future_data_rows.empty?
-      puts cfc.asset + cfc.depth.to_s
-    end
-  end
-  
-  namespace :update_cfcs do
-    desc "create associations between the future data rows and the cfc table"
-    task :cfc, [:asset] => :environment do |t,args|
-      #update a specific asset, or if none specified updates all with names.
-      args.with_defaults(:asset => nil)
-      Asset.all.each do |asset|
-        next if asset.name.nil?
-        next if !args.asset.nil? and args.asset != asset.symbol
-        asset.future_data_rows.order("date desc").uniq.pluck(:date).each do |date|
-          the_rows = asset.future_data_rows.where(:date => date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj}
-          bump_count = 0
-          the_rows.each_with_index do |the_row,i|
-            depth = i + 1
-            if !the_row.cfc_id.nil?
-              next_row = the_row.cfc.future_data_rows.where("date > ?", date).order("date asc").first
-            end
-            if !next_row.nil?
-              if next_row.future.date_obj < the_row.future.date_obj
-                bump_count = bump_count + 1
-              end
-            end
-            depth = depth + bump_count
-            target_cfc = Cfc.where(:asset_id => the_row.asset.id,:depth => depth).first
-            if target_cfc
-              the_row.cfc = target_cfc
-              the_row.save
-            else
-              the_row.create_cfc(:asset_id => the_row.asset.id,:depth => depth)
-            end
-            puts "Asset: " + the_row.asset.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
-            t2 = Time.now
-          end
-        end     
-      end
+      scraper = FutureScraper.new
+      scraper.add_source(:eur)
+      scraper.full_run
     end
   end 
 end
-
 
 namespace :options do
   namespace :scrape do
     desc "Scrape Yahoo Finance for options data for all ticker symbols in the table"
     task :yahoo => :environment do
-      if (Date.today - 1).wday == 0 || (Date.today - 1).wday == 6
+      date = Date.today-1
+      if (date).wday == 0 || (date).wday == 6
         puts "# input date is a weekend; doing nothing"
-        exit
-      end
-      require 'net/http'
-      require 'uri'
-      require 'json'
-      Stock.all.each do |stock|
-        puts "Looking for #{stock.symbol} options"
-        url = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.options%20where%20symbol%20in%20(%22' + \
-          stock.symbol + '%22)&format=json&diagnostics=true&env=http%3A%2F%2Fdatatables.org%2Falltables.env&callback='
-        uri = URI.parse(url)
-        #send query to YQL a second time if the first attempt fails
-        options = nil
-        1.upto(2) do
-          begin
-            response = Net::HTTP.get_response(uri)
-            options = JSON.parse(response.body)["query"]["results"]["optionsChain"]["option"]
-            options = [options] if options.is_a?(Hash)
-            break
-          rescue
-          end
-        end
-        #if there are no options report it and continue
-        if !options.nil?
-          options.each do |option|
-            #find the expiry date from yahoo's code. Note some weird cases: "DUK1120721C00017000" (extra 1 after ticker symbol)
-            x = stock.symbol.length
-            y = nil
-            option["symbol"][x..-1].split(//).each_with_index do |char,i|
-              if char == 'C' or char == 'P'
-                y = i - 1
-              end
-            end
-            expiry_date = Date.strptime(option["symbol"][(y-5+x)..(y+x)],'%y%m%d')
-            is_call = (option["type"] == 'C')
-            option_record = stock.stock_options.where(:symbol => option["symbol"]).first_or_create(:expiry_date => expiry_date, :is_call => is_call, :strike_price => option["strikePrice"])
-            option_record.stock_option_data_rows.where(:date => (Date.today - 1)).first_or_create.update_attributes(:last_trade_price => option["lastPrice"], :change => option["change"], :bid => option["bid"], :ask => option["ask"], :volume => option["vol"], :open_interest => option["openInt"])
-          end
-          puts "Found #{options.length.to_s}"
-        else
-          puts "None found"
-        end
+      else
+        scraper = OptionScraper.new
+        scraper.scrape(date)
+        scraper.add_to_database
       end
     end
   end
@@ -282,7 +189,6 @@ namespace :metals do
               :libor2 => row_data[7], :libor3 => row_data[8], :libor6 => row_data[9], :libor12 => row_data[10]) if !row_data[1,10].compact.empty?
           end
         end
-        
       end
       
       desc "Scrape history of data on non-precious metals"
@@ -465,7 +371,6 @@ namespace :metals do
             :libor2 => row_data[7], :libor3 => row_data[8], :libor6 => row_data[9], :libor12 => row_data[10]) if !row_data[1,10].compact.empty?
         end
         puts "Silver Forwards Updated"
-        
       end
       
       desc "Scrape the LME for yesterday's non-precious metal closing prices"
@@ -503,7 +408,6 @@ namespace :metals do
           end
         end
       end
-      
     end 
   end
 end
