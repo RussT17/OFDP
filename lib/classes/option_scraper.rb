@@ -3,8 +3,9 @@ require 'typhoeus'
 
 #The option scraper works differently than the future scraper. The list of which stocks to scrape options for does NOT
 #come from a text file like it did for futures. Instead, the stocks table in the database is used.
-#Also this scraper does not take advantage of parallel http requests because sometimes the http request to the Yahoo API
-#fails, so we need to do it in series, sometimes, sending an http request a second time.
+#SCRAPE: Yahoo does not supply the date of the data given, so an entry_date must be specified. This is the date that will
+#appear on the records in the database. The data is live and must be scraped at the end of the day after the market is closed.
+#HISTORY: is not available.
 
 class OptionScraper
   def initialize

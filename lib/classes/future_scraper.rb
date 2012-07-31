@@ -4,8 +4,21 @@ require 'open-uri'
 require 'date'
 require 'typhoeus'
 
-#The decision of which futures to scrape comes from the files in the lib/classes folder.
-#This works differently for options.
+#The decision of which futures to scrape comes from the files in the lib/classes/codes folder.
+#For all other data scrapers (metals and options) the list of items to scrape comes from the database.
+
+#SCRAPE: Settlement prices, with a five-or-so day history to select from. Scrape too early and not all the
+#data will necessarily be posted yet. Some assets' futures get posted up to a day late, so consider scraping for the two
+#previous days each day. Sometimes the site reports futures with expiry months that don't exist. These are not displayed
+#on the site but are stored in the database table bad_future_data_rows in case they are not just a glitch which
+#is suspected. No harm running on a weekend, will do nothing.
+
+#HISTORY: no built in history scraper since the history is not extensive.
+
+#CFCs: Continuous Futures Contracts. Run update_cfcs AFTER adding to the database.
+
+#full_run will do all your scraping, adding, and updating_cfcs in one function. Just add the sources with add_source
+#and use full_run.
 
 class FutureScraper
   def initialize
@@ -86,7 +99,7 @@ class FutureScraper
     ur = ur + '?tradeDate=' + du
 
     fnames = Hash.new     # exch.code => urlcode,outcode,exch,category,name
-    File.open(Dir[Rails.root.join "lib/classes/cmecodes"][0], "r") do |fp|
+    File.open(Dir[Rails.root.join "lib/classes/codes/cmecodes"][0], "r") do |fp|
       while (s = fp.gets)
         next if s[0].chr == '#'
         a = s.split(',')
@@ -100,6 +113,7 @@ class FutureScraper
     requests = Array.new
     fnames.each_with_index do |fn,i|
       url = sprintf(ur, fn[1][0], fn[1][2], fn[1][0])
+      puts url if /EM/.match(url)
       requests[i] = Typhoeus::Request.new(url)
       hydra.queue(requests[i])
     end
@@ -189,7 +203,7 @@ class FutureScraper
     ur = 'https://www.theice.com/marketdata/reports/icefutureseurope/EndOfDay.shtml?tradeDay=%d&tradeMonth=%d&tradeYear=%d&contractKey=%s'
 
     fnames = Hash.new     # exch.code => code,exch,category,name
-    File.open(Dir[Rails.root.join "lib/classes/icecodes"][0], "r") do |fp|
+    File.open(Dir[Rails.root.join "lib/classes/codes/icecodes"][0], "r") do |fp|
       while (s = fp.gets)
         next if s[0].chr=='#'
         a = s.split(',')
@@ -270,7 +284,7 @@ class FutureScraper
              'JUL' => 'N', 'AUG' => 'Q', 'SEP' => 'U', 'OCT' => 'V', 'NOV' => 'X', 'DEC' => 'Z' }
 
     fnames = Hash.new     # exch.code => code,exch,category,name
-    File.open(Dir[Rails.root.join "lib/classes/icucodes"][0], "r") do |fp|
+    File.open(Dir[Rails.root.join "lib/classes/codes/icucodes"][0], "r") do |fp|
       while (s = fp.gets)
         next if s[0].chr=='#'
         a = s.split(',')
@@ -358,7 +372,7 @@ class FutureScraper
     entries = Array.new
     assets = Array.new
     
-    File.open(Dir[Rails.root.join "lib/classes/eurexassets"][0],'r') do |file|
+    File.open(Dir[Rails.root.join "lib/classes/codes/eurexassets"][0],'r') do |file|
       file.each do |line|
         assets << eval(line)
       end
