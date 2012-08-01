@@ -4,7 +4,7 @@
 		<h1 class='page-title'>Data</h1>
 		<%= link_to 'Table of Contents', metal_prices_path %>
 		<h3><%= @the_dataset.metal.name + ' Price: ' + @the_dataset.name %></h3>
-		<table border='1'>
+		<table>
 			<tr>
 				<% if @the_dataset.table == 'non_prec_prices' %>
 					<th>Date</th><th>Bid</th><th>Ask</th><th>Mid</th>
