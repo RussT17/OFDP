@@ -464,7 +464,7 @@ class FutureScraper
         BadFutureDataRow.create(@record)
       else
         @future = @asset.futures.where(:year => @record[:year].to_i, :month => @record[:month]).first_or_create
-        @data_row = @future.future_data_rows.where(:date => @record[:date]).first_or_create().update_attributes(@record.select {|k| [:open,:high,:low,:settle,:volume,:interest,:date].include? k})
+        @data_row = @future.future_data_rows.where(:date => @record[:date]).first_or_create.update_attributes(@record.select {|k| [:open,:high,:low,:settle,:volume,:interest].include? k})
         puts 'Entry ' + to_s + ' submitted'
         @submitted = true
       end
