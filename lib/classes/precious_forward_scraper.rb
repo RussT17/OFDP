@@ -257,7 +257,8 @@ class PreciousForwardScraper
     end
     
     def submit
-      @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(@record.keep_if{|k| ![:metal,:dataset_name,:date].include? k})
+      @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(@record.select{|k| ![:metal,:dataset_name,:date].include? k})
+      puts 'Entry ' + to_s + ' submitted'
     end
   end
 end

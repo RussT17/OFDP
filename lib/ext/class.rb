@@ -12,6 +12,6 @@ class Class
     end
     
     #now the saver
-    self.class_eval("def save;@record={" + pairs.join(',') + "};puts 'Record ' + to_s + ' saved';end")
+    self.class_eval("def save;@record={" + pairs.join(',') + "};puts 'Entry ' + to_s + ' saved';end")
   end
 end

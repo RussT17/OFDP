@@ -92,6 +92,7 @@ class PreciousFixingScraper
       end
       1.upto(3) {|i| row_data[i] = row_data[i]/100 if !row_data[i].nil?}
       if !row_data[1,3].compact.empty?
+        entry = Entry.new
         entry.metal = the_metal
         entry.dataset_name = 'London Fixings'
         entry.date = date
@@ -277,6 +278,7 @@ class PreciousFixingScraper
     
     def submit
       @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
+      puts 'Entry ' + to_s + ' submitted'
     end
   end
 end

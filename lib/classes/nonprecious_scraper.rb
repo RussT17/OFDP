@@ -139,6 +139,7 @@ class NonpreciousScraper
     
     def submit
       @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(:buyer => @record[:buyer], :seller => @record[:seller])
+      puts 'Entry ' + to_s + ' submitted'
     end
   end
 end
