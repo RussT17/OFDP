@@ -21,8 +21,8 @@
 		<% for c in @contents %>
 		<tr><% type = c.is_call ? "Call" : "Put" %>
 			<td><%= c.symbol %></td>
-			<td><%= c.stock.name + ' ' + c.expiry_date.to_s + ' ' + type + ' ' + ' $' + c.strike_price.to_s + ' (' + c.symbol + ')'%></td>
-			<td><%= 'Option daily closing values from Yahoo! Finance, in $USD. Underlying Asset: ' + c.stock.name + ' (' + 'Symbol: ' + c.stock.symbol + ', Exchange: ' + c.stock.exchange + ', Sector: ' + c.stock.sector + '), ' + 'Expiry Date: ' + c.expiry_date.to_s + ', ' + type + ', Strike Price: $' + c.strike_price.to_s %></td>
+			<td><%= c.stock.name + ' ' + c.expiry_date.strftime("%B-%Y") + ' ' + type + ' ' + ' $' + c.strike_price.to_s %></td>
+			<td><%= 'Option daily closing values in $USD. Underlying Asset: ' + c.stock.name + ' (' + 'Symbol: ' + c.stock.symbol + ', Exchange: ' + c.stock.exchange + ', Sector: ' + c.stock.sector + '), ' + 'Expiry Date: ' + c.expiry_date.to_s + ', ' + type + ', Strike Price: $' + c.strike_price.to_s %></td>
 			<td><%= link_to stock_option_url(c), stock_option_url(c) %></td>
 		</tr>
 		<% end %>
