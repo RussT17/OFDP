@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723153606) do
+ActiveRecord::Schema.define(:version => 20120801152057) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -103,6 +103,13 @@ ActiveRecord::Schema.define(:version => 20120723153606) do
     t.float   "libor3"
     t.float   "libor6"
     t.float   "libor12"
+  end
+
+  create_table "rake_error_messages", :force => true do |t|
+    t.text     "message"
+    t.text     "backtrace"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "stock_option_data_rows", :force => true do |t|

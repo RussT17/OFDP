@@ -14,25 +14,41 @@ task :scrape1 => :environment do
   
   if ![0,6].include? date.wday #check that yesterday wasn't a weekend day
     puts "Options:"
-    scraper = OptionScraper.new
-    scraper.scrape(date)
-    scraper.add_to_database
-
+    begin
+      scraper = OptionScraper.new
+      scraper.scrape(date)
+      scraper.add_to_database
+    rescue => e
+      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+    end
+    
     puts "\nPrecious Metal Fixings:"
-    scraper = PreciousFixingScraper.new
-    scraper.scrape_on(date)
-    scraper.add_to_database
+    begin
+      scraper = PreciousFixingScraper.new
+      scraper.scrape_on(date)
+      scraper.add_to_database
+    rescue => e
+      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+    end
 
     puts "\nPrecious Metal Forwards:"
-    scraper = PreciousForwardScraper.new
-    scraper.scrape_on(date)
-    scraper.scrape_on(date-15)
-    scraper.add_to_database
+    begin
+      scraper = PreciousForwardScraper.new
+      scraper.scrape_on(date)
+      scraper.scrape_on(date-15)
+      scraper.add_to_database
+    rescue => e
+      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+    end
 
     puts "\nNonprecious Metal Prices:"
-    scraper = NonpreciousScraper.new
-    scraper.scrape
-    scraper.add_to_database
+    begin
+      scraper = NonpreciousScraper.new
+      scraper.scrape
+      scraper.add_to_database
+    rescue => e
+      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+    end
   end
 end
 
@@ -41,12 +57,16 @@ task :scrape2 => :environment do
   date1 = Date.today-1
   date2 = date1 - 1
   puts "Futures:"
-  scraper = FutureScraper.new
-  scraper.add_source(:cme, date1)
-  scraper.add_source(:cme, date2)
-  scraper.add_source(:ice, date1)
-  scraper.add_source(:ice, date2)
-  scraper.add_source(:icu, date1)
-  scraper.add_source(:icu, date2)
-  scraper.full_run
+  begin
+    scraper = FutureScraper.new
+    scraper.add_source(:cme, date1)
+    scraper.add_source(:cme, date2)
+    scraper.add_source(:ice, date1)
+    scraper.add_source(:ice, date2)
+    scraper.add_source(:icu, date1)
+    scraper.add_source(:icu, date2)
+    scraper.full_run
+  rescue => e
+    RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+  end
 end
