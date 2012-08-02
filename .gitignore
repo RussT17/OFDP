@@ -15,4 +15,4 @@
 /tmp
 
 #Ignore the seed file
-#/db/futures_file.csv
+/db/futures_file.csv
