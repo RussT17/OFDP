@@ -1,6 +1,6 @@
 require 'date'
 
-File.open('futures_file.csv','r') do |f|
+File.open(Dir[Rails.root.join "db/futures_file.csv"][0], 'r') do |f|
   f.each_with_index do |row,i|
     cells = row.split(';')
     asset = Asset.where(:exchange => cells[1], :symbol => cells[2]).first_or_create
