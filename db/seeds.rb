@@ -1,9 +1,9 @@
 require 'date'
 
 cutoff = Date.parse('2012-07-25')
-FutureDataRow.where("date <= '2012-07-25'").delete_all
 File.open(Dir[Rails.root.join "db/futures_file.csv"][0], 'r') do |f|
   f.each_with_index do |row,i|
+    next if i <= 1730149
     cells = row.split(';')
     if Date.parse(cells[0]) > cutoff
       asset = Asset.where(:exchange => cells[1], :symbol => cells[2]).first_or_create
