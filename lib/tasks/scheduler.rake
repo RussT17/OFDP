@@ -55,16 +55,22 @@ end
 desc "The 4:30am scrape, including American futures"
 task :scrape2 => :environment do
   date1 = Date.today-1
+  date1_good = ![0,6].include? date1.wday
   date2 = date1 - 1
+  date2_good = ![0,6].include? date2.wday
   puts "Futures:"
   begin
     scraper = FutureScraper.new
-    scraper.add_source(:cme, date1)
-    scraper.add_source(:cme, date2)
-    scraper.add_source(:ice, date1)
-    scraper.add_source(:ice, date2)
-    scraper.add_source(:icu, date1)
-    scraper.add_source(:icu, date2)
+    if date1_good
+      scraper.add_source(:cme, date1)
+      scraper.add_source(:ice, date1)
+      scraper.add_source(:icu, date1)
+    end
+    if date2_good
+      scraper.add_source(:cme, date2)
+      scraper.add_source(:ice, date2)
+      scraper.add_source(:icu, date2)
+    end
     scraper.scrape
     scraper.add_to_database
   rescue => e
