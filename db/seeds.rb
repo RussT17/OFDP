@@ -1,6 +1,6 @@
 require 'date'
 cutoff = Date.parse('2012-07-25')
-FutureDataRow.where('date <= 2012-07-25').delete_all
+FutureDataRow.where("date <= '2012-07-25'").delete_all
 File.open(Dir[Rails.root.join "db/futures_file.csv"][0], 'r') do |f|
   f.each_with_index do |row,i|
     cells = row.split(';')
