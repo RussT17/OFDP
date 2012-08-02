@@ -13,6 +13,7 @@ html, body {
 
 body {
   font-family:sans-serif;
+  color:#111111;
   margin:0;
 }
 
@@ -32,7 +33,8 @@ p {
 
 .header {
   background-color:white;
-  border-bottom:1px solid black;
+  border-bottom:1px solid #111111;
+  margin-top:2px;
   height:94px;
 }
 
@@ -45,18 +47,21 @@ p {
   margin-right:auto;
   position:relative;
   display:block;
-  border-top:1px solid black;
+  border-top:1px solid #111111;
 }
 
 .page-content {
   padding:45px;
   padding-top:15px;
   background-color:white;
-  min-height:700px;
+  min-height: 100%;
+  height: auto !important;
+  height:100%;
+  margin: 0 auto -3em;
 }
 
-.footer {
-  clear:both;
+.footer, .push {
+  height: 3em;
 }
 
 h1.page-title {
@@ -98,7 +103,7 @@ div.tab{
   text-align:center;
   background-color:#abcabc;
   color:black;
-  border:1px solid black;
+  border:1px solid #111111;
   margin-left:20px;
 }
 
@@ -124,5 +129,5 @@ div.tab.spot-metal-prices-tab div{
 }
 
 table,th,td {
-  border: 1px solid black;
+  border: 1px solid #111111;
 }
