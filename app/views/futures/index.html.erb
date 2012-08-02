@@ -19,10 +19,9 @@
 		<tr>
 			<% the_ticker = c.asset.symbol + c.month + c.year.to_s %>
 			<td><%= the_ticker %></td>
-			<% the_name = c.asset.name + ' ' + Ofdp::Application::MONTH_NAMES[c.month] + ' ' + c.year.to_s + ' ' + 
-			'(' + the_ticker + ')' %>
+			<% the_name = c.asset.name + ' ' + Ofdp::Application::MONTH_NAMES[c.month] + ' ' + c.year.to_s %>
 			<td><%= the_name %></td>
-			<td><%= 'Future contract closing price in $USD, scraped daily from the ' + c.asset.exchange + '. Future Contract: ' + (/\s\(/).match(the_name).pre_match + ' Ticker: ' + the_ticker + ' Exchange: ' + c.asset.exchange %></td>
+			<td><%= the_ticker + ' future contract closing price in $USD; ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] %></td>
 			<td><%= link_to future_url(c),future_url(c) %></td>
 		</tr>
 		<% end %>

@@ -62,6 +62,15 @@ module Ofdp
     #autoload the classes in lib
     config.autoload_paths += Dir["#{config.root}/lib/classes/**/"]
     
+    EXCHANGE_NAMES = {
+      'CME' => 'Chicago Mercantile Exchange (CME)',
+      'ICE' => 'Intercontinental Exchange (ICE) Europe',
+      'ICU' => 'Intercontinental Exchange (ICE) United States',
+      'NYM' => 'New York Mercantile Exchange (NYMEX)',
+      'CBT' => 'Chicago Board of Trade (CBOT)',
+      'CEC' => 'Commodity Exchange (COMEX)'
+    }
+    
     MONTH_NAMES = {
       'F' => 'January',
       'G' => 'February',
