@@ -8,8 +8,8 @@
 
 require 'date'
 
-desc "The 1:00am scrape, including options, precious metals, and nonprecious metals"
-task :scrape1 => :environment do
+desc "Everything is combined into a big scrape starting at 3:00am UTC"
+task :scrape => :environment do
   date = Date.today-1
   
   if ![0,6].include? date.wday #check that yesterday wasn't a weekend day
@@ -21,39 +21,37 @@ task :scrape1 => :environment do
     rescue => e
       RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
     end
-    
-    puts "\nPrecious Metal Fixings:"
-    begin
-      scraper = PreciousFixingScraper.new
-      scraper.scrape_on(date)
-      scraper.add_to_database
-    rescue => e
-      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
-    end
-
-    puts "\nPrecious Metal Forwards:"
-    begin
-      scraper = PreciousForwardScraper.new
-      scraper.scrape_on(date)
-      scraper.scrape_on(date-15)
-      scraper.add_to_database
-    rescue => e
-      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
-    end
-
-    puts "\nNonprecious Metal Prices:"
-    begin
-      scraper = NonpreciousScraper.new
-      scraper.scrape
-      scraper.add_to_database
-    rescue => e
-      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
-    end
   end
-end
+  
+  puts "\nPrecious Metal Fixings:"
+  begin
+    scraper = PreciousFixingScraper.new
+    scraper.scrape_on(date)
+    scraper.add_to_database
+  rescue => e
+    RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+  end
 
-desc "The 4:30am scrape, including American futures"
-task :scrape2 => :environment do
+  puts "\nPrecious Metal Forwards:"
+  begin
+    scraper = PreciousForwardScraper.new
+    scraper.scrape_on(date)
+    scraper.scrape_on(date-15)
+    scraper.add_to_database
+  rescue => e
+    RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+  end
+  
+  puts "\nNonprecious Metal Prices:"
+  begin
+    scraper = NonpreciousScraper.new
+    scraper.scrape
+    scraper.add_to_database
+  rescue => e
+    RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+  end
+  
+  #FUTURES
   date1 = Date.today-1
   date1_good = (![0,6].include? date1.wday)
   date2 = date1 - 1
