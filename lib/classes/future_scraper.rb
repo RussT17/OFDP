@@ -29,9 +29,9 @@ class FutureScraper
   
   def add_source(source_symbol,date = nil)
     raise ArgumentError.new('Source not recognized.') if ![:cme,:icu,:ice,:eur].include? source_symbol
-    if [:cme,:icu,:ice].include? source_symbol
+    if [:cme,:icu,:ice,:eur].include? source_symbol
       raise ArgumentError.new('Date required to scrape this source.') if date.nil?
-      raise ArgumentError.new('Provided date is a weekend.') if [0,6].include? date.wday
+      raise ArgumentError.new('Provided date is a weekend.') if [0,6].include? date.wday and source_symbol != :eur
     end
     raise ArgumentError.new('Source/date combination already added') if @source_hashes.include?({:source => source_symbol, :date => date})
     @source_hashes << ({:source => source_symbol, :date => date})
@@ -366,7 +366,7 @@ class FutureScraper
     return entries
   end
   
-  def eur_entries
+  def eur_entries(input_date)
     max_concurrency = 100
     
     entries = Array.new
@@ -425,10 +425,7 @@ class FutureScraper
         entry.settle = cells[12].content.to_f
         entry.volume = cells[13].content.to_i
         entry.interest = cells[14].content.to_i
-        tempdate = cells[10].content
-        puts tempdate
-        date = Date.new(('20' + tempdate[6..7]).to_i,tempdate[3..4].to_i,tempdate[0..1].to_i)
-        entry.date = date
+        entry.date = input_date
         entry.exchange = 'EUR'
         entry.symbol = asset[:symbol]
         entry.year = asset[:expiries][i][0..3]
