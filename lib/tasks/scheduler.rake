@@ -23,6 +23,7 @@ task :scrape => :environment do
     end
   end
   
+  #for precaution we run the metals whether it was a weekday or not
   puts "\nPrecious Metal Fixings:"
   begin
     scraper = PreciousFixingScraper.new
@@ -51,7 +52,7 @@ task :scrape => :environment do
     RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
   end
   
-  #FUTURES
+  #FUTURES - only run on weekdays
   date1 = Date.today-1
   date1_good = (![0,6].include? date1.wday)
   date2 = date1 - 1
