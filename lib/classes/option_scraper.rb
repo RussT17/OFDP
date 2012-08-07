@@ -105,7 +105,7 @@ class OptionScraper
        option_record = @record[:stock].stock_options.where(:symbol => @record[:option_symbol]).first_or_create(:expiry_date => @record[:expiry_date],
           :is_call => @record[:is_call], :strike_price => @record[:strike_price])
        option_record.stock_option_data_rows.where(:date => @record[:date]).first_or_create.update_attributes(:last_trade_price => @record[:last_trade_price],
-          :change => @record[:change], :bid => @record[:bid], :ask => @record[:ask], :volume => @record[:vol], :open_interest => @record[:open_interest])
+          :change => @record[:change], :bid => @record[:bid], :ask => @record[:ask], :volume => @record[:volume], :open_interest => @record[:open_interest])
        puts 'Entry ' + to_s + ' submitted'
     end
   end
