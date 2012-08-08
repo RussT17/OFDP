@@ -68,7 +68,8 @@ module Ofdp
       'ICU' => 'Intercontinental Exchange (ICE) United States',
       'NYM' => 'New York Mercantile Exchange (NYMEX)',
       'CBT' => 'Chicago Board of Trade (CBOT)',
-      'CEC' => 'Commodity Exchange (COMEX)'
+      'CEC' => 'Commodity Exchange (COMEX)',
+      'EUR' => 'Eurex'
     }
     
     MONTH_NAMES = {

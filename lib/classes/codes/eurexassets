@@ -111,16 +111,6 @@
 {:symbol=>"FT4M", :name=>"RB Month Futures", :link=>"COM/COL"}
 {:symbol=>"FT4Q", :name=>"RB Quarter Futures", :link=>"COM/COL"}
 {:symbol=>"FT4Y", :name=>"RB Year Futures", :link=>"COM/COL"}
-{:symbol=>"HU12", :name=>"Hurricane Futures USA 10bn 2012", :link=>"WED/USA/U12"}
-{:symbol=>"HU22", :name=>"Hurricane Futures USA 20bn 2012", :link=>"WED/USA/U12"}
-{:symbol=>"HU32", :name=>"Hurricane Futures USA 30bn 2012", :link=>"WED/USA/U12"}
-{:symbol=>"HU42", :name=>"Hurricane Futures USA 40bn 2012", :link=>"WED/USA/U12"}
-{:symbol=>"HU52", :name=>"Hurricane Futures USA 50bn 2012", :link=>"WED/USA/U12"}
-{:symbol=>"HF32", :name=>"Hurricane Futures Florida 30bn 2012", :link=>"WED/FLO/F12"}
-{:symbol=>"HF42", :name=>"Hurricane Futures Florida 40bn 2012", :link=>"WED/FLO/F12"}
-{:symbol=>"HF52", :name=>"Hurricane Futures Florida 50bn 2012", :link=>"WED/FLO/F12"}
-{:symbol=>"HG12", :name=>"Hurricane Futures Gulf 10bn 2012", :link=>"WED/GUL/G12"}
-{:symbol=>"HG22", :name=>"Hurricane Futures Gulf 20bn 2012", :link=>"WED/GUL/G12"}
 {:symbol=>"FVS", :name=>"VSTOXXMiniFutures", :link=>"VOL"}
 {:symbol=>"PUKA", :name=>"IPD UK Annual All Property Index", :link=>"PRD"}
 {:symbol=>"PARE", :name=>"IPD UK Annual All Retail Index", :link=>"PRD"}

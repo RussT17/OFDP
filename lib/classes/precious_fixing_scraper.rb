@@ -260,9 +260,9 @@ class PreciousFixingScraper
     end
   end
   
-  def add_to_database
+  def add_to_database(insert = false)
     @new_entries.delete_if do |entry|
-      entry.submit
+      entry.submit(insert)
       true
     end
   end
@@ -276,8 +276,12 @@ class PreciousFixingScraper
       @record.select{|k| [:metal,:dataset_name, :date].include? k}.to_s
     end
     
-    def submit
-      @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
+    def submit(insert)
+      if !insert
+        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
+      else
+        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
+      end
       puts 'Entry ' + to_s + ' submitted'
     end
   end
