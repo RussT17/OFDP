@@ -70,8 +70,7 @@ task :scrape => :environment do
       scraper.add_source(:ice, date2)
       scraper.add_source(:icu, date2)
     end
-    scraper.scrape
-    scraper.add_to_database
+    scraper.full_run
   rescue => e
     RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
   end
