@@ -53,5 +53,8 @@ gem 'nokogiri'
 #Typhoeus, parallel http requests
 gem 'typhoeus'
 
+#Exception Notification
+gem 'exception_notification'
+
 # Paginate with kaminari
 gem 'kaminari'
