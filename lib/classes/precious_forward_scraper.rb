@@ -42,8 +42,7 @@ class PreciousForwardScraper
       end
       if !row_data[1,5].compact.empty? or !row_data[11,15].compact.empty?
         entry = Entry.new
-        entry.metal = Metal.where(:name => 'Gold').first
-        entry.dataset_name = 'Forward Offered Rates'
+        entry.metal_dataset = Metal.where(:name => 'Gold').first.metal_datasets.where(:name => 'Forward Offered Rates').first
         entry.date = date
         entry.gofo1 = row_data[1]
         entry.gofo2 = row_data[2]
@@ -89,8 +88,7 @@ class PreciousForwardScraper
       end
       if !row_data[1,10].compact.empty?
         entry = Entry.new
-        entry.metal = Metal.where(:name => 'Silver').first
-        entry.dataset_name = 'Indicative Forward Mid Rates'
+        entry.metal_dataset = Metal.where(:name => 'Silver').first.metal_datasets.where(:name => 'Indicative Forward Mid Rates').first
         entry.date = date
         entry.gofo1 = row_data[1]
         entry.gofo2 = row_data[2]
@@ -125,7 +123,7 @@ class PreciousForwardScraper
     hydra.run
     puts "Hydra finished"
     
-    the_metal = Metal.where(:name => 'Gold').first
+    the_dataset = Metal.where(:name => 'Gold').first.metal_datasets.where(:name => 'Forward Offered Rates').first
     1989.upto(Date.today.year) do |year|
       index = year - 1989
       doc = Nokogiri::HTML(requests[index].response.body)
@@ -147,8 +145,7 @@ class PreciousForwardScraper
           row_data[j] = temp != "" ? temp.to_f : nil
         end
         entry = Entry.new
-        entry.metal = the_metal
-        entry.dataset_name = 'Forward Offered Rates'
+        entry.metal_dataset = the_dataset
         entry.date = Date.parse(row_data[0])
         if year == 1989
           if !row_data[1,4].compact.empty? or !row_data[9,12].compact.empty?
@@ -197,7 +194,7 @@ class PreciousForwardScraper
     hydra.run
     puts "Hydra finished"
     
-    the_metal = Metal.where(:name => 'Silver').first
+    the_dataset = Metal.where(:name => 'Silver').first.metal_datasets.where(:name => 'Indicative Forward Mid Rates').first
     2006.upto(Date.today.year) do |year|
       index = year-2006
       doc = Nokogiri::HTML(requests[index].response.body)
@@ -220,7 +217,7 @@ class PreciousForwardScraper
         end
         if !row_data[1,10].compact.empty?
           entry = Entry.new
-          entry.metal = the_metal
+          entry.metal_dataset = the_dataset
           entry.dataset_name = 'Indicative Forward Mid Rates'
           entry.date = Date.parse(row_data[0])
           entry.gofo1 = row_data[1]
@@ -250,17 +247,17 @@ class PreciousForwardScraper
   private
   
   class Entry < DataEntry
-    entry_attr_accessor :metal, :dataset_name, :date, :gofo1, :gofo2, :gofo3, :gofo6, :gofo12, :libor1, :libor2, :libor3, :libor6, :libor12
+    entry_attr_accessor :metal_dataset, :date, :gofo1, :gofo2, :gofo3, :gofo6, :gofo12, :libor1, :libor2, :libor3, :libor6, :libor12
     
     def to_s
-      @record.select{|k| [:metal,:dataset_name, :date].include? k}.to_s
+      @record.select{|k| [:metal_dataset, :date].include? k}.to_s
     end
     
     def submit(insert = false)
       if !insert
-        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(@record.select{|k| ![:metal,:dataset_name,:date].include? k})
+        @record[:metal_dataset].first_or_create_data_row(:date => @record[:date]).update_attributes(@record.select{|k| ![:metal,:dataset_name,:date].include? k})
       else
-        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.create_data_row(:date => @record[:date]).update_attributes(@record.select{|k| ![:metal,:dataset_name,:date].include? k})
+        @record[:metal_dataset].create_data_row(:date => @record[:date]).update_attributes(@record.select{|k| ![:metal,:dataset_name,:date].include? k})
       end
       puts 'Entry ' + to_s + ' submitted'
     end

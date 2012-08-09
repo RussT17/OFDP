@@ -45,6 +45,7 @@ class FutureScraper
   
   def scrape
     @source_hashes.each do |hash|
+      puts "Scraping #{hash[:source].to_s.upcase} on #{hash[:date]}"
       case hash[:source]
       when :cme
         @new_entries += cme_entries(hash[:date])
@@ -113,10 +114,10 @@ class FutureScraper
     requests = Array.new
     fnames.each_with_index do |fn,i|
       url = sprintf(ur, fn[1][0], fn[1][2], fn[1][0])
-      puts url if /EM/.match(url)
       requests[i] = Typhoeus::Request.new(url)
       hydra.queue(requests[i])
     end
+    puts "starting Hydra"
     hydra.run
     fnames.each_with_index do |fn,i|
       doc = Nokogiri::HTML(requests[i].response.body)
@@ -221,6 +222,7 @@ class FutureScraper
       requests[i] = Typhoeus::Request.new(url)
       hydra.queue(requests[i])
     end
+    puts "Starting Hydra"
     hydra.run
     fnames.each_with_index do |fn,i|
       doc = Nokogiri::HTML(requests[i].response.body)
@@ -302,6 +304,7 @@ class FutureScraper
       requests[i] = Typhoeus::Request.new(url)
       hydra.queue(requests[i])
     end
+    puts "Starting Hydra"
     hydra.run
     fnames.each_with_index do |fn,i|
       doc = Nokogiri::HTML(requests[i].response.body)
