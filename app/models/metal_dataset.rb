@@ -1,5 +1,5 @@
 class MetalDataset < ActiveRecord::Base
-  attr_accessible :id,:metal_id,:table,:name
+  attr_accessible :id,:metal,:table,:name
   belongs_to :metal
   
   def data_rows
