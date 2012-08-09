@@ -4,6 +4,7 @@ class FuturesController < ApplicationController
   end
   
   def index
-    @contents = Future.joins(:asset).where("assets.name is not null").order("assets.symbol,year,month").page(params[:page])
+    futures_to_show = Future.joins(:asset).where("assets.name is not null").order("assets.symbol,year,month").to_a.select {|future| future.valid?}
+    @contents = Kaminari.paginate_array(futures_to_show).page(params[:page])
   end
 end
