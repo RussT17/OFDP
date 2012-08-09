@@ -218,7 +218,6 @@ class PreciousForwardScraper
         if !row_data[1,10].compact.empty?
           entry = Entry.new
           entry.metal_dataset = the_dataset
-          entry.dataset_name = 'Indicative Forward Mid Rates'
           entry.date = Date.parse(row_data[0])
           entry.gofo1 = row_data[1]
           entry.gofo2 = row_data[2]
