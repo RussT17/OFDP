@@ -1,5 +1,5 @@
 class Future < ActiveRecord::Base
-  attr_accessible :asset,:month,:year
+  attr_accessible :asset,:asset_id,:month,:year
   belongs_to :asset
   has_many :future_data_rows, :dependent => :destroy
   

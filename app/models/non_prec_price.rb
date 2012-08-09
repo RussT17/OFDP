@@ -1,5 +1,5 @@
 class NonPrecPrice < ActiveRecord::Base
-  attr_accessible :metal_dataset,:date,:buyer,:seller
+  attr_accessible :metal_dataset, :metal_dataset_id,:date,:buyer,:seller
   belongs_to :metal_dataset
   
   def mean

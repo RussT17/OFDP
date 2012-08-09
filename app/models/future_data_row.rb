@@ -1,5 +1,5 @@
 class FutureDataRow < ActiveRecord::Base
-  attr_accessible :future,:date,:open,:high,:low,:settle,:volume,:interest,:cfc
+  attr_accessible :future,:future_id,:date,:open,:high,:low,:settle,:volume,:interest,:cfc,:cfc_id
   belongs_to :future
   belongs_to :cfc
   

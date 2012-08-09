@@ -15,6 +15,8 @@ class PreciousFixingScraper
   def scrape_on(date)
     #Gold Fixings
     the_metal = Metal.where(:name=>'Gold').first
+    the_am_dataset = the_metal.metal_datasets.where(:name => 'London Fixings A.M.').first
+    the_pm_dataset = the_metal.metal_datasets.where(:name => 'London Fixings P.M.').first
     url = "http://www.lbma.org.uk/pages/index.cfm?page_id=53&title=gold_fixings&show=" + date.year.to_s + "&type=daily"
     doc = Nokogiri::HTML(open(url))
     table = doc.css('table.pricing_detail')
@@ -41,8 +43,7 @@ class PreciousFixingScraper
       end
       if !row_data[1,3].compact.empty?
         entry = Entry.new
-        entry.metal = the_metal
-        entry.dataset_name = 'London Fixings A.M.'
+        entry.metal_dataset = the_am_dataset
         entry.date = date
         entry.usd = row_data[1]
         entry.gbp = row_data[2]
@@ -52,8 +53,7 @@ class PreciousFixingScraper
       end
       if !row_data[4,6].compact.empty?
         entry = Entry.new
-        entry.metal = the_metal
-        entry.dataset_name = 'London Fixings P.M.'
+        entry.metal_dataset = the_pm_dataset
         entry.date = date
         entry.usd = row_data[4]
         entry.gbp = row_data[5]
@@ -65,7 +65,7 @@ class PreciousFixingScraper
     end
     
     #Silver Fixings
-    the_metal = Metal.where(:name=>'Silver').first
+    the_dataset = Metal.where(:name=>'Silver').first.metal_datasets.where(:name => 'London Fixings').first
     url = "http://www.lbma.org.uk/pages/index.cfm?page_id=54&title=silver_fixings&show=" + date.year.to_s + "&type=daily"
     doc = Nokogiri::HTML(open(url))
     table = doc.css('table.pricing_detail')
@@ -93,8 +93,7 @@ class PreciousFixingScraper
       1.upto(3) {|i| row_data[i] = row_data[i]/100 if !row_data[i].nil?}
       if !row_data[1,3].compact.empty?
         entry = Entry.new
-        entry.metal = the_metal
-        entry.dataset_name = 'London Fixings'
+        entry.metal_dataset = the_dataset
         entry.date = date
         entry.usd = row_data[1]
         entry.gbp = row_data[2]
@@ -123,6 +122,8 @@ class PreciousFixingScraper
     puts "Hydra finished"
     
     the_metal = Metal.where(:name=>'Gold').first
+    the_am_dataset = the_metal.metal_datasets.where(:name => 'London Fixings A.M.').first
+    the_pm_dataset = the_metal.metal_datasets.where(:name => 'London Fixings P.M.').first
     1968.upto(Date.today.year) do |year|
       index = year-1968
       url = "http://www.lbma.org.uk/pages/index.cfm?page_id=53&title=gold_fixings&show=" + year.to_s + "&type=daily"
@@ -149,8 +150,7 @@ class PreciousFixingScraper
         if numcols == 5
           if !row_data[1,2].compact.empty?
             entry = Entry.new
-            entry.metal = the_metal
-            entry.dataset_name = 'London Fixings A.M.'
+            entry.metal_dataset = the_am_dataset
             entry.date = Date.parse(row_data[0])
             entry.usd = row_data[1]
             entry.gbp = row_data[2]
@@ -159,8 +159,7 @@ class PreciousFixingScraper
           end
           if !row_data[3,4].compact.empty?
             entry = Entry.new
-            entry.metal = the_metal
-            entry.dataset_name = 'London Fixings P.M.'
+            entry.metal_dataset = the_pm_dataset
             entry.date = Date.parse(row_data[0])
             entry.usd = row_data[3]
             entry.gbp = row_data[4]
@@ -171,8 +170,7 @@ class PreciousFixingScraper
         if numcols == 7
           if !row_data[1,3].compact.empty?
             entry = Entry.new
-            entry.metal = the_metal
-            entry.dataset_name = 'London Fixings A.M.'
+            entry.metal_dataset = the_am_dataset
             entry.date = Date.parse(row_data[0])
             entry.usd = row_data[1]
             entry.gbp = row_data[2]
@@ -182,8 +180,7 @@ class PreciousFixingScraper
           end
           if !row_data[4,6].compact.empty?
             entry = Entry.new
-            entry.metal = the_metal
-            entry.dataset_name = 'London Fixings P.M.'
+            entry.metal_dataset = the_pm_dataset
             entry.date = Date.parse(row_data[0])
             entry.usd = row_data[4]
             entry.gbp = row_data[5]
@@ -210,7 +207,7 @@ class PreciousFixingScraper
     hydra.run
     puts "Hydra finished"
     
-    the_metal = Metal.where(:name=>'Silver').first
+    the_dataset = Metal.where(:name=>'Silver').first.metal_datasets.where(:name => 'London Fixings').first
     1968.upto(Date.today.year) do |year|
       next if year == 1997 #NO DATES FOR THIS YEAR, PERHAPS THEY HAVE FIXED THE ERROR
       index = year-1968
@@ -238,8 +235,7 @@ class PreciousFixingScraper
         end
         1.upto(3) {|i| row_data[i] = row_data[i]/100 if !row_data[i].nil?}
         entry = Entry.new
-        entry.metal = the_metal
-        entry.dataset_name = 'London Fixings'
+        entry.metal_dataset = the_dataset
         entry.date = Date.parse(row_data[0])
         entry.usd = row_data[1]
         entry.gbp = row_data[2]
@@ -270,17 +266,17 @@ class PreciousFixingScraper
   private
   
   class Entry < DataEntry
-    entry_attr_accessor :metal, :dataset_name, :date, :usd, :gbp, :eur
+    entry_attr_accessor :metal_dataset, :date, :usd, :gbp, :eur
     
     def to_s
-      @record.select{|k| [:metal,:dataset_name, :date].include? k}.to_s
+      @record.select{|k| [:metal_dataset, :date].include? k}.to_s
     end
     
     def submit(insert)
       if !insert
-        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
+        @record[:metal_dataset].first_or_create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
       else
-        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
+        @record[:metal_dataset].create_data_row(:date => @record[:date]).update_attributes(:usd => @record[:usd], :gbp => @record[:gbp], :eur => @record[:eur])
       end
       puts 'Entry ' + to_s + ' submitted'
     end
