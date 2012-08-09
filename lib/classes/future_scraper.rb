@@ -459,15 +459,10 @@ class FutureScraper
     
     def submit
       @asset = Asset.where(:exchange => @record[:exchange], :symbol => @record[:symbol]).first_or_create
-      if @asset.invalid_contract_months.map{|row| row.month}.include? @record[:month]
-        puts 'Entry ' + to_s + ' invalid'
-        BadFutureDataRow.create(@record)
-      else
-        @future = @asset.futures.where(:year => @record[:year].to_i, :month => @record[:month]).first_or_create
-        @data_row = @future.future_data_rows.where(:date => @record[:date]).first_or_create.update_attributes(@record.select {|k| [:open,:high,:low,:settle,:volume,:interest].include? k})
-        puts 'Entry ' + to_s + ' submitted'
-        @submitted = true
-      end
+      @future = @asset.futures.where(:year => @record[:year].to_i, :month => @record[:month]).first_or_create
+      @data_row = @future.future_data_rows.where(:date => @record[:date]).first_or_create.update_attributes(@record.select {|k| [:open,:high,:low,:settle,:volume,:interest].include? k})
+      puts 'Entry ' + to_s + ' submitted'
+      @submitted = true
     end
   end
 end
