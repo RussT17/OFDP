@@ -46,8 +46,7 @@ class NonpreciousScraper
         [['Cash',6,7],['3-Months',10,11],['December 1',14,15],['December 2',18,19],['December 3',22,23]].each do |arr|
           if !row_data[arr[1]].nil? and !row_data[arr[2]].nil?
             entry = Entry.new
-            entry.metal = metal
-            entry.dataset_name = arr[0]
+            entry.metal_dataset = metal.metal_datasets.where(name: arr[0]).first
             entry.date = date
             entry.buyer = row_data[arr[1]]
             entry.seller = row_data[arr[2]]
@@ -64,8 +63,7 @@ class NonpreciousScraper
         [['Cash',14,20],['3-Months',26,32],['15-Months',38,44]].each do |arr|
           if !row_data[arr[1]].nil? and !row_data[arr[2]].nil?
             entry = Entry.new
-            entry.metal = metal
-            entry.dataset_name = arr[0]
+            entry.metal_dataset = metal.metal_datasets.where(name: arr[0]).first
             entry.date = date
             entry.buyer = row_data[arr[1]]
             entry.seller = row_data[arr[2]]
@@ -108,8 +106,7 @@ class NonpreciousScraper
                 buyer = row[3*i + 2]
                 seller = row[3*i + 3]
                 entry = Entry.new
-                entry.metal = metal
-                entry.dataset_name = dataset.name
+                entry.metal_dataset = dataset
                 entry.date = date
                 entry.buyer = buyer
                 entry.seller = seller
@@ -131,17 +128,17 @@ class NonpreciousScraper
   end
   
   class Entry < DataEntry
-    entry_attr_accessor :metal, :dataset_name, :date, :buyer, :seller
+    entry_attr_accessor :metal_dataset, :date, :buyer, :seller
     
     def to_s
-      @record.select{|k| [:metal,:dataset_name, :date].include? k}.to_s
+      @record.select{|k| [:metal_dataset, :date].include? k}.to_s
     end
     
     def submit(insert = false)
       if !insert
-        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.first_or_create_data_row(:date => @record[:date]).update_attributes(:buyer => @record[:buyer], :seller => @record[:seller])
+        @record[:metal_dataset].first_or_create_data_row(:date => @record[:date]).update_attributes(:buyer => @record[:buyer], :seller => @record[:seller])
       else
-        @record[:metal].metal_datasets.where(:name => @record[:dataset_name]).first.create_data_row(:date => @record[:date]).update_attributes(:buyer => @record[:buyer], :seller => @record[:seller])
+        @record[:metal_dataset].create_data_row(:date => @record[:date]).update_attributes(:buyer => @record[:buyer], :seller => @record[:seller])
       end
       puts 'Entry ' + to_s + ' submitted'
     end
