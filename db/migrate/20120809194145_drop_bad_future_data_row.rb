@@ -1,7 +1,7 @@
 class DropBadFutureDataRow < ActiveRecord::Migration
   def up
     drop_table :bad_future_data_rows
-    add_column :futures, :valid, :boolean
+    add_column :futures, :is_valid, :boolean
   end
 
   def down
@@ -18,6 +18,6 @@ class DropBadFutureDataRow < ActiveRecord::Migration
       t.float :volume
       t.float :interest
     end 
-    remove_column :futures, :valid
+    remove_column :futures, :is_valid
   end
 end

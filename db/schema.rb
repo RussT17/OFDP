@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20120809194145) do
     t.integer "asset_id"
     t.string  "month"
     t.integer "year"
-    t.boolean "valid"
+    t.boolean "is_valid"
   end
 
   create_table "invalid_contract_months", :force => true do |t|
