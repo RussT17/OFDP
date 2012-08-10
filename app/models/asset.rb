@@ -3,8 +3,7 @@ class Asset < ActiveRecord::Base
   has_many :futures, :dependent => :destroy
   has_many :future_data_rows, :through => :futures
   has_many :cfcs, :dependent => :destroy
-  has_many :invalid_contract_months, :dependent => :destroy
-  
+=begin
   def update_cfc_on(input_date)
     #does a single date in the asset's history
     #first make cfc associations for all today's new entries
@@ -64,5 +63,33 @@ class Asset < ActiveRecord::Base
         puts "Asset: " + self.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
       end
     end
+  end
+=end
+
+  def update_cfc1_on(input_date)
+    front_row = (self.future_data_rows.where(date: input_date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj})[0]
+    if !front_row.nil?
+      front_row.set_cfc(1)
+      front_row.validate_cfc
+    end
+  end
+  
+  def calculate_cfcs
+=begin
+    rows = self.future_data_rows
+    start_date = rows.minimum('date')
+    end_date = rows.maximum('date')
+    #First determine the cfc of depth 1
+    (start_date..end_date).each do |date|
+      update_cfc1_on(date)
+    end
+=end
+    #Now figure out the order of futures from start to end in cfc depth 1
+    the_cfc = self.cfcs.where(depth: 1).first
+    front_rows = the_cfc.future_data_rows
+    future_change_dates = front_rows.minimum(:date, :group => :future_id).to_a.map{|arr| {future: Future.find(arr[0].to_i), date: arr[1]}}.sort{|hash1,hash2| hash2[:date] <=> hash1[:date]}
+    
+    #now fill in the CFC pyramid of confusion (see unincluded diagram)
+    
   end
 end
