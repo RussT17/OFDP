@@ -3,68 +3,26 @@ class Asset < ActiveRecord::Base
   has_many :futures, :dependent => :destroy
   has_many :future_data_rows, :through => :futures
   has_many :cfcs, :dependent => :destroy
-=begin
-  def update_cfc_on(input_date)
-    #does a single date in the asset's history
-    #first make cfc associations for all today's new entries
-    puts "Updating CFC for " + self.symbol + ' based on data updated for ' + input_date.to_s
-    the_rows = self.future_data_rows.where(:date => input_date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj}
-    the_rows.each_with_index do |the_row,i|
-      depth = i + 1
-      target_cfc = self.cfcs.where(:depth => depth).first_or_create
-      the_row.cfc = target_cfc
-      the_row.save
-      puts "Asset: " + self.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
-    end
-    #now fix previous depths in cfcs according to the new data
-    #cycle through each cfc starting with front month
-    self.cfcs.order("depth asc").each do |cfc|
-      puts "Verifying " + self.symbol + cfc.depth.to_s + ' around ' + input_date.to_s
-      #only fixes errors from the last 30 days
-      the_rows = cfc.future_data_rows.where("date > ?",input_date - 30).where("date <= ?",input_date + 1).order("date desc")
-      next if the_rows.empty?
-      #cycle through these rows
-      earliest_expiry = the_rows[0].future.date_obj
-      the_rows.each_index do |i|
-        next if i == 0
-        if earliest_expiry < the_rows[i].future.date_obj
-          the_rows[i].increase_depth
-        else
-          break if the_rows[i].date < input_date
-          earliest_expiry = the_rows[i].future.date_obj
-        end
+
+  def update_cfcs_on(input_date)
+    #first update cfc1 for this new date
+    update_cfc1_on(input_date)
+    
+    #now, just for the most recent front month change period, update all the other cfcs
+    the_cfc = self.cfcs.where(depth: 1).first
+    front_rows = the_cfc.future_data_rows
+    last_change = front_rows.minimum(:date, :group => :future_id).to_hash.max_by{|k,v| v}
+    cfc1_future = Future.find(last_change[0])
+    
+    futures = self.futures.reject{|f| f.date_obj <= cfc1_future.date_obj}.sort{|f1,f2| f1.date_obj <=> f2.date_obj}
+    futures.each_with_index do |f,i|
+      rows = f.future_data_rows.where("date >= ?", last_change[1])
+      next if rows.empty?
+      rows.each do |row|
+        row.set_cfc(i+2)
       end
     end
   end
-  
-  def update_cfc
-    #works for all history of the asset
-    self.future_data_rows.order("date desc").uniq.pluck(:date).each do |date|
-      the_rows = self.future_data_rows.where(:date => date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj}
-      bump_count = 0
-      the_rows.each_with_index do |the_row,i|
-        depth = i + 1
-        if !the_row.cfc_id.nil?
-          next_row = the_row.cfc.future_data_rows.where("date > ?", date).order("date asc").first
-        end
-        if !next_row.nil?
-          if next_row.future.date_obj < the_row.future.date_obj
-            bump_count = bump_count + 1
-          end
-        end
-        depth = depth + bump_count
-        target_cfc = Cfc.where(:asset_id => self.id,:depth => depth).first
-        if target_cfc
-          the_row.cfc = target_cfc
-          the_row.save
-        else
-          the_row.create_cfc(:asset_id => self.id,:depth => depth)
-        end
-        puts "Asset: " + self.id.to_s + " Date: " + the_row.date.to_s + " Depth: " + (depth).to_s
-      end
-    end
-  end
-=end
 
   def update_cfc1_on(input_date)
     front_row = (self.future_data_rows.where(date: input_date).sort {|row1,row2| row1.future.date_obj <=> row2.future.date_obj})[0]
@@ -75,21 +33,37 @@ class Asset < ActiveRecord::Base
   end
   
   def calculate_cfcs
-=begin
     rows = self.future_data_rows
     start_date = rows.minimum('date')
     end_date = rows.maximum('date')
+
     #First determine the cfc of depth 1
     (start_date..end_date).each do |date|
       update_cfc1_on(date)
     end
-=end
-    #Now figure out the order of futures from start to end in cfc depth 1
+    
+    #Now figure out the dates when the front month changes
     the_cfc = self.cfcs.where(depth: 1).first
     front_rows = the_cfc.future_data_rows
-    future_change_dates = front_rows.minimum(:date, :group => :future_id).to_a.map{|arr| {future: Future.find(arr[0].to_i), date: arr[1]}}.sort{|hash1,hash2| hash2[:date] <=> hash1[:date]}
+    future_change_dates = front_rows.minimum(:date, :group => :future_id).to_a.map{|arr| {future: Future.find(arr[0].to_i), date: arr[1]}}.sort{|hash1,hash2| hash1[:date] <=> hash2[:date]}
     
-    #now fill in the CFC pyramid of confusion (see unincluded diagram)
+    #Find the definitive list of ordered future contracts for this asset
+    futures = self.futures.sort {|f1,f2| f1.date_obj <=> f2.date_obj}
     
+    #Now for each chunk in the continuous contract history, build the deeper cfcs using the order from above.
+    #Note: One time one of the american futures sources reported extra futures with unusual expiry months. This could ruin
+    #a cfc for a front month period.
+    future_change_dates.each_index do |i|
+      h1 = future_change_dates[i]
+      h2 = future_change_dates[i+1]
+      h2 = {date: end_date + 1} if h2.nil?
+      futures[futures.index(h1[:future])+1..-1].each_with_index do |f,i|
+        rows = f.future_data_rows.where("date >= ?", h1[:date]).where("date < ?", h2[:date])
+        next if rows.empty?
+        rows.each do |row|
+          row.set_cfc(i+2)
+        end
+      end
+    end
   end
 end

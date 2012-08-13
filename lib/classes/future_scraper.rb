@@ -76,7 +76,7 @@ class FutureScraper
   
   def update_cfcs
     #only updates the cfcs if the asset has a proper name in the database
-    updated_assets.each {|hash| hash[:asset].update_cfc_on(hash[:date]) if !hash[:asset].name.nil?}
+    updated_assets.each {|hash| hash[:asset].update_cfcs_on(hash[:date]) if !hash[:asset].name.nil?}
     @submitted_entries = Array.new
   end
   
