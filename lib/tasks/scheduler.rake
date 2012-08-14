@@ -11,7 +11,7 @@ require 'date'
 desc "Everything is combined into a big scrape starting at 3:00am UTC"
 task :scrape => :environment do
   date = Date.today-1
-  
+  RakeErrorMessage.create(:message => "starting Options")
   if ![0,6].include? date.wday #check that yesterday wasn't a weekend day
     puts "Options:"
     begin
@@ -22,7 +22,7 @@ task :scrape => :environment do
       RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
     end
   end
-  
+  RakeErrorMessage.create(:message => "starting precious metal fixings")
   #for precaution we run the metals whether it was a weekday or not
   puts "\nPrecious Metal Fixings:"
   begin
@@ -32,7 +32,7 @@ task :scrape => :environment do
   rescue => e
     RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
   end
-
+  RakeErrorMessage.create(:message => "starting precious metal forwards")
   puts "\nPrecious Metal Forwards:"
   begin
     scraper = PreciousForwardScraper.new
@@ -42,7 +42,7 @@ task :scrape => :environment do
   rescue => e
     RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
   end
-  
+  RakeErrorMessage.create(:message => "starting nonprec")
   puts "\nNonprecious Metal Prices:"
   begin
     scraper = NonpreciousScraper.new
@@ -51,7 +51,7 @@ task :scrape => :environment do
   rescue => e
     RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
   end
-  
+  RakeErrorMessage.create(:message => "starting futures")
   #FUTURES - only run on weekdays
   date1 = Date.today-1
   date1_good = (![0,6].include? date1.wday)

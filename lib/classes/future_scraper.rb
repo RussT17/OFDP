@@ -31,7 +31,7 @@ class FutureScraper
     raise ArgumentError.new('Source not recognized.') if ![:cme,:icu,:ice,:eur].include? source_symbol
     if [:cme,:icu,:ice,:eur].include? source_symbol
       raise ArgumentError.new('Date required to scrape this source.') if date.nil?
-      raise ArgumentError.new('Provided date is a weekend.') if [0,6].include? date.wday and source_symbol != :eur
+      raise ArgumentError.new('Provided date is a weekend.') if [0,6].include? date.wday
     end
     raise ArgumentError.new('Source/date combination already added') if @source_hashes.include?({:source => source_symbol, :date => date})
     @source_hashes << ({:source => source_symbol, :date => date})
@@ -54,7 +54,7 @@ class FutureScraper
       when :icu
         @new_entries += icu_entries(hash[:date])
       when :eur
-        @new_entries += eur_entries
+        @new_entries += eur_entries(hash[:date])
       end
     end
     @source_hashes = Array.new
@@ -430,9 +430,10 @@ class FutureScraper
         entry.interest = cells[14].content.to_i
         entry.date = input_date
         entry.exchange = 'EUR'
+        entry.asset_name = asset[:name]
         entry.symbol = asset[:symbol]
         entry.year = asset[:expiries][i][0..3]
-        entry.month = Ofdp::Application::MONTH_NAMES.keys(asset[:expiries][i][4..5].to_i - 1)
+        entry.month = Ofdp::Application::MONTH_NAMES.keys[asset[:expiries][i][4..5].to_i - 1]
         entry.save
         entries << entry
       end
@@ -447,7 +448,7 @@ class FutureScraper
     end
     
     attr_reader :asset
-    entry_attr_accessor :date, :exchange, :symbol, :year, :month, :open, :high, :low, :settle, :volume, :interest
+    entry_attr_accessor :date, :exchange, :symbol, :year, :month, :open, :high, :low, :settle, :volume, :interest, :asset_name
     
     def submitted?
       @submitted
@@ -458,7 +459,7 @@ class FutureScraper
     end
     
     def submit
-      @asset = Asset.where(:exchange => @record[:exchange], :symbol => @record[:symbol]).first_or_create
+      @asset = Asset.where(:exchange => @record[:exchange], :symbol => @record[:symbol]).first_or_create(name: @record[:asset_name])
       @future = @asset.futures.where(:year => @record[:year].to_i, :month => @record[:month]).first_or_create
       @data_row = @future.future_data_rows.where(:date => @record[:date]).first_or_create.update_attributes(@record.select {|k| [:open,:high,:low,:settle,:volume,:interest].include? k})
       puts 'Entry ' + to_s + ' submitted'
