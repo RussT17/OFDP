@@ -50,14 +50,19 @@ class Asset < ActiveRecord::Base
     #Find the definitive list of ordered future contracts for this asset
     futures = self.futures.sort {|f1,f2| f1.date_obj <=> f2.date_obj}
     
+    #Now tack these two future lists together, that is, create a new list which begins with the futures from future_change_dates
+    #and then, when that runs out, resort to the (potentially less accurate) futures list from above.
+    fut_order = future_change_dates.map{|hash| hash[:future]} + futures[(futures.index(future_change_dates[-1][:future]) + 1)..-1]
+    
     #Now for each chunk in the continuous contract history, build the deeper cfcs using the order from above.
-    #Note: One time one of the american futures sources reported extra futures with unusual expiry months. This could ruin
-    #a cfc for a front month period.
+    #Note: One time one of the american futures sources reported extra future contracts with unusual expiry months. This could ruin
+    #a cfc for a front month period, but would be fixed down the road if this function was rerun later, once in the invalid contract
+    #had passed it's expiry date, since it never would have become a front month.
     future_change_dates.each_index do |i|
       h1 = future_change_dates[i]
       h2 = future_change_dates[i+1]
       h2 = {date: end_date + 1} if h2.nil?
-      futures[futures.index(h1[:future])+1..-1].each_with_index do |f,i|
+      fut_order[i+1..-1].each_with_index do |f,i|
         rows = f.future_data_rows.where("date >= ?", h1[:date]).where("date < ?", h2[:date])
         next if rows.empty?
         rows.each do |row|
