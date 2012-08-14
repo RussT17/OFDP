@@ -33,6 +33,15 @@ class Asset < ActiveRecord::Base
   end
   
   def calculate_cfcs
+    #See WARNINGS on the functions called by this function
+    
+    build_cfc1
+    build_deeper_cfcs
+  end
+  
+  def build_cfc1
+    #WARNING: Assumes all CFC_IDs for future_data_rows in CFC1 are set to nil before beginning. Make sure this happens first.
+    
     rows = self.future_data_rows
     start_date = rows.minimum('date')
     end_date = rows.maximum('date')
@@ -41,8 +50,12 @@ class Asset < ActiveRecord::Base
     (start_date..end_date).each do |date|
       update_cfc1_on(date)
     end
+  end
+  
+  def build_deeper_cfcs
+    #WARNING: Assumes all CFC_IDs for future_data_rows in CFC2 and up are set to nil before beginning. Make sure this happens first.
     
-    #Now figure out the dates when the front month changes
+    #Figure out the dates when the front month changes
     the_cfc = self.cfcs.where(depth: 1).first
     front_rows = the_cfc.future_data_rows
     future_change_dates = front_rows.minimum(:date, :group => :future_id).to_a.map{|arr| {future: Future.find(arr[0].to_i), date: arr[1]}}.sort{|hash1,hash2| hash1[:date] <=> hash2[:date]}
@@ -61,12 +74,21 @@ class Asset < ActiveRecord::Base
     future_change_dates.each_index do |i|
       h1 = future_change_dates[i]
       h2 = future_change_dates[i+1]
-      h2 = {date: end_date + 1} if h2.nil?
-      fut_order[i+1..-1].each_with_index do |f,i|
-        rows = f.future_data_rows.where("date >= ?", h1[:date]).where("date < ?", h2[:date])
-        next if rows.empty?
-        rows.each do |row|
-          row.set_cfc(i+2)
+      if !h2.nil?
+        fut_order[i+1..-1].each_with_index do |f,i|
+          rows = f.future_data_rows.where("date >= ?", h1[:date]).where("date < ?", h2[:date])
+          next if rows.empty?
+          rows.each do |row|
+            row.set_cfc(i+2)
+          end
+        end
+      else
+        fut_order[i+1..-1].each_with_index do |f,i|
+          rows = f.future_data_rows.where("date >= ?", h1[:date])
+          next if rows.empty?
+          rows.each do |row|
+            row.set_cfc(i+2)
+          end
         end
       end
     end
