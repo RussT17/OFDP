@@ -21,7 +21,7 @@
 			<td><%= the_ticker %></td>
 			<% the_name = c.asset.name.to_s + ' Continuous Contract Index: ' + c.depth.to_s + ' (' + the_ticker + ')' %>
 			<td><%= the_name %></td>
-			<td><%= 'Continuous future contract daily closing prices in $USD. Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + ' contract(s) before maturity. Continuous contract determined based on futures data from the ' + c.asset.exchange + '.' %></td>
+			<td><%= 'Continuous future contract daily closing prices in $USD. Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + ' contract(s) before maturity. Continuous contract determined based on futures data from ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] + '.' %></td>
 			<td><%= link_to cfc_url(c),cfc_url(c) %></td>
 		</tr>
 		<% end %>
