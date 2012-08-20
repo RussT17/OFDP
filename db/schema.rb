@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813185647) do
+ActiveRecord::Schema.define(:version => 20120817195507) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(:version => 20120813185647) do
   create_table "cfcs", :force => true do |t|
     t.integer "asset_id"
     t.integer "depth"
+  end
+
+  create_table "cot_data_rows", :force => true do |t|
+    t.integer "cot_id"
+    t.date    "date"
+    t.string  "data"
+  end
+
+  create_table "cots", :force => true do |t|
+    t.string  "name"
+    t.string  "desc"
+    t.boolean "legacy"
   end
 
   create_table "future_data_rows", :force => true do |t|

@@ -1,11 +1,3 @@
-# LIST of             SCRAPE TIMES (UTC) and DATE INPUTS (if applicable):
-
-# AMERICAN FUTURES    04:30                  Date.today-1,Date.today-2
-# EUREX FUTURES       ???                    ???
-# OPTIONS             1:00                   Date.today-1
-# PRECIOUS METALS     1:00                   Date.today-1
-# NONPRECIOUS METALS  1:00                   N/A
-
 require 'date'
 
 desc "Everything is combined into a big scrape starting at 3:00am UTC"
@@ -74,5 +66,17 @@ task :scrape => :environment do
     scraper.full_run
   rescue => e
     RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+  end
+  
+  #if it's saturday do the weekly scrape on CFTC
+  date = Date.today
+  if date.wday == 0
+    begin
+      scraper = CotScraper.new
+      scraper.scrape_newest_before(date)
+      scraper.add_to_database
+    rescue => e
+      RakeErrorMessage.create(:message => e.message, :backtrace => e.backtrace.join("\n"))
+    end
   end
 end

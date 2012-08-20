@@ -2,8 +2,7 @@
 	<a href='<%= root_path %>'><div class='main-logo-small'></div></a>
 	<div class='navbar'>
 		<a href='<%= root_path %>'><div class='tab home-tab <%= 'on' if params[:controller] == 'home' %>'><div>Home</div></div></a>
-		<a href='<%= futures_path %>'><div class='tab futures-tab <%= 'on' if params[:controller] == 'futures' %>'><div>Futures</div></div></a>
-		<a href='<%= cfcs_path %>'><div class='tab cfcs-tab <%= 'on' if params[:controller] == 'cfcs' %>'><div>Continuous Futures Contracts</div></div></a>
+		<a href='<%= futures_path %>'><div class='tab futures-tab <%= 'on' if ['futures', 'cfcs', 'cots'].include? params[:controller] %>'><div>Futures</div></div></a>
 		<a href='<%= stock_options_path %>'><div class='tab stock-options-tab <%= 'on' if params[:controller] == 'stock_options' %>'><div>Stock Options</div></div></a>
 		<a href='<%= metal_prices_path %>'><div class='tab spot-metal-prices-tab <%= 'on' if params[:controller] == 'metal_prices' %>'><div>Spot Metal Prices</div></div></a>
 	</div>
