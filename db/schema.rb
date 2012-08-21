@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817195507) do
+ActiveRecord::Schema.define(:version => 20120821165704) do
 
   create_table "assets", :force => true do |t|
     t.string "symbol"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20120817195507) do
     t.integer "asset_id"
     t.string  "month"
     t.integer "year"
+  end
+
+  create_table "index_data_rows", :force => true do |t|
+    t.integer "index_id"
+    t.date    "date"
+    t.float   "value"
+  end
+
+  create_table "indices", :force => true do |t|
+    t.string "name"
   end
 
   create_table "invalid_contract_months", :force => true do |t|

@@ -1,0 +1,14 @@
+<h1 class='page-title'>Data</h1>
+		<%= link_to 'Table of Contents', indices_path %>
+		<h3><%= @title %></h3>
+		<table>
+			<tr>
+				<th>Date</th><th>Value</th>
+			</tr>
+			<% @rows.each do |row|%>
+			<tr>
+				<td><%= row.date.to_s %></td>
+				<td><%= row.value.to_s %></td>
+			</tr>
+			<% end %>
+		</table>

@@ -1,5 +1,6 @@
 Ofdp::Application.routes.draw do
   resources :futures, :only => [:index,:show]
+  resources :indices, :only => [:index,:show]
   resources :cfcs, :only => [:index,:show]
   resources :cots, :only => [:index,:show]
   resources :stock_options, :only => [:index,:show]

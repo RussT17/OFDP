@@ -1,0 +1,21 @@
+<h1 class='page-title'>Table of Contents</h1>
+	<%= paginate @contents %><br>
+	<table>
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				Data URL
+			</th>
+		</tr>
+		<% for c in @contents %>
+			<td><%= c.name %></td>
+			<td>Source: DryShips Inc.</td>
+			<td><%= link_to index_url(c), index_url(c) %></td>
+		</tr>
+		<% end %>
+	</table>
