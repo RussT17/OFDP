@@ -3,6 +3,9 @@
 	<table>
 		<tr>
 			<th>
+				Dataset Code
+			</th>
+			<th>
 				Name
 			</th>
 			<th>
@@ -13,6 +16,7 @@
 			</th>
 		</tr>
 		<% for c in @contents %>
+			<td>index.<%= c.name.split(' ').map{|w| w[0]}.join + '.' + c.id.to_s %></td>
 			<td><%= c.name %></td>
 			<td>Source: DryShips Inc.</td>
 			<td><%= link_to index_url(c), index_url(c) %></td>

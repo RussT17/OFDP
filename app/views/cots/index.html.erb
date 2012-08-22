@@ -3,10 +3,11 @@
 <%= paginate @contents %><br>
 <table>
 	<tr>
-		<th>Name</th><th>Description</th><th>URL</th>
+		<th>Dataset Code</th><th>Name</th><th>Description</th><th>URL</th>
 	</tr>
 	<% for c in @contents %>
 	<tr>
+		<td>future.COT.<%= c.id.to_s %></td>
 		<td><%= c.name %> Commitment of traders<%= ', legacy format' if c.legacy %></td>
 		<td><%= c.desc %>. Futures holdings only. Data source: U.S. Commodity Futures Trading Commission.</td>
 		<td><%= link_to cot_url(c),cot_url(c) %></td>

@@ -3,6 +3,9 @@
 	<table>
 		<tr>
 			<th>
+				Dataset Code
+			</th>
+			<th>
 				Dataset Name
 			</th>
 			<th>
@@ -14,6 +17,7 @@
 		</tr>
 		<% for c in @contents %>
 		<tr>
+			<td><%= c.metal.name.gsub(/\s/,'') + '.' + c.id.to_s %></td>
 			<% if c.metal.source == 'lme' %>
 			<td><%= c.metal.name + ' Price: ' + c.name %></td>
 			<% dataset_name = c.name.downcase[0] == 'd' ? c.name : c.name.downcase %>

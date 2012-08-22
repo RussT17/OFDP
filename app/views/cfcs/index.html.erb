@@ -4,7 +4,7 @@
 	<table>
 		<tr>
 			<th>
-				Symbol
+				Dataset Code
 			</th>
 			<th>
 				Name
@@ -19,7 +19,7 @@
 		<% for c in @contents %>
 		<tr>
 			<% the_ticker = c.asset.symbol + c.depth.to_s %>
-			<td><%= the_ticker %></td>
+			<td>future.<%= the_ticker %></td>
 			<% the_name = c.asset.name.to_s + ' Continuous Contract Index: ' + c.depth.to_s + ' (' + the_ticker + ')' %>
 			<td><%= the_name %></td>
 			<td><%= 'Continuous future contract daily closing prices in $USD. Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + ' contract(s) before maturity. Continuous contract determined based on futures data from ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] + '.' %></td>

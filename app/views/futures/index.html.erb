@@ -4,7 +4,7 @@ Futures Contracts | <%= link_to 'Continuous Futures Contracts', cfcs_path %> | <
 	<table>
 		<tr>
 			<th>
-				Ticker Symbol
+				Dataset Code
 			</th>
 			<th>
 				Future Name
@@ -19,7 +19,7 @@ Futures Contracts | <%= link_to 'Continuous Futures Contracts', cfcs_path %> | <
 		<% for c in @contents %>
 		<tr>
 			<% the_ticker = c.asset.symbol + c.month + c.year.to_s %>
-			<td><%= the_ticker %></td>
+			<td>future.<%= the_ticker %></td>
 			<% the_name = c.asset.name + ' ' + Ofdp::Application::MONTH_NAMES[c.month] + ' ' + c.year.to_s %>
 			<td><%= the_name %></td>
 			<td><%= the_ticker + ' future contract closing price in $USD; ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] %></td>
