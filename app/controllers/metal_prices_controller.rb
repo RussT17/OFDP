@@ -4,6 +4,10 @@ class MetalPricesController < ApplicationController
   end
   
   def index
-    @contents = MetalDataset.joins(:metal).order("metals.name,name").page(params[:page])
+    if params[:all]
+      @contents = MetalDataset.all
+    else
+      @contents = MetalDataset.joins(:metal).order("metals.name,name").page(params[:page])
+    end
   end
 end

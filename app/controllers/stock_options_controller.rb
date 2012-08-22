@@ -6,6 +6,10 @@ class StockOptionsController < ApplicationController
   end
 
   def index
-    @contents = StockOption.order('symbol').page(params[:page])
+    if params[:all]
+      @contents = StockOption.all
+    else
+      @contents = StockOption.order('symbol').page(params[:page])
+    end
   end
 end

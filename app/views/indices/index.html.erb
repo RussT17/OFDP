@@ -1,5 +1,5 @@
 <h1 class='page-title'>Table of Contents</h1>
-	<%= paginate @contents %><br>
+	<%= paginate @contents if !params[:all] %><br>
 	<table>
 		<tr>
 			<th>
@@ -16,7 +16,7 @@
 			</th>
 		</tr>
 		<% for c in @contents %>
-			<td>index.<%= c.name.split(' ').map{|w| w[0]}.join + '.' + c.id.to_s %></td>
+			<td>INDEX.<%= c.name.split(' ').map{|w| w[0]}.join + '.' + c.id.to_s %></td>
 			<td><%= c.name %></td>
 			<td>Source: DryShips Inc.</td>
 			<td><%= link_to index_url(c), index_url(c) %></td>

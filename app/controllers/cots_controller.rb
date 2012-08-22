@@ -17,6 +17,10 @@ class CotsController < ApplicationController
   end
   
   def index
-    @contents = Cot.order('name').page(params[:page])
+    if params[:all]
+       @contents = Cot.all
+    else
+       @contents = Cot.order('name').page(params[:page])
+    end
   end
 end

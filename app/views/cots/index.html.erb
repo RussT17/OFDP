@@ -1,13 +1,13 @@
 <%= link_to 'Futures Contracts', futures_url %> | <%= link_to 'Continuous Futures Contracts', cfcs_path %> | Commitment of Traders
 <h1 class='page-title'>Commitment of Traders</h1>
-<%= paginate @contents %><br>
+<%= paginate @contents if !params[:all] %><br>
 <table>
 	<tr>
 		<th>Dataset Code</th><th>Name</th><th>Description</th><th>URL</th>
 	</tr>
 	<% for c in @contents %>
 	<tr>
-		<td>future.COT.<%= c.id.to_s %></td>
+		<td>FUTURE.COT.<%= c.id.to_s %></td>
 		<td><%= c.name %> Commitment of traders<%= ', legacy format' if c.legacy %></td>
 		<td><%= c.desc %>. Futures holdings only. Data source: U.S. Commodity Futures Trading Commission.</td>
 		<td><%= link_to cot_url(c),cot_url(c) %></td>

@@ -5,6 +5,10 @@ class IndicesController < ApplicationController
   end
   
   def index
-    @contents = Index.order(:name).page(params[:page])
+    if params[:all]
+      @contents = Index.all
+    else
+      @contents = Index.order(:name).page(params[:page])
+    end
   end
 end

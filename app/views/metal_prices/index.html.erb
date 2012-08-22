@@ -1,5 +1,5 @@
 <h1 class='page-title'>Table of Contents</h1>
-	<%= paginate @contents %><br>
+	<%= paginate @contents if !params[:all] %><br>
 	<table>
 		<tr>
 			<th>
@@ -17,7 +17,7 @@
 		</tr>
 		<% for c in @contents %>
 		<tr>
-			<td><%= c.metal.name.gsub(/\s/,'') + '.' + c.id.to_s %></td>
+			<td><%= c.metal.name.gsub(/\s/,'').upcase + '.' + c.id.to_s %></td>
 			<% if c.metal.source == 'lme' %>
 			<td><%= c.metal.name + ' Price: ' + c.name %></td>
 			<% dataset_name = c.name.downcase[0] == 'd' ? c.name : c.name.downcase %>

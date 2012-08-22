@@ -5,6 +5,10 @@ class CfcsController < ApplicationController
   end
   
   def index
-    @contents = Cfc.joins(:asset).where("assets.name is not null").order("assets.symbol,depth").page(params[:page])
+    if params[:all]
+      @contents = Cfc.joins(:asset).where("assets.name is not null")
+    else
+      @contents = Cfc.joins(:asset).where("assets.name is not null").order("assets.symbol,depth").page(params[:page])
+    end
   end
 end

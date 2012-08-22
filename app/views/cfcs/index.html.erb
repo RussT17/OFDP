@@ -1,6 +1,6 @@
 	<%= link_to 'Futures Contracts', futures_url %> | Continuous Futures Contracts | <%= link_to 'Commitment of Traders', cots_path %>
 	<h1 class='page-title'>Continuous Futures Contracts</h1>
-	<%= paginate @contents %><br>
+	<%= paginate @contents if !params[:all] %><br>
 	<table>
 		<tr>
 			<th>
@@ -19,7 +19,7 @@
 		<% for c in @contents %>
 		<tr>
 			<% the_ticker = c.asset.symbol + c.depth.to_s %>
-			<td>future.<%= the_ticker %></td>
+			<td>FUTURE.<%= the_ticker %></td>
 			<% the_name = c.asset.name.to_s + ' Continuous Contract Index: ' + c.depth.to_s + ' (' + the_ticker + ')' %>
 			<td><%= the_name %></td>
 			<td><%= 'Continuous future contract daily closing prices in $USD. Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + ' contract(s) before maturity. Continuous contract determined based on futures data from ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] + '.' %></td>
