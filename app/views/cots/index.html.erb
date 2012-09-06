@@ -8,8 +8,8 @@
 	<% for c in @contents %>
 	<tr>
 		<td>FUTURE.COT.<%= c.id.to_s %></td>
-		<td><%= c.name %> Commitment of traders<%= ', legacy format' if c.legacy %></td>
-		<td><%= c.desc %>. Futures holdings only. Data source: U.S. Commodity Futures Trading Commission.</td>
+		<td><%= c.name %>. Futures Commitment of Traders data from CFTC.  <%= ' Legacy format.' if c.legacy %></td>
+		<td><%= c.name + ". "+ c.desc %>. Futures holdings only. Data source: U.S. Commodity Futures Trading Commission (CFTC). <%= ' Legacy format.' if c.legacy %></td>
 		<td><%= link_to cot_url(c),cot_url(c) %></td>
 	</tr>
 	<% end %>

@@ -20,9 +20,13 @@
 		<tr>
 			<% the_ticker = c.asset.symbol + c.depth.to_s %>
 			<td>FUTURE.<%= the_ticker %></td>
-			<% the_name = c.asset.name.to_s + ' Continuous Contract Index: ' + c.depth.to_s + ' (' + the_ticker + ')' %>
+			<% if c.depth == 1 %>
+				<% the_name = c.asset.name.to_s + ' Futures, Continuous Contract #' + c.depth.to_s + ' (' + the_ticker + ') (Front Month)' %>
+			<% else %>
+				<% the_name = c.asset.name.to_s + ' Futures, Continuous Contract #' + c.depth.to_s + ' (' + the_ticker + ')' %>
+			<% end %>
 			<td><%= the_name %></td>
-			<td><%= 'Continuous future contract daily closing prices in $USD. Contract: ' + c.asset.name.to_s + ', ' + c.depth.to_s + ' contract(s) before maturity. Continuous contract determined based on futures data from ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] + '.' %></td>
+			<td><%= c.asset.name.to_s + ' Futures, Continuous Contract #' + c.depth.to_s + '. Non-adjusted price based on spot-month continuous contract calculations. Raw futures data from ' + Ofdp::Application::EXCHANGE_NAMES[c.asset.exchange] + '.' %></td>
 			<td><%= link_to cfc_url(c),cfc_url(c) %></td>
 		</tr>
 		<% end %>
