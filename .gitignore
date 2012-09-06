@@ -14,5 +14,8 @@
 /log/*.log
 /tmp
 
+#Ignore .DS_Store
+/.DS_Store
+
 #Ignore the seed file
 /db/futures_file.csv
