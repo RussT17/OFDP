@@ -44,7 +44,7 @@ GEM
       actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffi (1.1.5)
+    ffi (1.11.1)
     foreigner (1.2.1)
       activerecord (>= 3.0.0)
     hike (1.2.1)
